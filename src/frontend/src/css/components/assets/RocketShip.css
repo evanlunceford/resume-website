@@ -1,0 +1,96 @@
+/* ===== Rocket Color Variables ===== */
+:root {
+  --rocket-body-fill:       var(--beige);
+  --rocket-body-stroke:     var(--beige-hover);
+  --rocket-accent-start:    var(--navy);
+  --rocket-accent-end:      var(--gold);
+  --rocket-flame-start:     var(--orange);
+  --rocket-separator-fill:  var(--black);
+
+  /* Size */
+  --rocket-width:  477px;
+  --rocket-height: 549px;
+}
+
+/* ===== Gradient Stop Colors ===== */
+.gradient-accent-start { stop-color: var(--rocket-accent-start); }
+.gradient-accent-end   { stop-color: var(--rocket-accent-end); }
+.gradient-flame-start  { stop-color: var(--rocket-flame-start); }
+.gradient-flame-end    { stop-color: var(--rocket-accent-end); }
+
+/* ===== Rocket Parts ===== */
+.rocket-body {
+  fill:   var(--rocket-body-fill);
+  stroke: var(--rocket-body-stroke);
+}
+
+.rocket-separator {
+  fill: var(--rocket-separator-fill);
+}
+
+/* ===== Layout ===== */
+#js-rocket {
+  display: flex;
+  margin: 4rem;
+}
+
+#js-rocket svg {
+  margin: auto;
+  width:  var(--rocket-width);
+  height: var(--rocket-height);
+}
+
+/* ===== Animations ===== */
+#particles ellipse {
+  will-change: transform;
+  animation: vibrate .3s infinite;
+}
+
+#js-rocket #flame {
+  will-change: transform;
+  animation: flicker .1s infinite;
+}
+
+#js-rocket #speed rect {
+  will-change: transform;
+}
+
+#js-rocket #speed rect:first-of-type {
+  animation: translateSpeed 9s infinite;
+  animation-delay: 5s;
+}
+
+#js-rocket #speed rect:nth-child(2) {
+  animation: translateSpeed 9s infinite;
+}
+
+#js-rocket #speed rect:nth-child(3) {
+  animation: translateSpeed 9s infinite;
+  animation-delay: 6s;
+}
+
+#js-rocket #speed rect:nth-child(4) {
+  animation: translateSpeed 7s infinite;
+  animation-delay: 5s;
+}
+
+#js-rocket #speed rect:nth-child(5) {
+  animation: translateSpeed 6s infinite;
+  animation-delay: 5s;
+}
+
+@keyframes vibrate {
+  0%   { transform: translateX(-0.2%); }
+  50%  { transform: translateX(0%); }
+  100% { transform: translateX(-0.2%); }
+}
+
+@keyframes flicker {
+  0%   { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+@keyframes translateSpeed {
+  0%   { transform: translateY(-100%); opacity: 1; }
+  100% { transform: translateY(200%);  opacity: 0; }
+}
