@@ -38,6 +38,14 @@ export default function Home() {
                         Lunceford
                     </h1>
                 </div>
+                <div className="description">
+                    <div className="rocket">
+                        <RocketShip />
+                    </div>
+                    <span className="description-text">
+                        Software Engineer | Data Analyst
+                    </span>
+                </div>
             </div>     
         </div>
     );

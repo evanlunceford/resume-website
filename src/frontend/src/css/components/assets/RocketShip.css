@@ -8,8 +8,8 @@
   --rocket-separator-fill:  var(--black);
 
   /* Size */
-  --rocket-width:  477px;
-  --rocket-height: 549px;
+  --rocket-width:  100px;
+  --rocket-height: 150px;
 }
 
 /* ===== Gradient Stop Colors ===== */
