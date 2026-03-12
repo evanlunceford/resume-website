@@ -1,0 +1,49 @@
+.solar-sun {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sun-center-glow {
+  position: absolute;
+  width: 8em;
+  height: 8em;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.15) 35%,
+    transparent 70%
+  );
+  filter: blur(0.8em);
+  animation: sun-pulse 3s ease-in-out infinite;
+}
+
+.sun-ray {
+  position: absolute;
+  left: 0;
+  top: -1em;
+  width: 20em;
+  height: 2em;
+  transform-origin: 0 50%;
+  transform: rotate(var(--angle));
+  background: linear-gradient(
+    to right,
+    rgba(var(--r), var(--g), var(--b), 0.55) 0%,
+    rgba(var(--r), var(--g), var(--b), 0.15) 40%,
+    transparent 80%
+  );
+  filter: blur(0.6em);
+  animation: sun-pulse var(--dur) ease-in-out infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes sun-pulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1.0; }
+}

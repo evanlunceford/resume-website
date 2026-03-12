@@ -50,6 +50,7 @@
 html, body {
     height: 100%;
     background-color: var(--black);
+    overflow-x: clip; /* prevents horizontal scroll without creating a scroll container, so children can still overflow vertically */
 }
 
 body {

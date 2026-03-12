@@ -53,7 +53,6 @@
     animation:
         ray-pulse var(--dur) ease-in-out infinite,
         ray-sway  var(--dur) ease-in-out infinite;
-    animation-delay: var(--delay);
 }
 
 @keyframes ray-pulse {

@@ -1,0 +1,75 @@
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4em;
+  height: 4em;
+  margin-top: -2em;
+  margin-left: -2em;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #333;
+  background-size: cover;
+  transform: rotateX(90deg);
+  transition: box-shadow 0.3s ease;
+}
+
+.planet:hover,
+.planet.selected {
+  box-shadow: 0 0 2em rgba(255, 255, 255, 0.6);
+}
+
+.planet img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+dl.infos {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  top: 50%;
+  left: 120%;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease;
+}
+
+dl.infos.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+dl.infos::before {
+  content: '';
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  width: 1.5em;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+dl.infos dt {
+  color: var(--beige);
+  font-size: 1.4em;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+
+dl.infos dd {
+  color: rgba(235, 235, 211, 0.7);
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+dl.infos dd span {
+  display: block;
+  font-size: 0.75em;
+  opacity: 0.55;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}

@@ -2,8 +2,8 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    overflow: hidden;
 }
+
 
 .glow-backdrop {
     position: absolute;
@@ -71,7 +71,6 @@
     rotate: 15deg;
     z-index: 1;
     animation: drift-c 22s ease-in-out infinite;
-    animation-delay: -7s;
 }
 
 .spot-4 {
@@ -84,7 +83,6 @@
     rotate: 50deg;
     z-index: 1;
     animation: drift-b 27s ease-in-out infinite;
-    animation-delay: -12s;
 }
 
 .spot-5 {
@@ -96,7 +94,6 @@
     left: 55%;
     z-index: 1;
     animation: drift-d 35s ease-in-out infinite;
-    animation-delay: -5s;
 }
 
 .spot-6 {
@@ -109,7 +106,6 @@
     rotate: -25deg;
     z-index: 1;
     animation: drift-a 20s ease-in-out infinite;
-    animation-delay: -15s;
 }
 
 
@@ -124,7 +120,6 @@
     rotate: -45deg;
     z-index: 1;
     animation: drift-b 25s ease-in-out infinite;
-    animation-delay: -9s;
 }
 
 .spot-9 {
@@ -135,7 +130,6 @@
     top: 50%;
     left: 55%;
     animation: drift-b 25s ease-in-out infinite;
-    animation-delay: -9s;
 }
 
 .home-content {

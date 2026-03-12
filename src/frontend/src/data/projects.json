@@ -1,0 +1,42 @@
+[
+  {
+    "id": "p1",
+    "title": "Resume Website",
+    "image": "/placeholder.png",
+    "description": "Personal portfolio site built with React and FastAPI.",
+    "time": "3 months",
+    "lines": "~2,000",
+    "speed": "18s",
+    "distance": 28
+  },
+  {
+    "id": "p2",
+    "title": "Data Pipeline",
+    "image": "/placeholder.png",
+    "description": "ETL pipeline for ingesting and transforming analytics data.",
+    "time": "6 months",
+    "lines": "~4,500",
+    "speed": "26s",
+    "distance": 44
+  },
+  {
+    "id": "p3",
+    "title": "ML Dashboard",
+    "image": "/placeholder.png",
+    "description": "Interactive dashboard for visualizing machine learning model outputs.",
+    "time": "4 months",
+    "lines": "~3,200",
+    "speed": "34s",
+    "distance": 62
+  },
+  {
+    "id": "p4",
+    "title": "API Gateway",
+    "image": "/placeholder.png",
+    "description": "Lightweight API gateway with rate limiting and auth middleware.",
+    "time": "2 months",
+    "lines": "~1,100",
+    "speed": "42s",
+    "distance": 82
+  }
+]
