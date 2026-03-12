@@ -1,5 +1,7 @@
 import Galaxy from "../components/assets/Galaxy";
 import RocketShip from "../components/assets/RocketShip";
+import RainbowRays from "../components/assets/RainbowRays";
+import LensFlare from "../components/assets/LensFlare";
 import "../css/pages/Home.css";
 
 export default function Home() {
@@ -8,15 +10,15 @@ export default function Home() {
             <Galaxy 
                 mouseRepulsion={false}
                 mouseInteraction={false}
-                density={3}
+                density={1}
                 glowIntensity={0.3}
-                saturation={0}
-                hueShift={140}
+                saturation={0.3}
+                hueShift={190}
                 twinkleIntensity={0.3}
-                rotationSpeed={0.001}
+                rotationSpeed={0.0001}
                 autoCenterRepulsion={0}
-                starSpeed={0.0001}
-                speed={0.1}
+                starSpeed={0.000001}
+                speed={0.001}
             />  
             <div className="glow-backdrop">
                 {/* First 4 are for name container */}
@@ -28,7 +30,11 @@ export default function Home() {
                 <div className="glow-spot spot-5" />
                 <div className="glow-spot spot-6" />
                 <div className="glow-spot spot-7" />
+                <div className="glow-spot spot-8" />
+                <div className="glow-spot spot-9" />
             </div>
+            <RainbowRays />
+            <LensFlare />
             <div className="home-content">
                 <div className="name-container">
                     <h1 className="first-name">

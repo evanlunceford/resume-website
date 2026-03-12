@@ -1,0 +1,232 @@
+/* Zero-size anchor pinned to screen center — all children are positioned
+   relative to this point so the flare stays exactly on the light source. */
+.lens-flare {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+/* ============================================================
+   ANAMORPHIC HORIZONTAL STREAKS
+   All three share left: -50vw / width: 100vw so they span the
+   full viewport centered on the origin.
+   ============================================================ */
+.lf-streak {
+    position: absolute;
+    left: -50vw;
+    width: 100vw;
+    transform: translateY(-50%);
+}
+
+/* Razor-thin bright line — chromatic shift blue→white→orange */
+.lf-streak-core {
+    top: 0;
+    height: 0.35vw;
+    background: linear-gradient(
+        to right,
+        transparent       0%,
+        rgba(80, 160, 255, 0.55) 22%,
+        rgba(220,240,255, 0.90) 46%,
+        rgba(255,255,255, 1.00) 50%,
+        rgba(255,240,220, 0.90) 54%,
+        rgba(255,160, 80, 0.55) 78%,
+        transparent      100%
+    );
+    filter: blur(0.12vw);
+    animation: lf-pulse 5s ease-in-out infinite;
+}
+
+/* Wide soft bloom behind the core line */
+.lf-streak-bloom {
+    top: 0;
+    height: 3vw;
+    background: linear-gradient(
+        to right,
+        transparent              0%,
+        rgba(80, 160, 255, 0.10) 20%,
+        rgba(180,210,255, 0.22) 42%,
+        rgba(255,255,255, 0.28) 50%,
+        rgba(255,210,180, 0.22) 58%,
+        rgba(255,160, 80, 0.10) 80%,
+        transparent             100%
+    );
+    filter: blur(1.2vw);
+    animation: lf-pulse 5s ease-in-out infinite;
+}
+
+/* Secondary faint line slightly offset — adds depth */
+.lf-streak-thin {
+    top: 0.55vw;
+    height: 0.15vw;
+    background: linear-gradient(
+        to right,
+        transparent             5%,
+        rgba(160,200,255, 0.40) 30%,
+        rgba(255,255,255, 0.55) 50%,
+        rgba(255,200,160, 0.40) 70%,
+        transparent             95%
+    );
+    filter: blur(0.08vw);
+    animation: lf-pulse 5s ease-in-out infinite 0.4s;
+}
+
+
+/* ============================================================
+   CIRCULAR GHOST ARTIFACTS
+   Scattered along the horizontal axis of the flare.
+   Mix of ring-style (hollow center) and filled blobs.
+   ============================================================ */
+.lf-ghost {
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Large ring — right side */
+.lf-ghost-1 {
+    width: 9vw;
+    height: 9vw;
+    left: 20vw;
+    top: 0;
+    background: radial-gradient(
+        circle,
+        transparent               38%,
+        rgba(130, 170, 255, 0.30) 58%,
+        transparent               78%
+    );
+    filter: blur(0.5vw);
+    animation: lf-ghost-pulse 7s ease-in-out infinite;
+}
+
+/* Small warm blob — left side */
+.lf-ghost-2 {
+    width: 2.5vw;
+    height: 2.5vw;
+    left: -24vw;
+    top: 0;
+    background: radial-gradient(
+        circle,
+        rgba(255, 210, 100, 0.65) 0%,
+        rgba(255, 180,  60, 0.25) 55%,
+        transparent               100%
+    );
+    filter: blur(0.3vw);
+    animation: lf-ghost-pulse 6s ease-in-out infinite 1.2s;
+}
+
+/* Mid ring — left side */
+.lf-ghost-3 {
+    width: 5vw;
+    height: 5vw;
+    left: -14vw;
+    top: 0;
+    background: radial-gradient(
+        circle,
+        transparent               28%,
+        rgba(190, 140, 255, 0.28) 52%,
+        transparent               72%
+    );
+    filter: blur(0.4vw);
+    animation: lf-ghost-pulse 8.5s ease-in-out infinite 2s;
+}
+
+/* Tiny bright dot — right side, further out */
+.lf-ghost-4 {
+    width: 1.8vw;
+    height: 1.8vw;
+    left: 33vw;
+    top: 0;
+    background: radial-gradient(
+        circle,
+        rgba(200, 225, 255, 0.80) 0%,
+        transparent               100%
+    );
+    filter: blur(0.2vw);
+    animation: lf-ghost-pulse 5.5s ease-in-out infinite 0.6s;
+}
+
+/* Soft cyan smear — slightly above axis, left */
+.lf-ghost-5 {
+    width: 4vw;
+    height: 2vw;
+    left: -8vw;
+    top: -0.5vw;
+    background: radial-gradient(
+        ellipse,
+        rgba(100, 220, 255, 0.30) 0%,
+        transparent               100%
+    );
+    filter: blur(0.5vw);
+    animation: lf-ghost-pulse 9s ease-in-out infinite 3s;
+}
+
+
+/* ============================================================
+   CONIC BEAM ARTIFACTS
+   The element's bottom-left corner sits at screen center.
+   transform-origin: 0% 100% pivots around that corner.
+   Rotating the element swings the narrow cone to different angles.
+   ============================================================ */
+.lf-conic {
+    position: absolute;
+    left: 0;
+    top: -50vw;
+    width: 50vw;
+    height: 50vw;
+    transform-origin: 0% 100%;  /* bottom-left = screen center */
+}
+
+.lf-conic-1 {
+    background: conic-gradient(
+        from 3deg at 0% 100%,
+        transparent              0deg,
+        rgba(255, 255, 210, 0.18) 6deg,
+        transparent             13deg
+    );
+    transform: rotate(-35deg);
+    filter: blur(0.6vw);
+    animation: lf-pulse 6.5s ease-in-out infinite;
+}
+
+.lf-conic-2 {
+    background: conic-gradient(
+        from 2deg at 0% 100%,
+        transparent              0deg,
+        rgba(180, 220, 255, 0.15) 5deg,
+        transparent             10deg
+    );
+    transform: rotate(15deg);
+    filter: blur(0.5vw);
+    animation: lf-pulse 7.5s ease-in-out infinite 1.8s;
+}
+
+.lf-conic-3 {
+    background: conic-gradient(
+        from 4deg at 0% 100%,
+        transparent              0deg,
+        rgba(255, 200, 160, 0.13) 9deg,
+        transparent             17deg
+    );
+    transform: rotate(-75deg);
+    filter: blur(0.6vw);
+    animation: lf-pulse 8s ease-in-out infinite 3.5s;
+}
+
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes lf-pulse {
+    0%, 100% { opacity: 0.50; }
+    50%       { opacity: 1.00; }
+}
+
+@keyframes lf-ghost-pulse {
+    0%, 100% { opacity: 0.35; }
+    50%       { opacity: 0.75; }
+}
