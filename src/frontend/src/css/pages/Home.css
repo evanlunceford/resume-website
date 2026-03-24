@@ -1,209 +1,33 @@
-.home-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
+
+
+.home-container{
+    height: 100vh; 
 }
 
+.home-content-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
 
-.glow-backdrop {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
+    padding: 1cap;
 }
 
-@keyframes drift-a {
-    0%, 100% { translate: -50% -50%; }
-    50%       { translate: calc(-50% + 1.2vw) calc(-50% + 0.6vw); }
-}
-
-@keyframes drift-b {
-    0%, 100% { translate: -50% -50%; }
-    50%       { translate: calc(-50% - 1vw) calc(-50% + 0.8vw); }
-}
-
-@keyframes drift-c {
-    0%, 100% { translate: -50% -50%; }
-    33%       { translate: calc(-50% + 0.8vw) calc(-50% - 0.5vw); }
-    66%       { translate: calc(-50% - 0.6vw) calc(-50% + 0.9vw); }
-}
-
-@keyframes drift-d {
-    0%, 100% { translate: -50% -50%; }
-    50%       { translate: calc(-50% + 0.5vw) calc(-50% - 1vw); }
-}
-
-.glow-spot {
-    position: absolute;
-    border-radius: 50%;
-}
-
-/* Covers the entire name container */
-.spot-1 {
-    width: 5vw;
-    height: 5vw;
-    background: rgb(255, 255, 255);
-    filter: blur(0.7vw);
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: 1;
-}
-
-.spot-2 {
-    width: 2vw;
-    height: 2vw;
-    background: rgb(255, 255, 255);
-    filter: blur(0.5vw);
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: 2;
-}
-
-/* 2-6 accent the name container */
-.spot-3 {
-    width: 16vw;
-    height: 5vw;
-    background: rgba(153, 243, 250, 0.5);
-    filter: blur(8vw);
-    top: 5%;
-    left: 0%;
-    rotate: 15deg;
-    z-index: 1;
-    animation: drift-c 22s ease-in-out infinite;
-}
-
-.spot-4 {
-    width: 13vw;
-    height: 6.5vw;
-    background: rgba(255, 150, 40, 0.25);
-    filter: blur(2.5vw);
-    top: 42%;
-    left: 42%;
-    rotate: 50deg;
-    z-index: 1;
-    animation: drift-b 27s ease-in-out infinite;
-}
-
-.spot-5 {
-    width: 45vw;
-    height: 11vw;
-    background: rgba(255, 255, 255, 0.35);
-    filter: blur(5.5vw);
-    top: 57%;
-    left: 55%;
-    z-index: 1;
-    animation: drift-d 35s ease-in-out infinite;
-}
-
-.spot-6 {
-    width: 12vw;
-    height: 7vw;
-    background: rgba(153, 187, 250, 0.2);
-    filter: blur(2vw);
-    top: 57%;
-    left: 45%;
-    rotate: -25deg;
-    z-index: 1;
-    animation: drift-a 20s ease-in-out infinite;
-}
-
-
-/* Corner light as a light source */
-.spot-8 {
-    width: 20vw;
-    height: 8vw;
-    background: rgba(255, 255, 200, 0.25);
-    filter: blur(7vw);
-    top: 92%;
-    left: 95%;
-    rotate: -45deg;
-    z-index: 1;
-    animation: drift-b 25s ease-in-out infinite;
-}
-
-.spot-9 {
-    width: 70vw;
-    height: 50vw;
-    background: rgba(0, 0, 0, 1);
-    filter: blur(7vw);
-    top: 50%;
-    left: 55%;
-    animation: drift-b 25s ease-in-out infinite;
-}
-
-.home-content {
-}
-
-.name-container{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-
+.home-title-container{
     display: flex;
     flex-direction: column;
-    gap: 0;
+    align-items: start;
+    justify-content: center;
+    color: var(--white);
+    gap: 1rem;
 }
 
-.first-name, .last-name{
-    font-size: 10vw;
-    font-weight: 600;
-    line-height: 1;
-    color: rgba(255, 255, 255, 0.35);
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
-    text-shadow: 0 0 2vw rgba(255, 255, 255, 0.15);
+.home-name{
+    font-size: var(--text-title);
+    line-height: 0.9;
 }
 
-.last-name{
-    transform: translateX(0.55em);
-}
-
-.description {
-    position: absolute;
-    width: 100%;
-    top: calc(50% + 12vw);
-    left: 50%;
-    translate: -50% 0;
-}
-
-.rocket {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    rotate: 90deg;
-    z-index: 2;
-    animation: reveal-rocket 5s ease-out 2s both;
-}
-
-.rocket #js-rocket {
-    margin: 0;
-}
-
-.rocket #js-rocket svg {
-    width: 2vw;
-    height: auto;
-}
-
-.description-text {
-    text-align: center;
-    display: block;
-    font-size: 1.5vw;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.65);
-    letter-spacing: 0.1em;
-    white-space: nowrap;
-    clip-path: inset(0 100% 0 0);
-    animation: reveal-text 4.3s ease-out 2s both;
-}
-
-@keyframes reveal-rocket {
-    from { translate: -5vw -50%;      }
-    to   { translate: 120vw -50%;   }
-}
-
-@keyframes reveal-text {
-    from { clip-path: inset(0 100% 0 0); }
-    to   { clip-path: inset(0 0%   0 0); }
+.home-description {
+    font-size: var(--text-xl);
 }
