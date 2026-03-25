@@ -12,9 +12,7 @@ export default function Home() {
             Software Developer | Data Analyst
           </h2>
         </div>
-        <div className="home-picture-container">
-          <img src="/evan-headshot.jpg" alt="My headshot" />
-        </div>
+
       </div>
     </div>
   )

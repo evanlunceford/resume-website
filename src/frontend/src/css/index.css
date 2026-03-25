@@ -1,13 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 /* ─── Color Tokens ─────────────────────────────────────────── */
 :root {
   --white: #ffffff;
   --black: #000000;
 
-  /* Surfaces — low-opacity black layered on a dark background */
-  --surface-1: rgba(0, 0, 0, 0.10);   /* subtle, near-transparent */
-  --surface-2: rgba(0, 0, 0, 0.25);   /* cards, panels */
-  --surface-3: rgba(0, 0, 0, 0.45);   /* elevated modals, popovers */
-  --surface-4: rgba(0, 0, 0, 0.65);   /* heavy overlay, scrims */
+  /* Primary colors */
+  --grey: rgba(76, 84, 84, 1);
+  --orange: rgba(255, 113, 91, 1);
+  --peach: rgba(255, 184, 173, 1);
+  --teal: rgba(30, 168, 150, 1);
+  --dark-teal: rgba(56, 116, 103, 1);
+  --brown: rgba(82, 63, 56, 1);
+  --tan: rgba(243, 221, 195, 1);
+
+  /* Hover colors */
+  --grey-hover: rgba(76, 84, 84, 0.8);
+  --orange-hover: rgba(255, 113, 91, 0.8);
+  --peach-hover: rgba(255, 184, 173, 0.8);
+  --teal-hover: rgba(30, 168, 150, 0.8);
+  --dark-teal-hover: rgba(56, 116, 103, 0.8);
+  --brown-hover: rgba(82, 63, 56, 0.8);
 
   /* Greys — solid stops */
   --grey-100: #f5f5f5;
@@ -52,12 +64,12 @@
 html, body {
   width: 100%;
   height: 100%;
-  background-color: var(--black);
+  background-color: var(--tan);
+  
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  font-size: var(--text-base);
+  font-family: "Righteous", sans-serif;  font-size: var(--text-base);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
