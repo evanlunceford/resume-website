@@ -1,7 +1,9 @@
+import ExperienceTimeline from '../components/ExperienceTimeline';
+
 export default function About() {
   return (
     <main>
-      <p>About coming soon.</p>
+      <ExperienceTimeline />
     </main>
   )
 }

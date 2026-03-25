@@ -29,3 +29,11 @@
     color: var(--teal);
     font-size: var(--text-4xl);
 }
+
+/* TIMELINE SECTION */
+.timeline-heading {
+  font-size: var(--text-3xl);
+  color: var(--brown);
+  margin-bottom: 3.5rem;
+  letter-spacing: -0.01em;
+}

@@ -1,4 +1,5 @@
 import TitleStreak from "../components/assets/TitleStreak";
+import ExperienceTimeline from "../components/ExperienceTimeline";
 import "../css/pages/Home.css";
 
 export default function Home() {
@@ -15,6 +16,11 @@ export default function Home() {
         </div>
         
         <TitleStreak />
+      </div>
+
+      <div className="timeline-content-container">
+        <h2 className="timeline-heading">Experience</h2>
+        <ExperienceTimeline />
       </div>
       
     </div>
