@@ -1,11 +1,12 @@
 
 .home-container{
-    height: 100vh; 
+    height: 100vh;
+    padding-top: 5rem;
 }
 
 .home-content-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }

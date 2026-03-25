@@ -1,0 +1,7 @@
+.title-streak-container {
+  width: 100%;
+}
+
+.title-streak-container svg {
+  overflow: visible;
+}

@@ -1,3 +1,4 @@
+import TitleStreak from "../components/assets/TitleStreak";
 import "../css/pages/Home.css";
 
 export default function Home() {
@@ -12,8 +13,10 @@ export default function Home() {
             Software Developer | Data Analyst
           </h2>
         </div>
-
+        
+        <TitleStreak />
       </div>
+      
     </div>
   )
 }
