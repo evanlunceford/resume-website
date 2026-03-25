@@ -1,5 +1,6 @@
 import TitleStreak from "../components/assets/TitleStreak";
 import ExperienceTimeline from "../components/ExperienceTimeline";
+import SkillsSection from "../components/SkillsSection";
 import "../css/pages/Home.css";
 
 export default function Home() {
@@ -14,6 +15,9 @@ export default function Home() {
             Software Developer | Data Analyst
           </h2>
         </div>
+        <div className="home-buttons">
+          
+        </div>
         
         <TitleStreak />
       </div>
@@ -22,7 +26,12 @@ export default function Home() {
         <h2 className="timeline-heading">Experience</h2>
         <ExperienceTimeline />
       </div>
-      
+
+      <div className="skills-content-container">
+        <h2 className="skills-heading">Skills</h2>
+        <SkillsSection />
+      </div>
+
     </div>
   )
 }

@@ -25,9 +25,9 @@
 .timeline-axis-line {
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
+  left: -2px;
+  right: -2px;
+  height: 5px;
   background-color: var(--brown);
   border-radius: 2px;
 }
@@ -37,7 +37,7 @@
   position: absolute;
   bottom: -5px;
   width: 3px;
-  height: 18px;
+  height: 25px;
   background-color: var(--orange);
   border-radius: 2px;
   transform: translateX(-50%);
@@ -70,7 +70,7 @@
 }
 
 .timeline-year-label {
-  font-size: 11px;
+  font-size: 15px;
   font-family: "Righteous", sans-serif;
   color: var(--brown);
   opacity: 0.55;
@@ -79,8 +79,8 @@
 }
 
 .timeline-year-tick {
-  width: 1px;
-  height: 10px;
+  width: 2px;
+  height: 18px;
   background-color: var(--brown);
   opacity: 0.3;
 }
@@ -230,15 +230,14 @@
 }
 
 .timeline-tt-badge--full-time   { background-color: var(--teal);       color: #fff; }
-.timeline-tt-badge--part-time   { background-color: var(--peach);      color: var(--brown); }
-.timeline-tt-badge--freelance   { background-color: var(--orange);     color: #fff; }
+.timeline-tt-badge--part-time   { background-color: var(--orange);     color: var(--brown); }
+.timeline-tt-badge--freelance   { background-color: var(--peach);      color: #fff; }
 .timeline-tt-badge--internship  { background-color: var(--grey);       color: #fff; }
 .timeline-tt-badge--contract    { background-color: var(--dark-teal);  color: #fff; }
 
 .timeline-tt-role {
   font-size: var(--text-sm);
   font-family: "Righteous", sans-serif;
-  color: var(--peach);
   margin-bottom: 5px;
 }
 

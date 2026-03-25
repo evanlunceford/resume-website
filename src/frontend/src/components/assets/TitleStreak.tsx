@@ -64,7 +64,7 @@ const iconVariants: Variants = {
 
                 <motion.svg
                     x="74%"
-                    y="12%"
+                    y="10.5%"
                     width="80"
                     height="80"
                     viewBox="0 0 70 70"

@@ -1,7 +1,7 @@
 
 .home-container{
     height: 100vh;
-    padding-top: 5rem;
+    padding-top: 3rem;
 }
 
 .home-content-container{
@@ -31,9 +31,19 @@
 }
 
 /* TIMELINE SECTION */
+.timeline-content-container{
+    width: 100%;
+}
 .timeline-heading {
-  font-size: var(--text-3xl);
+  font-size: var(--text-4xl);
   color: var(--brown);
+  text-align: center;
   margin-bottom: 3.5rem;
   letter-spacing: -0.01em;
+}
+
+
+/* SKILLS SECTION */
+.skills-content-container{
+    
 }

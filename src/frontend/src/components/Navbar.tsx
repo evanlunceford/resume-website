@@ -5,12 +5,13 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-links">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/projects">Projects</NavLink>
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/"><img src="/home.svg" alt="" className="navbar-icon" />Home</NavLink>
+        <NavLink to="/projects"><img src="/projects.svg" alt="" className="navbar-icon" />Projects</NavLink>
+        <NavLink to="/about"><img src="/about-me.svg" alt="" className="navbar-icon" />About</NavLink>
       </div>
       <a className="navbar-resume" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-        Resume
+        <img src="/resume.svg" alt="Resume Download" />
+        <span>Resume</span>
       </a>
     </nav>
   )

@@ -90,8 +90,6 @@ export default function ExperienceTimeline() {
 
   return (
     <section className="timeline-section">
-
-
       <div className="timeline-scroll">
         <div className="timeline-canvas">
 

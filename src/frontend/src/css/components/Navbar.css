@@ -3,25 +3,63 @@
   top: 0;
   left: 0;
   right: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   padding: 0 2rem;
   height: 60px;
-  background: transparent;
+  background: var(--tan-hover);
+  backdrop-filter: blur(5px);
   z-index: 100;
+}
+
+.navbar::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background: linear-gradient(to bottom, var(--tan-hover), transparent);
+  pointer-events: none;
 }
 
 .navbar-links {
   display: flex;
   gap: 2rem;
+  grid-column: 2;
+  justify-self: center;
 }
 
 .navbar-links a {
-  font-size: var(--text-sm);
-  color: var(--white);
+  font-size: var(--text-md);
+  color: var(--brown);
   opacity: 0.7;
   transition: opacity 0.2s ease;
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--brown);
+  border-radius: var(--radius-full);
+  transform: scaleX(0);
+  transition: transform 0.2s ease;
+}
+
+.navbar-links a.active::after {
+  transform: scaleX(1);
 }
 
 .navbar-links a:hover,
@@ -29,7 +67,15 @@
   opacity: 1;
 }
 
+.navbar-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
 .navbar-resume {
+  grid-column: 3;
+  justify-self: end;
   font-size: var(--text-sm);
   color: var(--black);
   background: var(--white);
@@ -37,6 +83,17 @@
   border-radius: var(--radius-full);
   font-weight: 500;
   transition: opacity 0.2s ease;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.navbar-resume img {
+  width: 20px;
+  height: 20px;
 }
 
 .navbar-resume:hover {

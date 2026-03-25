@@ -1,0 +1,106 @@
+.skills-section {
+  padding: 0 3rem 7rem;
+}
+
+/* ── Grid layout ───────────────────────────────────────────────── */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* ── Column ────────────────────────────────────────────────────── */
+
+.skills-column-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.25rem;
+}
+
+.skills-column-accent {
+  width: 4px;
+  height: 28px;
+  background-color: var(--cc);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.skills-column-title {
+  font-size: var(--text-md);
+  font-family: "Righteous", sans-serif;
+  color: var(--brown);
+  letter-spacing: 0.02em;
+}
+
+/* ── Skill list ────────────────────────────────────────────────── */
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Skill card ────────────────────────────────────────────────── */
+
+.skill-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px 10px 16px;
+  background-color: rgba(255, 255, 255, 0.55);
+  border: 1.5px solid rgba(82, 63, 56, 0.1);
+  border-left: 3px solid var(--cc);
+  border-radius: var(--radius-md);
+  cursor: default;
+
+  animation: skill-card-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition:
+    background-color 0.18s ease,
+    transform        0.18s ease,
+    box-shadow       0.18s ease;
+}
+
+.skill-card:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  transform: translateX(4px);
+  box-shadow: 0 2px 12px rgba(82, 63, 56, 0.1);
+}
+
+@keyframes skill-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.skill-name {
+  font-size: var(--text-base);
+  font-family: "Righteous", sans-serif;
+  color: var(--brown);
+  letter-spacing: 0.01em;
+}
+
+.skill-count {
+  font-size: var(--text-xs);
+  font-family: "Righteous", sans-serif;
+  color: var(--cc);
+  opacity: 0.85;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
