@@ -34,14 +34,47 @@
 .timeline-content-container{
     width: 100%;
 }
-.timeline-heading {
-  font-size: var(--text-4xl);
-  color: var(--brown);
-  text-align: center;
-  margin-bottom: 3.5rem;
-  letter-spacing: -0.01em;
+
+.timeline-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
+.timeline-title {
+  font-size: var(--text-5xl);
+  color: var(--brown);
+  text-align: center;
+}
+
+.timeline-header img {
+    width: 60px;
+    height: 60px;
+}
+
+
+/* TIMELINE TITLE UNDERLINE */
+.timeline-title-underline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 8px auto 0;
+}
+
+.ttu-seg {
+  height: 5px;
+  border-radius: 9999px;
+}
+
+.ttu-teal      { width: 60px;  background-color: var(--teal);      margin-top: -55px; margin-left: 0;     }
+.ttu-orange    { width: 60px;  background-color: var(--orange);    margin-top: -40px; margin-left: -14px; }
+.ttu-brown     { width: 90px;  background-color: var(--brown);     margin-top: -55px; margin-left: -10px; }
+.ttu-peach     { width: 70px;  background-color: var(--peach);     margin-top: -40px; margin-left: -16px; }
+.ttu-dark-teal { width: 130px; background-color: var(--dark-teal); margin-top: -55px; margin-left: -12px; }
 
 /* SKILLS SECTION */
 .skills-content-container{

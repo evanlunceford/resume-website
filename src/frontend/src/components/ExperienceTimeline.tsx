@@ -39,9 +39,8 @@ export default function ExperienceTimeline() {
       parseDate(e.endDate).getTime(),
     ]);
     const minYear = new Date(Math.min(...allMs)).getFullYear();
-    const maxYear = new Date(Math.max(...allMs)).getFullYear();
     const rs = new Date(minYear, 0, 1);
-    const re = new Date(maxYear + 1, 0, 1);
+    const re = new Date();
     return { rangeStart: rs, rangeEnd: re, totalMs: re.getTime() - rs.getTime() };
   }, []);
 

@@ -61,7 +61,7 @@
   background-color: rgba(255, 255, 255, 0.55);
   border: 1.5px solid rgba(82, 63, 56, 0.1);
   border-left: 3px solid var(--cc);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   cursor: default;
 
   animation: skill-card-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;

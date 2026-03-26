@@ -45,7 +45,7 @@
 }
 
 .timeline-today-marker::before {
-  content: 'now';
+  content: 'Present';
   position: absolute;
   bottom: 100%;
   left: 50%;
