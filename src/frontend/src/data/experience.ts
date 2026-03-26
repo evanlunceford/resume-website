@@ -27,15 +27,6 @@ export const experiences: Experience[] = [
     type: "part-time",
     description: "Built an internal data analytics dashboard",
   },
-  {
-    id: 3,
-    company: "Center for Entrepreneurial Innovation",
-    title: "Software Engineer & Consultant",
-    startDate: "2026-05",
-    endDate: "present",
-    type: "full-time",
-    description: "Add your role description and key accomplishments here.",
-  },
 
 
 ];
