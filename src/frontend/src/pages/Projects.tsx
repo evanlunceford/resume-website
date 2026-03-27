@@ -13,25 +13,36 @@ export default function Projects() {
       <section className="projects-section" aria-labelledby="featured-projects-title">
         <div className="featured-projects-grid">
           {featuredProjects.map((project) => (
-            <article
+            <div
               key={project.id}
               className="project-card featured-project-card"
+              style={{ '--card-hue': `${project.hue ?? 0}deg` } as React.CSSProperties}
             >
-              <div className="project-card-header">
-                <h3 className="project-card-title">{project.name}</h3>
-                <span className="project-card-badge">Featured</span>
+              {project.background && <project.background className="project-card-bg" />}
+              <div 
+                className="project-card-header"
+                style={{ justifyContent: project.orientation}}
+              >
+                {project.logo && (
+                  <img 
+                    className="project-card-logo"
+                    src={project.logo} 
+                    alt={project.logo}
+                  />
+                )}
+                {!project.logoOnly && (
+                  <h3 
+                    className="project-card-title"
+                    style={{
+                      fontFamily: project.font,
+                      fontWeight: project.fontWeight,
+                    }}
+                  >
+                    {project.name}
+                  </h3>
+                )}
               </div>
-
-              <p className="project-card-description">{project.description}</p>
-
-              <div className="project-skills" aria-label={`${project.name} skills`}>
-                {project.skills.map((skillId) => (
-                  <span key={skillId} className="project-skill-chip">
-                    {skillNameById.get(skillId) ?? skillId}
-                  </span>
-                ))}
-              </div>
-            </article>
+            </div>
           ))}
         </div>
       </section>
@@ -49,6 +60,7 @@ export default function Projects() {
         <div className="projects-grid">
           {otherProjects.map((project) => (
             <article key={project.id} className="project-card">
+              {project.background && <project.background className="project-card-bg" />}
               <div className="project-card-header">
                 <h3 className="project-card-title">{project.name}</h3>
               </div>
