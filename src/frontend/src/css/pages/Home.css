@@ -2,7 +2,12 @@
 .home-container{
     min-height: 100vh;
     padding-top: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 
 .home-content-container{
     display: flex;
@@ -11,7 +16,6 @@
     justify-content: center;
     width: 100%;
     min-height: calc(100vh - 3rem);
-    padding: 0 1.5rem;
 }
 
 .home-title-container{
@@ -35,56 +39,46 @@
     font-size: var(--text-4xl);
 }
 
+.main-content-container{
+  max-width: 1600px;
+}
+
 .intro-container {
-    width: min(1200px, 92%);
-    display: grid;
-    grid-template-columns: minmax(260px, 420px) minmax(320px, 1fr);
-    align-items: center;
-    justify-content: center;
-    gap: 2.5rem;
-    margin: 2rem auto 5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1.5rem, 10vw, 15rem);
+  padding: 2rem 2rem 7rem 2rem;
 }
 
 .intro-left {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .intro-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: end;
 }
 
 .intro-copy {
-    max-width: 640px;
-    color: var(--white);
+  max-width: 640px;
+  color: var(--white);
 }
 
 .intro-heading {
-    color: var(--brown);
-    font-size: var(--text-5xl);
-    margin-bottom: 1rem;
-}
-
-.intro-heading-text {
-    display: inline-block;
-    white-space: nowrap;
-    clip-path: inset(0 100% 0 0);
-    opacity: 0.95;
-}
-
-.intro-heading-text.is-visible {
-    animation: intro-typing 2.1s steps(15, end) 0.2s forwards;
+  color: var(--brown);
+  font-size: var(--text-5xl);
 }
 
 .intro-text {
-    color: var(--white);
-    font-size: var(--text-lg);
-    line-height: 1.7;
-    margin-bottom: 1rem;
+  color: var(--white);
+  font-size: var(--text-lg);
 }
 
 @media (max-width: 1100px) {
@@ -113,16 +107,6 @@
   }
 }
 
-@keyframes intro-typing {
-  from {
-    clip-path: inset(0 100% 0 0);
-  }
-
-  to {
-    clip-path: inset(0 0 0 0);
-    opacity: 1;
-  }
-}
 
 /* TIMELINE SECTION */
 .timeline-content-container{

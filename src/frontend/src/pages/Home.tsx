@@ -69,6 +69,7 @@ export default function Home() {
   const introRef = useRef(null);
   const introInView = useInView(introRef, { once: true, margin: "-80px" });
 
+
   return (
     <div className="home-container">
       <div className="home-content-container">
@@ -86,108 +87,112 @@ export default function Home() {
 
         <TitleStreak />
       </div>
+      <div className="main-content-container">
+        <div className="intro-container">
+          <div className="intro-left">
+            <CrtHeadshot />
+          </div>
 
-      <div className="intro-container">
-        <div className="intro-left">
-          <CrtHeadshot />
-        </div>
-
-        <div className="intro-right">
-          <div className="intro-copy" ref={introRef}>
-            <h3 className="intro-heading">
-              <span className={`intro-heading-text${introInView ? " is-visible" : ""}`}>
-                Hello, Stranger
-              </span>
-            </h3>
-            <p className="intro-text">
-              Nice of you to be here! As noted by the gigantic title, my name is Evan Lunceford.
-              I am currently a student at Northern Arizona University, pursuing a Computer Science
-              Bachelors Degree. While I am still a student, I hope this website will showcase the amount
-              of real world experience I have solving real problems. Additionally, I hope to convey my
-              ambition and work-ethic in a meaningful way.
-            </p>
+          <div className="intro-right">
+            <div className="intro-copy" ref={introRef}>
+              <motion.h3
+                className="intro-heading"
+                initial={{ opacity: 0 }}
+                animate={introInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ duration: 0.8 }}
+              >
+                Hello
+              </motion.h3>
+              <p className="intro-text">
+                Nice of you to be here! As noted by the gigantic title, my name is Evan Lunceford.
+                I am currently a student at Northern Arizona University, pursuing a Computer Science
+                Bachelors Degree. While I am still a student, I hope this website will showcase the amount
+                of real world experience I have solving real problems. Additionally, I hope to convey my
+                ambition and work-ethic in a meaningful way.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="timeline-content-container" ref={sectionRef}>
-        <div className="timeline-header">
-          <motion.h2
-            className="timeline-title"
-            variants={titleVariants}
+        <div className="timeline-content-container" ref={sectionRef}>
+          <div className="timeline-header">
+            <motion.h2
+              className="timeline-title"
+              variants={titleVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+            >
+              Experience
+            </motion.h2>
+          </div>
+
+          <motion.div
+            className="timeline-title-underline"
+            variants={underlineContainerVariants}
             initial="hidden"
             animate={inView ? "visible" : "hidden"}
           >
-            Experience
-          </motion.h2>
+            <motion.div className="ttu-seg ttu-teal"      variants={segVariants} />
+            <motion.div className="ttu-seg ttu-orange"    variants={segVariants} />
+            <motion.div className="ttu-seg ttu-dark-teal" variants={segVariants} />
+            <motion.div className="ttu-seg ttu-peach"     variants={segVariants} />
+            <motion.div className="ttu-seg ttu-brown"     variants={segVariants} />
+            <motion.div className="ttu-seg ttu-grey"      variants={segVariants} />
+          </motion.div>
+
+          <motion.div
+            variants={timelineFadeVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+          >
+            <ExperienceTimeline />
+          </motion.div>
         </div>
 
-        <motion.div
-          className="timeline-title-underline"
-          variants={underlineContainerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-        >
-          <motion.div className="ttu-seg ttu-teal"      variants={segVariants} />
-          <motion.div className="ttu-seg ttu-orange"    variants={segVariants} />
-          <motion.div className="ttu-seg ttu-dark-teal" variants={segVariants} />
-          <motion.div className="ttu-seg ttu-peach"     variants={segVariants} />
-          <motion.div className="ttu-seg ttu-brown"     variants={segVariants} />
-          <motion.div className="ttu-seg ttu-grey"      variants={segVariants} />
-        </motion.div>
+        <div className="skills-content-container" ref={skillsRef}>
+          <div className="skills-header">
+            <div className="skills-title-wrapper">
+              <h2 className="skills-title">Skills</h2>
+              <div className="skills-underline">
+                <motion.div 
+                      className="skills-underline-container"
+                      variants={skillLineContainerVariants}
+                      initial="hidden"
+                      animate={skillsInView ? "visible" : "hidden"}
+                    >
+                      <div className="skills-lines">
+                        {/* transformOrigin "left" ensures they grow from the start of the text */}
+                        <motion.div 
+                          className="line line-1" 
+                          variants={skillLineVariants} 
+                          style={{ originX: 0 }} 
+                        />
+                        <motion.div 
+                          className="line line-2" 
+                          variants={skillLineVariants} 
+                          style={{ originX: 0 }} 
+                        />
+                        <motion.div 
+                          className="line line-3" 
+                          variants={skillLineVariants} 
+                          style={{ originX: 0 }} 
+                        />
+                      </div>
 
-        <motion.div
-          variants={timelineFadeVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-        >
-          <ExperienceTimeline />
-        </motion.div>
-      </div>
-
-      <div className="skills-content-container" ref={skillsRef}>
-        <div className="skills-header">
-          <div className="skills-title-wrapper">
-            <h2 className="skills-title">Skills</h2>
-            <div className="skills-underline">
-              <motion.div 
-                    className="skills-underline-container"
-                    variants={skillLineContainerVariants}
-                    initial="hidden"
-                    animate={skillsInView ? "visible" : "hidden"}
-                  >
-                    <div className="skills-lines">
-                      {/* transformOrigin "left" ensures they grow from the start of the text */}
-                      <motion.div 
-                        className="line line-1" 
-                        variants={skillLineVariants} 
-                        style={{ originX: 0 }} 
+                      <motion.img 
+                        src="/skills.svg" 
+                        alt="Skills Icon" 
+                        className="skills-icon"
+                        variants={skillIconVariants}
                       />
-                      <motion.div 
-                        className="line line-2" 
-                        variants={skillLineVariants} 
-                        style={{ originX: 0 }} 
-                      />
-                      <motion.div 
-                        className="line line-3" 
-                        variants={skillLineVariants} 
-                        style={{ originX: 0 }} 
-                      />
-                    </div>
-
-                    <motion.img 
-                      src="/skills.svg" 
-                      alt="Skills Icon" 
-                      className="skills-icon"
-                      variants={skillIconVariants}
-                    />
-                  </motion.div>
+                    </motion.div>
+              </div>
             </div>
-          </div>
-            
+              
 
+          </div>
+          <SkillsSection />
         </div>
-        <SkillsSection />
       </div>
 
     </div>
