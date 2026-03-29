@@ -1,6 +1,7 @@
 import React from "react";
 import AdStrategiesBackground from "../components/projects/AdStrategiesBackground";
 import LeaseLiftBackground from "../components/projects/LeaseLiftBackground";
+import MrCassetteBackground from "../components/projects/MrCassetteBackground";
 import ScoutBackground from "../components/projects/ScoutBackground";
 
 export type Project = {
@@ -51,10 +52,11 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    name: 'Resume Website',
-    description: 'Personal portfolio and resume site built with React and TypeScript.',
+    name: 'Mr. Cassette',
+    description: 'Analyzes frequencies to determine musical context like chords, key, and rhythm.',
     skills: ['typescript', 'react', 'github'],
     featured: true,
+    background: MrCassetteBackground,
     logoOnly: false,
   },
   {

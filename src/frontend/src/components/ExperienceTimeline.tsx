@@ -56,15 +56,10 @@ export default function ExperienceTimeline() {
     return arr;
   }, [rangeStart, rangeEnd]);
 
-  // Greedy interval scheduling: pack experiences into the fewest lanes
-  // so overlapping periods stack visibly in adjacent rows
   const laneMap = useMemo(() => {
-    const sorted = [...experiences].sort(
-      (a, b) => parseDate(a.startDate).getTime() - parseDate(b.startDate).getTime()
-    );
     const laneEnds: number[] = [];
     const map = new Map<number, number>();
-    for (const exp of sorted) {
+    for (const exp of experiences) {
       const startMs = parseDate(exp.startDate).getTime();
       const endMs = parseDate(exp.endDate).getTime();
       const laneIdx = laneEnds.findIndex(t => t <= startMs);
