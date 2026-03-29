@@ -101,7 +101,7 @@ export type ScoutBackgroundProps = {
 
 const ScoutBackground: React.FC<ScoutBackgroundProps> = ({
   particleCount = 10000,
-  particleSpread = 50,
+  particleSpread = 30,
   speed = 0.03,
   particleColors = ["#FF6B6B", "#FFA600", "#4FFF8F", "#00E0FF"],
   moveParticlesOnHover = false,

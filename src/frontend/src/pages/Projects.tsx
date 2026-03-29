@@ -3,6 +3,12 @@ import { skills } from "../data/skills";
 import "../css/pages/Projects.css";
 
 const skillNameById = new Map(skills.map((skill) => [skill.id, skill.name]));
+const featuredProjectSlotClasses = [
+  "featured-project-card--primary",
+  "featured-project-card--wide",
+  "featured-project-card--compact",
+  "featured-project-card--compact",
+];
 
 export default function Projects() {
   const featuredProjects = projects.filter((project) => project.featured);
@@ -12,17 +18,14 @@ export default function Projects() {
     <div className="projects-content-container">
       <section className="projects-section" aria-labelledby="featured-projects-title">
         <div className="featured-projects-grid">
-          {featuredProjects.map((project) => (
+          {featuredProjects.map((project, index) => (
             <div
               key={project.id}
-              className="project-card featured-project-card"
+              className={`project-card featured-project-card ${featuredProjectSlotClasses[index] ?? "featured-project-card--compact"}`}
               style={{ '--card-hue': `${project.hue ?? 0}deg` } as React.CSSProperties}
             >
               {project.background && <project.background className="project-card-bg" />}
-              <div 
-                className="project-card-header"
-                style={{ justifyContent: project.orientation}}
-              >
+              <div className="project-card-header">
                 {project.logo && (
                   <img 
                     className="project-card-logo"

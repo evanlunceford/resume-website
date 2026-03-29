@@ -1,4 +1,6 @@
 import React from "react";
+import AdStrategiesBackground from "../components/projects/AdStrategiesBackground";
+import LeaseLiftBackground from "../components/projects/LeaseLiftBackground";
 import ScoutBackground from "../components/projects/ScoutBackground";
 
 export type Project = {
@@ -13,9 +15,6 @@ export type Project = {
   logo?: string;
   logoOnly: boolean;
   hue?: number;
-
-  // Defines where to align the title and logo
-  orientation?: "start" | "end";
 };
 
 export const projects: Project[] = [
@@ -30,20 +29,28 @@ export const projects: Project[] = [
     fontWeight: "600",
     logo: "/scout-horizontal.png",
     logoOnly: true,
-
-    orientation: "start",
     hue: 150,
   },
   {
     id: 2,
-    name: 'Ad Strategies Dashboard',
+    name: 'LeaseLift',
     description: 'Internal data analytics dashboard for marketing performance tracking.',
     skills: ['python', 'pandas', 'numpy', 'sql', 'postgres', 'github'],
     featured: true,
+    background: LeaseLiftBackground,
     logoOnly: false
   },
   {
     id: 3,
+    name: 'Ad Strategies Dashboard',
+    description: 'Internal data analytics dashboard for marketing performance tracking.',
+    skills: ['python', 'pandas', 'numpy', 'sql', 'postgres', 'github'],
+    featured: true,
+    background: AdStrategiesBackground,
+    logoOnly: false
+  },
+  {
+    id: 4,
     name: 'Resume Website',
     description: 'Personal portfolio and resume site built with React and TypeScript.',
     skills: ['typescript', 'react', 'github'],
@@ -51,7 +58,7 @@ export const projects: Project[] = [
     logoOnly: false,
   },
   {
-    id: 4,
+    id: 5,
     name: 'Project Placeholder A',
     description: 'Add your project description here.',
     skills: ['java', 'sql', 'github'],
@@ -59,7 +66,7 @@ export const projects: Project[] = [
     logoOnly: false,
   },
   {
-    id: 5,
+    id: 6,
     name: 'Project Placeholder B',
     description: 'Add your project description here.',
     skills: ['python', 'fastapi', 'docker', 'azure'],

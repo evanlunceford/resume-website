@@ -1,0 +1,380 @@
+.lease-lift-bg {
+  display: flex;
+  align-items: flex-end;
+  justify-content: stretch;
+  background:
+    radial-gradient(circle at 50% 100%, rgba(250, 205, 95, 0.12), transparent 42%),
+    linear-gradient(180deg, rgba(9, 18, 28, 0.1) 0%, rgba(5, 10, 18, 0.32) 100%);
+}
+
+.lease-lift-sky-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 80%, rgba(255, 216, 127, 0.12), transparent 70%),
+    radial-gradient(circle at 50% 80%, rgba(255, 216, 127, 0.08), transparent 54%),
+    radial-gradient(circle at 80% 15%, rgba(255, 255, 255, 0.04), transparent 34%);
+  opacity: 0.8;
+}
+
+.lease-lift-skyline {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: stretch;
+  gap: 0;
+  padding: 0 0 0.9rem;
+  height: 74%;
+}
+
+.lease-lift-building {
+  position: relative;
+  width: var(--building-width);
+  height: var(--building-height);
+  min-width: 20px;
+}
+
+.lease-lift-building-face {
+  position: absolute;
+  inset: var(--building-top) 0 0;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(180deg, rgba(17, 31, 43, 0.98), rgba(6, 11, 18, 0.98));
+  box-shadow:
+    inset 1px 0 0 rgba(255, 255, 255, 0.04),
+    inset -1px 0 0 rgba(0, 0, 0, 0.35);
+}
+
+.lease-lift-building--academic .lease-lift-building-face,
+.lease-lift-building--student-center .lease-lift-building-face {
+  background: linear-gradient(180deg, rgba(28, 38, 49, 0.98), rgba(10, 15, 22, 0.98));
+}
+
+.lease-lift-building--dorm .lease-lift-building-face,
+.lease-lift-building--apartment .lease-lift-building-face {
+  background: linear-gradient(180deg, rgba(19, 31, 42, 0.98), rgba(6, 11, 18, 0.98));
+}
+
+.lease-lift-building--tower .lease-lift-building-face {
+  clip-path: polygon(14% 12%, 36% 0, 64% 0, 86% 12%, 100% 12%, 100% 100%, 0 100%, 0 12%);
+}
+
+.lease-lift-building--stepped .lease-lift-building-face {
+  clip-path: polygon(0 20%, 18% 20%, 18% 8%, 42% 8%, 42% 0, 74% 0, 74% 12%, 100% 12%, 100% 100%, 0 100%);
+}
+
+.lease-lift-building--block .lease-lift-building-face {
+  clip-path: polygon(0 14%, 18% 14%, 18% 6%, 82% 6%, 82% 14%, 100% 14%, 100% 100%, 0 100%);
+}
+
+.lease-lift-building--gable .lease-lift-building-face {
+  clip-path: polygon(0 18%, 36% 18%, 50% 0, 64% 18%, 100% 18%, 100% 100%, 0 100%);
+}
+
+.lease-lift-building--hall .lease-lift-building-face {
+  clip-path: polygon(0 22%, 8% 22%, 8% 10%, 28% 10%, 28% 18%, 72% 18%, 72% 10%, 92% 10%, 92% 22%, 100% 22%, 100% 100%, 0 100%);
+}
+
+.lease-lift-building-accent {
+  position: absolute;
+  inset: calc(var(--building-top) + 6%) 18% auto;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(201, 217, 235, 0.16);
+}
+
+.lease-lift-window-grid {
+  position: absolute;
+  inset: calc(var(--building-top) + 10%) 16% 8%;
+  display: grid;
+  grid-template-columns: repeat(var(--building-columns), minmax(0, 1fr));
+  align-content: start;
+  gap: 0.22rem;
+}
+
+.lease-lift-building--tower .lease-lift-window-grid {
+  inset: calc(var(--building-top) + 16%) 18% 8%;
+}
+
+.lease-lift-window {
+  aspect-ratio: 0.72 / 1;
+  border-radius: 2px;
+  background: rgba(255, 225, 145, 0.06);
+  box-shadow: none;
+  opacity: 0.15;
+  transform: scale(0.92);
+  transition:
+    opacity 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.lease-lift-window--dark {
+  opacity: 0.08;
+}
+
+.lease-lift-window--bottom-row {
+  opacity: 0.08;
+}
+
+.lease-lift-window--shade-0 {
+  --window-color: #ffd45f;
+}
+
+.lease-lift-window--shade-1 {
+  --window-color: #ffe082;
+}
+
+.lease-lift-window--shade-2 {
+  --window-color: #ffefae;
+}
+
+.lease-lift-window--shade-3 {
+  --window-color: #f7c94b;
+}
+
+.featured-project-card:hover .lease-lift-window--lit {
+  opacity: 0.95;
+  background: var(--window-color);
+  transform: scale(1);
+  box-shadow:
+    0 0 6px color-mix(in srgb, var(--window-color) 85%, transparent),
+    0 0 12px color-mix(in srgb, var(--window-color) 32%, transparent);
+  animation: lease-lift-window-pulse var(--window-duration) ease-in-out infinite;
+  animation-delay: 0s;
+}
+
+.featured-project-card:hover .lease-lift-window--dark {
+  opacity: 0.12;
+  background: rgba(255, 225, 145, 0.08);
+  transform: scale(0.92);
+  box-shadow: none;
+  animation: none;
+}
+
+.featured-project-card:hover .lease-lift-window--bottom-row {
+  opacity: 0.08;
+  background: rgba(255, 225, 145, 0.06);
+  transform: scale(0.92);
+  box-shadow: none;
+  animation: none;
+}
+
+.lease-lift-street {
+  position: absolute;
+  inset: auto 0 0;
+  height: 22%;
+}
+
+.lease-lift-traffic {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.lease-lift-road {
+  position: absolute;
+  inset: auto 0 0;
+  height: 22%;
+  background: rgba(18, 21, 29, 0.95);
+    
+  border-top: 1px solid rgba(209, 219, 230, 0.08);
+}
+
+.lease-lift-streetlamp {
+  position: absolute;
+  left: var(--lamp-left);
+  bottom: 18%;
+  width: 3px;
+  height: var(--lamp-height);
+  background: linear-gradient(180deg, rgba(98, 115, 136, 0.4), rgba(39, 48, 59, 0.5));
+  border-radius: 999px;
+  z-index: 2;
+}
+
+.lease-lift-streetlamp-head {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 12px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(171, 183, 198, 0.7);
+}
+
+.lease-lift-streetlamp-glow {
+  position: absolute;
+  top: 2px;
+  left: -18px;
+  width: 40px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 218, 123, 0.2) 0%, rgba(255, 218, 123, 0.08) 36%, transparent 72%);
+  opacity: 0.55;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.featured-project-card:hover .lease-lift-streetlamp-glow {
+  opacity: 0.9;
+  transform: scale(1.04);
+}
+
+.lease-lift-car {
+  position: absolute;
+  left: var(--car-start-left);
+  bottom: var(--car-lane-bottom);
+  width: var(--car-width);
+  height: 14px;
+  border-radius: 10px 12px 6px 6px;
+  background: linear-gradient(180deg, rgba(28, 34, 42, 0.95), rgba(8, 12, 18, 0.98));
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+  animation: lease-lift-drive-east var(--car-duration) linear infinite;
+  animation-delay: var(--car-delay);
+  z-index: 2;
+}
+
+.lease-lift-car--westbound {
+  animation-name: lease-lift-drive-west;
+  transform: scaleX(-1);
+}
+
+.lease-lift-car::before {
+  content: "";
+  position: absolute;
+  inset: auto -22px 0 auto;
+  width: 28px;
+  height: 10px;
+  background: linear-gradient(90deg, rgba(255, 244, 198, 0.28), rgba(255, 244, 198, 0));
+  filter: blur(4px);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.lease-lift-car-top {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  width: calc(100% - 18px);
+  height: 8px;
+  border-radius: 10px 10px 2px 2px;
+  background: inherit;
+}
+
+.lease-lift-car-window {
+  position: absolute;
+  left: 13px;
+  bottom: 12px;
+  width: calc(100% - 24px);
+  height: 5px;
+  border-radius: 4px;
+  background: rgba(180, 208, 230, 0.28);
+}
+
+.lease-lift-car-headlight {
+  position: absolute;
+  bottom: 4px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ffe7a6;
+  box-shadow: 0 0 8px rgba(255, 231, 166, 0.9);
+}
+
+.lease-lift-car-headlight--front {
+  right: 2px;
+}
+
+.lease-lift-car-headlight--rear {
+  left: 2px;
+  width: 3px;
+  height: 3px;
+  background: rgba(255, 115, 82, 0.85);
+  box-shadow: 0 0 6px rgba(255, 115, 82, 0.55);
+}
+
+.lease-lift-car-wheel {
+  position: absolute;
+  bottom: -3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(11, 14, 20, 0.98);
+}
+
+.lease-lift-car-wheel--front {
+  right: 6px;
+}
+
+.lease-lift-car-wheel--rear {
+  left: 6px;
+}
+
+.lease-lift-car--teal {
+  background: linear-gradient(180deg, rgba(53, 116, 126, 0.95), rgba(19, 52, 58, 0.98));
+}
+
+.lease-lift-car--amber {
+  background: linear-gradient(180deg, rgba(146, 96, 45, 0.95), rgba(70, 38, 12, 0.98));
+}
+
+.lease-lift-car--slate {
+  background: linear-gradient(180deg, rgba(82, 92, 105, 0.95), rgba(28, 35, 44, 0.98));
+}
+
+.lease-lift-ground-fade {
+  position: absolute;
+  inset: auto 0 0;
+  height: 24%;
+  background: linear-gradient(180deg, transparent 0%, rgba(2, 4, 8, 0.72) 100%);
+}
+
+@keyframes lease-lift-window-pulse {
+  0%,
+  100% {
+    opacity: 0.82;
+    filter: brightness(0.94);
+  }
+
+  50% {
+    opacity: 1;
+    filter: brightness(1.08);
+  }
+}
+
+@keyframes lease-lift-drive-east {
+  0% {
+    left: var(--car-start-left);
+  }
+
+  100% {
+    left: var(--car-end-left);
+  }
+}
+
+@keyframes lease-lift-drive-west {
+  0% {
+    left: var(--car-start-left);
+  }
+
+  100% {
+    left: var(--car-end-left);
+  }
+}
+
+@media (max-width: 1100px) {
+  .lease-lift-skyline {
+    padding-inline: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .lease-lift-window-grid {
+    gap: 0.16rem;
+  }
+
+  .lease-lift-streetlamp:nth-of-type(4),
+  .lease-lift-car:nth-of-type(4) {
+    display: none;
+  }
+}

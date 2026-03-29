@@ -1,0 +1,114 @@
+.ad-strategies-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+
+}
+
+.ad-strategies-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(11, 190, 68, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 190, 68, 0.12) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-position: 0 0;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent 92%);
+}
+
+.ad-strategies-bar-cluster {
+  position: absolute;
+  right: 10%;
+  bottom: 12%;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.9rem;
+  width: min(42%, 290px);
+  min-width: 150px;
+  height: 48%;
+  isolation: isolate;
+}
+
+.ad-strategies-bar {
+  position: relative;
+  width: 100%;
+  border-radius: 12px 12px 4px 4px;
+  background: linear-gradient(180deg, rgba(11, 190, 68, 0.44), rgba(11, 190, 68, 0.12));
+  border: 1px solid rgba(11, 190, 68, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(220, 255, 232, 0.14),
+    0 0 0 1px rgba(255, 255, 255, 0.02);
+  z-index: 1;
+}
+
+.ad-strategies-bar--1 {
+  height: 17%;
+}
+
+.ad-strategies-bar--2 {
+  height: 30%;
+}
+
+.ad-strategies-bar--3 {
+  height: 56%;
+}
+
+.ad-strategies-bar--4 {
+  height: 54%;
+  background: linear-gradient(180deg, rgba(11, 190, 68, 0.58), rgba(11, 190, 68, 0.16));
+  border-color: rgba(11, 190, 68, 0.24);
+}
+
+.ad-strategies-bar--5 {
+  height: 72%;
+}
+
+.ad-strategies-bar--6 {
+  height: 102%;
+  background: linear-gradient(180deg, rgba(11, 190, 68, 0.64), rgba(11, 190, 68, 0.18));
+  border-color: rgba(11, 190, 68, 0.28);
+}
+
+
+
+.ad-strategies-axis--vertical {
+  right: calc(10% + min(42%, 290px));
+  bottom: 12%;
+  width: 1px;
+  height: 50%;
+}
+
+.ad-strategies-axis--horizontal {
+  right: 10%;
+  bottom: 12%;
+  width: min(42%, 290px);
+  height: 1px;
+}
+
+.featured-project-card:hover .ad-strategies-grid {
+  animation: ad-strategies-grid-drift 1.8s linear infinite;
+}
+
+@keyframes ad-strategies-grid-drift {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 44px 44px;
+  }
+}
+
+@media (max-width: 900px) {
+  .ad-strategies-bar-cluster {
+    width: min(46%, 250px);
+  }
+}
+
+@media (max-width: 768px) {
+  .ad-strategies-bar-cluster {
+    gap: 0.45rem;
+    width: min(48%, 190px);
+    min-width: 120px;
+  }
+}

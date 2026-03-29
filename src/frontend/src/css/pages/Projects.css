@@ -52,8 +52,12 @@
 }
 
 .featured-projects-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    "primary wide wide"
+    "primary small-left small-right";
+  grid-auto-rows: minmax(220px, 1fr);
   gap: 1.5rem;
   width: 100%;
 }
@@ -77,18 +81,36 @@
 
 
 .featured-project-card {
-  min-height: 300px;
+  min-height: 100%;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   filter: grayscale(0.92) sepia(0.4);
-  transition: filter 0.5s ease;
+  transition: filter 0.5s ease, transform 0.3s ease;
   cursor: pointer;
-  transition: 0.3s transform ease;
 }
 
 .featured-project-card:hover {
   filter: grayscale(0) sepia(0);
-  transform: scale(1.08);
+  transform: scale(1.03);
+}
+
+.featured-project-card--primary {
+  grid-area: primary;
+  aspect-ratio: 1 / 1;
+  justify-content: center;
+}
+
+.featured-project-card--wide {
+  grid-area: wide;
+}
+
+.featured-project-card--compact:nth-of-type(3) {
+  grid-area: small-left;
+}
+
+.featured-project-card--compact:nth-of-type(4) {
+  grid-area: small-right;
 }
 
 .project-card-bg {
@@ -114,8 +136,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-
-  width: 35%;
+  width: min(100%, 70%);
   max-width: 600px;
 }
 
@@ -129,6 +150,25 @@
   width: 100%;
 }
 
+@media (max-width: 1100px) {
+  .featured-projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "primary primary"
+      "wide wide"
+      "small-left small-right";
+    grid-auto-rows: minmax(220px, auto);
+  }
+
+  .featured-project-card--primary {
+    aspect-ratio: auto;
+    min-height: 360px;
+  }
+
+  .project-card-header {
+    width: min(100%, 55%);
+  }
+}
 
 @media (max-width: 768px) {
   .projects-content-container {
@@ -143,8 +183,27 @@
     font-size: var(--text-lg);
   }
 
+  .featured-projects-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "primary"
+      "wide"
+      "small-left"
+      "small-right";
+    grid-auto-rows: auto;
+  }
+
+  .featured-project-card {
+    min-height: 280px;
+  }
+
+  .featured-project-card--primary {
+    min-height: 320px;
+  }
+
   .project-card-header {
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
   }
 }
