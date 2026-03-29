@@ -1,39 +1,58 @@
 export type SkillCategory = 'language' | 'framework' | 'other';
+export type TechStackCategory =
+  | 'frontend'
+  | 'backend'
+  | 'data'
+  | 'database'
+  | 'cloud'
+  | 'devops'
+  | 'tooling';
 
 export type Skill = {
   id: string;
   name: string;
   category: SkillCategory;
+  stackCategory: TechStackCategory;
 };
 
 export const skills: Skill[] = [
   // Programming Languages
-  { id: 'python',     name: 'Python',      category: 'language' },
-  { id: 'typescript', name: 'TypeScript',  category: 'language' },
-  { id: 'javascript', name: 'JavaScript',  category: 'language' },
-  { id: 'java',       name: 'Java',        category: 'language' },
-  { id: 'sql',        name: 'SQL',         category: 'language' },
-  { id: 'cpp',        name: 'C/C++',       category: 'language' },
+  { id: 'python',     name: 'Python',      category: 'language', stackCategory: 'backend' },
+  { id: 'typescript', name: 'TypeScript',  category: 'language', stackCategory: 'frontend' },
+  { id: 'javascript', name: 'JavaScript',  category: 'language', stackCategory: 'frontend' },
+  { id: 'java',       name: 'Java',        category: 'language', stackCategory: 'backend' },
+  { id: 'sql',        name: 'SQL',         category: 'language', stackCategory: 'database' },
+  { id: 'cpp',        name: 'C/C++',       category: 'language', stackCategory: 'backend' },
 
   // Frameworks & Libraries
-  { id: 'react',      name: 'React',       category: 'framework' },
-  { id: 'fastapi',    name: 'FastAPI',     category: 'framework' },
-  { id: 'nodejs',     name: 'Node.js',     category: 'framework' },
-  { id: 'pandas',     name: 'Pandas',      category: 'framework' },
-  { id: 'numpy',      name: 'NumPy',       category: 'framework' },
-  { id: 'tailwind',   name: 'Tailwind',    category: 'framework' },
+  { id: 'react',      name: 'React',       category: 'framework', stackCategory: 'frontend' },
+  { id: 'fastapi',    name: 'FastAPI',     category: 'framework', stackCategory: 'backend' },
+  { id: 'nodejs',     name: 'Node.js',     category: 'framework', stackCategory: 'backend' },
+  { id: 'pandas',     name: 'Pandas',      category: 'framework', stackCategory: 'data' },
+  { id: 'numpy',      name: 'NumPy',       category: 'framework', stackCategory: 'data' },
+  { id: 'tailwind',   name: 'Tailwind',    category: 'framework', stackCategory: 'frontend' },
 
   // Other (tools, platforms, services)
-  { id: 'gcs',        name: 'Google Cloud',  category: 'other' },
-  { id: 'azure',      name: 'Azure',         category: 'other' },
-  { id: 'github',     name: 'GitHub',        category: 'other' },
-  { id: 'docker',     name: 'Docker',        category: 'other' },
-  { id: 'postgres',   name: 'PostgreSQL',    category: 'other' },
-  { id: 'figma',      name: 'Figma',         category: 'other' },
+  { id: 'gcs',        name: 'Google Cloud',  category: 'other', stackCategory: 'cloud' },
+  { id: 'azure',      name: 'Azure',         category: 'other', stackCategory: 'cloud' },
+  { id: 'github',     name: 'GitHub',        category: 'other', stackCategory: 'tooling' },
+  { id: 'docker',     name: 'Docker',        category: 'other', stackCategory: 'devops' },
+  { id: 'postgres',   name: 'PostgreSQL',    category: 'other', stackCategory: 'database' },
+  { id: 'figma',      name: 'Figma',         category: 'other', stackCategory: 'tooling' },
 ];
 
 export const CATEGORY_LABELS: Record<SkillCategory, string> = {
   language:  'Programming Languages',
   framework: 'Frameworks & Libraries',
   other:     'Tools & Platforms',
+};
+
+export const STACK_CATEGORY_LABELS: Record<TechStackCategory, string> = {
+  frontend: 'Frontend',
+  backend: 'Backend',
+  data: 'Data',
+  database: 'Database',
+  cloud: 'Cloud',
+  devops: 'DevOps',
+  tooling: 'Tooling',
 };
