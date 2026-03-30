@@ -41,7 +41,18 @@ export default function Projects() {
   return (
     <>
       <div className="projects-content-container">
-        <section className="projects-section" aria-labelledby="featured-projects-title">
+          <div className="projects-section-header projects-section-header--banner">
+            <div className="projects-title-banner" aria-hidden="true">
+              <span className="projects-title-banner__stripe projects-title-banner__stripe--teal" />
+              <span className="projects-title-banner__stripe projects-title-banner__stripe--orange" />
+              <span className="projects-title-banner__stripe projects-title-banner__stripe--brown" />
+            </div>
+            <h2 className="projects-section-title projects-section-title--banner" id="featured-projects-title">
+              Featured Projects
+            </h2>
+          </div>
+        <section className="featured-projects-section" aria-labelledby="featured-projects-title">
+
           <div className="featured-projects-grid">
             {featuredProjects.map((project, index) => (
               <button
@@ -75,6 +86,11 @@ export default function Projects() {
               </button>
             ))}
           </div>
+          <div className="projects-title-banner projects-title-banner--divider" aria-hidden="true">
+            <span className="projects-title-banner__stripe projects-title-banner__stripe--teal" />
+            <span className="projects-title-banner__stripe projects-title-banner__stripe--orange" />
+            <span className="projects-title-banner__stripe projects-title-banner__stripe--brown" />
+          </div>
         </section>
 
         <section className="projects-section" aria-labelledby="other-projects-title">
@@ -82,32 +98,41 @@ export default function Projects() {
             <h2 className="projects-section-title" id="other-projects-title">
               More Projects
             </h2>
-            <p className="projects-section-copy">
-              Additional builds, experiments, and smaller implementations.
-            </p>
           </div>
 
           <div className="projects-grid">
-            {otherProjects.map((project) => (
+            {otherProjects.map((project, index) => (
               <button
                 key={project.id}
                 type="button"
                 className="project-card project-card-button project-card-button--standard"
                 onClick={() => setSelectedProjectId(project.id)}
               >
-                {project.background && <project.background className="project-card-bg" />}
-                <div className="project-card-header">
-                  <h3 className="project-card-title">{project.name}</h3>
+                <div className="project-listing-index" aria-hidden="true">
+                  {(index + 1).toString().padStart(2, "0")}
                 </div>
+                <div className="project-listing-content">
+                  {project.background && <project.background className="project-card-bg" />}
+                  <div className="project-card-header project-card-header--listing">
+                    <div className="project-listing-heading">
+                      <span className="project-listing-label">Archive Entry</span>
+                      <h3 className="project-card-title">{project.name}</h3>
+                    </div>
+                    <div className="project-listing-meta">
+                      <span>{project.startDate}</span>
+                      <span>{project.estimatedLinesOfCode.toLocaleString()} LOC</span>
+                    </div>
+                  </div>
 
-                <p className="project-card-description">{project.description}</p>
+                  <p className="project-card-description">{project.description}</p>
 
-                <div className="project-skills" aria-label={`${project.name} skills`}>
-                  {project.skills.map((skillId) => (
-                    <span key={skillId} className="project-skill-chip">
-                      {skillNameById.get(skillId) ?? skillId}
-                    </span>
-                  ))}
+                  <div className="project-skills" aria-label={`${project.name} skills`}>
+                    {project.skills.map((skillId) => (
+                      <span key={skillId} className="project-skill-chip">
+                        {skillNameById.get(skillId) ?? skillId}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </button>
             ))}

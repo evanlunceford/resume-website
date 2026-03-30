@@ -9,7 +9,7 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(11, 190, 68, 0.12) 1px, transparent 1px),
+    linear-gradient(rgba(11, 190, 68, 0.32) 1px, transparent 1px),
     linear-gradient(90deg, rgba(11, 190, 68, 0.12) 1px, transparent 1px);
   background-size: 44px 44px;
   background-position: 0 0;
