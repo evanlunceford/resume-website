@@ -54,7 +54,9 @@
 .intro-container {
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(280px, 420px) minmax(0, 720px);
+  grid-template-columns:
+    minmax(280px, clamp(360px, 26vw, 560px))
+    minmax(0, clamp(620px, 48vw, 980px));
   align-items: center;
   justify-content: center;
   gap: clamp(2rem, 5vw, 6rem);
@@ -78,7 +80,8 @@
   position: relative;
   display: grid;
   gap: 1rem;
-  max-width: 720px;
+  width: 100%;
+  max-width: clamp(620px, 48vw, 980px);
   padding: 2rem 2.25rem;
   border: 3px solid var(--brown);
   background:
@@ -120,12 +123,15 @@
   color: var(--tan);
   font-size: var(--text-5xl);
   line-height: 0.95;
+  text-align: right;
 }
 
 .intro-copy-divider {
   display: grid;
   gap: 0.4rem;
-  width: min(100%, 15rem);
+  align-self: flex-end;
+  justify-items: end;
+  width: 100%;
 }
 
 .intro-copy-divider__line {
@@ -134,17 +140,17 @@
 }
 
 .intro-copy-divider__line--teal {
-  width: 100%;
+  width: calc(100% - 10rem);
   background: var(--teal);
 }
 
 .intro-copy-divider__line--orange {
-  width: calc(100% - 1rem);
+  width: calc(100% - 12rem);
   background: var(--orange);
 }
 
 .intro-copy-divider__line--brown {
-  width: calc(100% - 2.25rem);
+  width: calc(100% - 15rem);
   background: var(--brown);
 }
 
@@ -184,6 +190,14 @@
   .intro-copy {
     text-align: center;
     padding: 1.5rem 1.25rem;
+  }
+
+  .intro-heading {
+    text-align: center;
+  }
+
+  .intro-copy-divider {
+    align-self: center;
   }
 }
 

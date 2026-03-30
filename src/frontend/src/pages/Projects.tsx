@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ProjectModal from "../components/projects/ProjectModal";
+import ProjectMiniTimeline from "../components/projects/ProjectMiniTimeline";
 import { projects } from "../data/projects";
 import { skills } from "../data/skills";
 import "../css/pages/Projects.css";
@@ -115,12 +116,15 @@ export default function Projects() {
                   {project.background && <project.background className="project-card-bg" />}
                   <div className="project-card-header project-card-header--listing">
                     <div className="project-listing-heading">
-                      <span className="project-listing-label">Archive Entry</span>
                       <h3 className="project-card-title">{project.name}</h3>
                     </div>
                     <div className="project-listing-meta">
-                      <span>{project.startDate}</span>
-                      <span>{project.estimatedLinesOfCode.toLocaleString()} LOC</span>
+                      <ProjectMiniTimeline
+                        startDate={project.startDate}
+                        endDate={project.endDate}
+                        className="project-listing-timeline"
+                      />
+                      <span className="project-listing-loc">~{project.estimatedLinesOfCode.toLocaleString()} lines of code</span>
                     </div>
                   </div>
 

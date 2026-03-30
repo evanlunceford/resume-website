@@ -95,7 +95,6 @@ export default function Home() {
 
           <div className="intro-right">
             <div className="intro-copy" ref={introRef}>
-              <span className="intro-eyebrow">About Me</span>
               <motion.h3
                 className="intro-heading"
                 initial={{ opacity: 0 }}

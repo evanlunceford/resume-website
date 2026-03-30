@@ -1,0 +1,61 @@
+.project-mini-timeline {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 190px;
+}
+
+.project-mini-timeline__labels {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: end;
+  gap: 0.5rem;
+  color: color-mix(in srgb, var(--brown) 88%, var(--black));
+  font-size: 0.68rem;
+  font-family: "Righteous", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-mini-timeline__duration {
+  justify-self: center;
+  color: var(--dark-teal);
+}
+
+.project-mini-timeline__rail {
+  position: relative;
+  height: 0.35rem;
+  border-radius: 2px;
+  background: var(--brown);
+  overflow: visible;
+}
+
+.project-mini-timeline__fill {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -0.11rem;
+  height: 0.55rem;
+  border-radius: 2px;
+  background: var(--teal);
+}
+
+.project-mini-timeline__cap {
+  position: absolute;
+  top: 50%;
+  width: 0.18rem;
+  height: 1rem;
+  border-radius: 1px;
+  border: 0;
+  background: var(--orange);
+  transform: translateY(-50%);
+}
+
+.project-mini-timeline__cap--start {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.project-mini-timeline__cap--end {
+  right: 0;
+  transform: translate(50%, -50%);
+}

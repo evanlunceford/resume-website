@@ -11,8 +11,8 @@ const TitleStreak: React.FC = () => {
             pathLength: 1,
             opacity: 1,
             transition: {
-                pathLength: { delay: i * 0.2, duration: 1, ease: "easeInOut" },
-                opacity: { delay: i * 0.2, duration: 0.01 }
+                pathLength: { delay: 0.5, duration: 1, ease: "easeInOut" },
+                opacity: { delay: 0.5, duration: 0.01 }
             }
         })
     };
@@ -29,7 +29,7 @@ const iconVariants: Variants = {
             opacity: { 
                 type: "tween",
                 ease: "linear",
-                duration: 2.5,
+                duration: 0.5,
                 delay: 0.3
             }
         }

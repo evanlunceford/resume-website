@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { CATEGORY_LABELS, skills, type SkillCategory } from "../../data/skills";
 import type { Project } from "../../data/projects";
+import ProjectMiniTimeline from "./ProjectMiniTimeline";
 import "../../css/components/ProjectModal.css";
 
 type ProjectModalProps = {
@@ -97,7 +98,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </div>
               <div className="project-modal-meta-card">
                 <span className="project-modal-meta-label">Timeline</span>
-                <strong className="project-modal-meta-value">{project.startDate} to {project.endDate}</strong>
+                <ProjectMiniTimeline
+                  startDate={project.startDate}
+                  endDate={project.endDate}
+                  className="project-modal-mini-timeline"
+                />
               </div>
             </div>
           </div>
