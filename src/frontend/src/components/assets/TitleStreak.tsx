@@ -40,10 +40,7 @@ const iconVariants: Variants = {
         <div className="title-streak-container">
             <svg width="100%" height="100%" viewBox="0 0 400 100" preserveAspectRatio="xMinYMid meet">
                 {[...Array(5)].map((_, i) => {
-
-                const taperOffset = Math.abs(2 - i) * 2; 
-                const lineLength = `${70 + taperOffset}%`;
-
+                const lineLength = "85%";
                 return (
                     <motion.line
                         key={i}
@@ -53,7 +50,6 @@ const iconVariants: Variants = {
                         y2={20 + i * 15}
                         stroke={brandColor}
                         strokeWidth="2"
-                        strokeLinecap="round"
                         custom={i}
                         variants={lineVariants}
                         initial="hidden"
@@ -73,6 +69,13 @@ const iconVariants: Variants = {
                     animate="visible"
                     style={{ overflow: "visible" }}
                 >
+                    <ellipse
+                        cx="35"
+                        cy="35"
+                        rx="45"
+                        ry="35"
+                        fill="rgba(243, 221, 195, 1)"
+                    />
                     <g fill="none" stroke={brandColor} strokeWidth="2">
                         {/* Outer Oval Boundary */}
                         <ellipse cx="35" cy="35" rx="40" ry="30" />

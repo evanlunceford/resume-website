@@ -95,6 +95,7 @@ export default function Home() {
 
           <div className="intro-right">
             <div className="intro-copy" ref={introRef}>
+              <span className="intro-eyebrow">About Me</span>
               <motion.h3
                 className="intro-heading"
                 initial={{ opacity: 0 }}
@@ -103,12 +104,18 @@ export default function Home() {
               >
                 Hello
               </motion.h3>
+              <div className="intro-copy-divider" aria-hidden="true">
+                <span className="intro-copy-divider__line intro-copy-divider__line--teal" />
+                <span className="intro-copy-divider__line intro-copy-divider__line--orange" />
+                <span className="intro-copy-divider__line intro-copy-divider__line--brown" />
+              </div>
               <p className="intro-text">
-                Nice of you to be here! As noted by the gigantic title, my name is Evan Lunceford.
-                I am currently a student at Northern Arizona University, pursuing a Computer Science
-                Bachelors Degree. While I am still a student, I hope this website will showcase the amount
-                of real world experience I have solving real problems. Additionally, I hope to convey my
-                ambition and work-ethic in a meaningful way.
+                Nice of you to be here. As noted by the gigantic title, my name is Evan Lunceford, and I am currently
+                a Computer Science student at Northern Arizona University.
+              </p>
+              <p className="intro-text">
+                This site is meant to show the kind of work I like doing most: building things that solve real
+                problems, communicate clearly, and feel intentional from the code to the interface.
               </p>
             </div>
           </div>
