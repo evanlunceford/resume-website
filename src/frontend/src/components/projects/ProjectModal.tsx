@@ -93,7 +93,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             <div className="project-modal-meta-row">
               <div className="project-modal-meta-card">
-                <span className="project-modal-meta-label">Estimated LOC</span>
+                <span className="project-modal-meta-label">Estimated Lines of Code</span>
                 <strong className="project-modal-meta-value">{project.estimatedLinesOfCode.toLocaleString()}</strong>
               </div>
               <div className="project-modal-meta-card">
