@@ -18,7 +18,10 @@ export type Project = {
   shortDescription: string;
   screenshotDirectory: string;
   screenshots: { title: string; caption: string; filename?: string }[];
-  link?: string;
+  link:
+    | { type: "public"; href: string }
+    | { type: "open-source"; href: string }
+    | { type: "private" };
   features: string[];
   estimatedLinesOfCode: number;
   startDate: string;
@@ -47,7 +50,7 @@ export const projects: Project[] = [
       { title: "Login Screen", caption: "", filename: "05-login-screen.png" },
       
     ],
-    link: "https://scoutworkforce.com",
+    link: { type: "public", href: "https://scoutworkforce.com" },
     features: [
       "Role-based internal workflow management for operations teams",
       "Scheduling and allocation views for active workforce planning",
@@ -76,6 +79,7 @@ export const projects: Project[] = [
       "KPI rollups for occupancy, pricing, and unit-level movement",
       "Analytical workflows designed for quick executive readouts",
     ],
+    link: { type: "private" },
     estimatedLinesOfCode: 14500,
     startDate: "2024-11",
     endDate: "2025-03",
@@ -99,6 +103,7 @@ export const projects: Project[] = [
       "Multi-metric comparisons for spend, conversions, and efficiency",
       "Flexible reporting layout for fast stakeholder reviews",
     ],
+    link: { type: "private" },
     estimatedLinesOfCode: 11200,
     startDate: "2024-06",
     endDate: "2024-10",
@@ -122,6 +127,7 @@ export const projects: Project[] = [
       "Music analysis concepts focused on chords, key, and rhythmic structure",
       "Strong visual identity built around tactile retro UI patterns",
     ],
+    link: { type: "open-source", href: "https://github.com/evanlunceford/Sandbox-Hackathon" },
     estimatedLinesOfCode: 8700,
     startDate: "2025-01",
     endDate: "2025-02",
@@ -143,6 +149,7 @@ export const projects: Project[] = [
       "Placeholder feature description two",
       "Placeholder feature description three",
     ],
+    link: { type: "private" },
     estimatedLinesOfCode: 2000,
     startDate: "2023-09",
     endDate: "2023-12",
@@ -164,6 +171,7 @@ export const projects: Project[] = [
       "Placeholder feature description two",
       "Placeholder feature description three",
     ],
+    link: { type: "private" },
     estimatedLinesOfCode: 5300,
     startDate: "2024-02",
     endDate: "2024-05",

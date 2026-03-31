@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { CATEGORY_LABELS, skills, type SkillCategory } from "../../data/skills";
 import type { Project } from "../../data/projects";
 import ProjectMiniTimeline from "./ProjectMiniTimeline";
@@ -7,6 +7,12 @@ import "../../css/components/ProjectModal.css";
 type ProjectModalProps = {
   project: Project;
   onClose: () => void;
+};
+
+const CATEGORY_COLORS: Record<SkillCategory, string> = {
+  language: "var(--teal)",
+  framework: "var(--orange)",
+  other: "var(--dark-teal)",
 };
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
@@ -35,6 +41,12 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   const activeScreenshot = project.screenshots[currentScreenshot];
   const canMove = project.screenshots.length > 1;
+  const projectLinkMeta =
+    project.link.type === "public"
+      ? { href: project.link.href, icon: "/redirect.svg", alt: "Website Icon", label: "Visit Project" }
+      : project.link.type === "open-source"
+        ? { href: project.link.href, icon: "/github.svg", alt: "GitHub Icon", label: "Visit Github" }
+        : null;
 
   const goPrevious = () => {
     setCurrentScreenshot((prev) => (prev === 0 ? project.screenshots.length - 1 : prev - 1));
@@ -62,12 +74,16 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
 
           <div className="project-modal-header-center">
-            {project.link ? (
-              <a className="project-modal-link" target="_blank" href={project.link}>
-                Visit Project
+            {projectLinkMeta ? (
+              <a className="project-modal-link" target="_blank" rel="noreferrer" href={projectLinkMeta.href}>
+                <img src={projectLinkMeta.icon} alt={projectLinkMeta.alt} />
+                <span>{projectLinkMeta.label}</span>
               </a>
             ) : (
-              <span className="project-modal-link project-modal-link--disabled">Private Project</span>
+              <span className="project-modal-link project-modal-link--disabled">
+                <img src="/lock.svg" alt="Lock Icon" />
+                <span>Private Project</span>
+              </span>
             )}
           </div>
 
@@ -160,12 +176,18 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
         <div className="project-modal-skills">
           <div className="project-modal-section-header">
-            <h3>Tech Stack</h3>
+            <div className="project-modal-skills-title-wrapper">
+              <h3 className="project-modal-skills-heading">Tech Stack</h3>
+            </div>
           </div>
 
           <div className="project-modal-skills-grid">
             {groupedSkills.map((group) => (
-              <div key={group.category} className="project-modal-skills-column">
+              <div
+                key={group.category}
+                className="project-modal-skills-column"
+                style={{ "--project-skill-accent": CATEGORY_COLORS[group.category] } as CSSProperties}
+              >
                 <div className="project-modal-skills-column-header">
                   <div className="project-modal-skills-column-accent" />
                   <h4 className="project-modal-skills-column-title">{CATEGORY_LABELS[group.category]}</h4>
@@ -188,7 +210,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
         <div className="lightbox-backdrop" onClick={() => setLightboxOpen(false)} role="presentation">
           <div className="lightbox" onClick={(event) => event.stopPropagation()}>
             <button className="lightbox-close" type="button" onClick={() => setLightboxOpen(false)} aria-label="Close lightbox">
-              x
+              <img src="/close.svg" alt="Close Screenshot View" />
             </button>
 
             <button
