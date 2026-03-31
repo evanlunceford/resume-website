@@ -72,30 +72,3 @@
   height: 20px;
   display: block;
 }
-
-.navbar-resume {
-  grid-column: 3;
-  justify-self: end;
-  font-size: var(--text-sm);
-  color: var(--black);
-  background: var(--white);
-  padding: 0.4rem 1.1rem;
-  border-radius: var(--radius-full);
-  font-weight: 500;
-  transition: opacity 0.2s ease;
-
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-}
-
-.navbar-resume img {
-  width: 20px;
-  height: 20px;
-}
-
-.navbar-resume:hover {
-  opacity: 0.85;
-}

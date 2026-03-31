@@ -11,6 +11,7 @@ type ProjectModalProps = {
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const [currentScreenshot, setCurrentScreenshot] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   useEffect(() => {
     setCurrentScreenshot(0);
@@ -57,14 +58,12 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             <h2 className="project-modal-title" id={`project-modal-title-${project.id}`}>
               {project.name}
             </h2>
-            <p className="project-modal-description">
-              {project.shortDescription}
-            </p>
+            <p className="project-modal-description">{project.shortDescription}</p>
           </div>
 
           <div className="project-modal-header-center">
             {project.link ? (
-              <a className="project-modal-link" href={project.link}>
+              <a className="project-modal-link" target="_blank" href={project.link}>
                 Visit Project
               </a>
             ) : (
@@ -122,15 +121,16 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 disabled={!canMove}
                 aria-label="Previous screenshot"
               >
-                ‹
+                &lt;
               </button>
 
               <div className="project-modal-photo-stage">
-                {activeScreenshot?.image ? (
+                {activeScreenshot?.filename ? (
                   <img
-                    src={activeScreenshot.image}
+                    src={`${project.screenshotDirectory}/${activeScreenshot.filename}`}
                     alt={activeScreenshot.title}
-                    className="project-modal-photo-image"
+                    className="project-modal-photo-image project-modal-photo-image--clickable"
+                    onClick={() => setLightboxOpen(true)}
                   />
                 ) : (
                   <div className="project-modal-photo-placeholder">
@@ -147,7 +147,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 disabled={!canMove}
                 aria-label="Next screenshot"
               >
-                ›
+                &gt;
               </button>
             </div>
 
@@ -183,6 +183,44 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
         </div>
       </section>
+
+      {lightboxOpen && (
+        <div className="lightbox-backdrop" onClick={() => setLightboxOpen(false)} role="presentation">
+          <div className="lightbox" onClick={(event) => event.stopPropagation()}>
+            <button className="lightbox-close" type="button" onClick={() => setLightboxOpen(false)} aria-label="Close lightbox">
+              x
+            </button>
+
+            <button
+              className="lightbox-arrow"
+              type="button"
+              onClick={goPrevious}
+              disabled={!canMove}
+              aria-label="Previous screenshot"
+            >
+              &lt;
+            </button>
+
+            <div className="lightbox-image-wrap">
+              <img
+                src={`${project.screenshotDirectory}/${activeScreenshot?.filename}`}
+                alt={activeScreenshot?.title}
+                className="lightbox-image"
+              />
+            </div>
+
+            <button
+              className="lightbox-arrow"
+              type="button"
+              onClick={goNext}
+              disabled={!canMove}
+              aria-label="Next screenshot"
+            >
+              &gt;
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

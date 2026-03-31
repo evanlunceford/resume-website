@@ -7,7 +7,6 @@ import ScoutBackground from "../components/projects/ScoutBackground";
 export type Project = {
   id: number;
   name: string;
-  description: string;
   skills: string[];
   featured: boolean;
   background?: React.ComponentType<{ className?: string }>;
@@ -18,7 +17,7 @@ export type Project = {
   hue?: number;
   shortDescription: string;
   screenshotDirectory: string;
-  screenshots: { title: string; caption: string; image?: string }[];
+  screenshots: { title: string; caption: string; filename?: string }[];
   link?: string;
   features: string[];
   estimatedLinesOfCode: number;
@@ -30,8 +29,7 @@ export const projects: Project[] = [
   {
     id: 1,
     name: 'SCOUT',
-    description: 'Internal workforce management platform co-founded at NAU Venture Studio.',
-    skills: ['python', 'fastapi', 'react', 'typescript', 'postgres', 'gcs', 'docker', 'github'],
+    skills: ['python', 'fastapi', 'react', 'javascript', 'postgres', 'gcs', 'docker', 'github', 'qdrant', 'firebase', 'css', 'sql'],
     featured: true,
     background: ScoutBackground,
     font: "'Inter', sans-serif",
@@ -39,12 +37,15 @@ export const projects: Project[] = [
     logo: "/scout-horizontal.png",
     logoOnly: true,
     hue: 150,
-    shortDescription: "An internal workforce management platform for staffing, scheduling, and operational visibility.",
-    screenshotDirectory: "/images/projects/scout",
+    shortDescription: "Internal workforce management platform for students, workers, and employers.",
+    screenshotDirectory: "/project-screenshots/scout",
     screenshots: [
-      { title: "Ops Dashboard", caption: "Snapshot placeholder for scheduling and staffing overview." },
-      { title: "Team Allocation", caption: "Placeholder for role assignment and headcount planning." },
-      { title: "Reporting View", caption: "Placeholder for internal metrics and workforce reporting." },
+      { title: "Home Page", caption: "An overview of a student/worker's portfolio.", filename: "01-home-page.png"},
+      { title: "Admin Panel", caption: "Placeholder for internal metrics and workforce reporting.", filename: "02-manage-users.png"},
+      { title: "Resume Assessment", caption: "Adds skills, projects, certificates, and work experience to your portfolio.", filename: "03-resume-assessment.png" },
+      { title: "Cohort Analysis", caption: "View strengths and weaknesses in your companies skillset.", filename: "04-cohort-analysis.png" },
+      { title: "Login Screen", caption: "", filename: "05-login-screen.png" },
+      
     ],
     link: "https://scoutworkforce.com",
     features: [
@@ -59,7 +60,6 @@ export const projects: Project[] = [
   {
     id: 2,
     name: 'LeaseLift',
-    description: 'Internal data analytics dashboard for marketing performance tracking.',
     skills: ['python', 'pandas', 'numpy', 'sql', 'postgres', 'github'],
     featured: true,
     background: LeaseLiftBackground,
@@ -83,7 +83,6 @@ export const projects: Project[] = [
   {
     id: 3,
     name: 'Ad Strategies Dashboard',
-    description: 'Internal data analytics dashboard for marketing performance tracking.',
     skills: ['python', 'pandas', 'numpy', 'sql', 'postgres', 'github'],
     featured: true,
     background: AdStrategiesBackground,
@@ -107,7 +106,6 @@ export const projects: Project[] = [
   {
     id: 4,
     name: 'Mr. Cassette',
-    description: 'Analyzes frequencies to determine musical context like chords, key, and rhythm.',
     skills: ['typescript', 'react', 'github'],
     featured: true,
     background: MrCassetteBackground,
@@ -131,7 +129,6 @@ export const projects: Project[] = [
   {
     id: 5,
     name: 'Music Analyzer',
-    description: 'Analyzes frequencies to determine musical context like chords, key, and rhythm.',
     skills: ['python', 'github'],
     featured: false,
     logoOnly: false,
@@ -153,7 +150,6 @@ export const projects: Project[] = [
   {
     id: 6,
     name: 'Project Placeholder B',
-    description: 'Add your project description here.',
     skills: ['python', 'fastapi', 'docker', 'azure'],
     featured: false,
     logoOnly: false,

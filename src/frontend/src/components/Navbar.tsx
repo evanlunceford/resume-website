@@ -9,10 +9,6 @@ export default function Navbar() {
         <NavLink to="/projects"><img src="/projects.svg" alt="" className="navbar-icon" />Projects</NavLink>
         <NavLink to="/about"><img src="/about-me.svg" alt="" className="navbar-icon" />About</NavLink>
       </div>
-      <a className="navbar-resume" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-        <img src="/resume.svg" alt="Resume Download" />
-        <span>Resume</span>
-      </a>
     </nav>
   )
 }

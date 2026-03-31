@@ -43,7 +43,7 @@ export const skills: Skill[] = [
 ];
 
 export const CATEGORY_LABELS: Record<SkillCategory, string> = {
-  language:  'Programming & Other Languages',
+  language:  'Languages',
   framework: 'Frameworks & Libraries',
   other:     'Tools & Platforms',
 };
