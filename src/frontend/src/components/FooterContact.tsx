@@ -76,9 +76,8 @@ export default function FooterContact() {
               <img src="/github.svg" alt="" className="footer-contact__social-icon" />
             </a>
             <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noreferrer"
+              href="/resume/Evan Lunceford - Resume.pdf"
+              download="Evan Lunceford - Resume.pdf"
               className="footer-contact__resume-link"
             >
               Download Resume

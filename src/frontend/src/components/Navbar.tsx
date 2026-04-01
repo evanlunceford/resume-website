@@ -10,9 +10,8 @@ export default function Navbar() {
         <NavLink to="/about"><img src="/about-me.svg" alt="" className="navbar-icon" />About</NavLink>
       </div>
       <a
-        href="/resume.pdf"
-        target="_blank"
-        rel="noreferrer"
+        href="/resume/Evan Lunceford - Resume.pdf"
+        download="Evan Lunceford - Resume.pdf"
         className="navbar-resume-button"
       >
         <img src="/resume.svg" alt="" className="navbar-icon" />
