@@ -268,7 +268,7 @@
 
 .about-stack__divider {
   justify-items: center;
-  width: min(100%, 22rem);
+  width: min(100%, 40rem);
 }
 
 .about-stack__divider .about-title-divider__line--teal {

@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { motion, useInView, type Variants } from "framer-motion";
 import TitleStreak from "../components/assets/TitleStreak";
 import CrtHeadshot from "../components/CrtHeadshot";
@@ -82,7 +83,18 @@ export default function Home() {
           </h2>
         </div>
         <div className="home-buttons">
-
+          <Link to="/projects" className="home-action-button home-action-button">
+            <img src="/projects.svg" alt="folder" className="navbar-icon" />
+            <span>Projects</span>
+          </Link>
+          <Link to="/about" className="home-action-button home-action-button">
+            <img src="/about-me.svg" alt="person waving" className="navbar-icon" />
+            <span>About Me</span>
+          </Link>
+          <a href="#contact" className="home-action-button home-action-button">
+            <img src="/mail.svg" alt="mail" className="navbar-icon" />
+            <span>Contact Me</span>
+          </a>
         </div>
 
         <TitleStreak />

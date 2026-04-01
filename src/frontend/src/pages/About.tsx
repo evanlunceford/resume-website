@@ -1,5 +1,4 @@
 import CrtHeadshot from "../components/CrtHeadshot";
-import ExperienceTimeline from "../components/ExperienceTimeline";
 import "../css/pages/About.css";
 
 
@@ -28,8 +27,8 @@ const quickFacts = [
 ];
 
 const offTheClockImages = [
-  "/off-the-clock-pictures/disc-golf.jpg",
-  "/off-the-clock-pictures/drums.jpg",
+  "/off-the-clock-pictures/01-drums.jpg",
+  "/off-the-clock-pictures/02-disc-golf.jpg",
 ];
 
 export default function About() {

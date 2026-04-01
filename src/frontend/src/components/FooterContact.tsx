@@ -49,14 +49,41 @@ export default function FooterContact() {
   }
 
   return (
-    <footer className="footer-contact">
+    <footer className="footer-contact" id="contact">
       <div className="footer-contact__inner">
         <div className="footer-contact__intro">
-          <p className="footer-contact__eyebrow">Stay In Touch</p>
           <h2 className="footer-contact__title">Contact Me</h2>
           <p className="footer-contact__copy">
             Send a quick note and I will see it in my inbox.
           </p>
+          <div className="footer-contact__links" aria-label="Social links and resume download">
+            <a
+              href="https://www.linkedin.com/in/evan-lunceford-2950b634b/"
+              target="_blank"
+              rel="noreferrer"
+              className="footer-contact__social-link"
+              aria-label="LinkedIn"
+            >
+              <img src="/linkedin.svg" alt="" className="footer-contact__social-icon" />
+            </a>
+            <a
+              href="https://github.com/evanlunceford"
+              target="_blank"
+              rel="noreferrer"
+              className="footer-contact__social-link"
+              aria-label="GitHub"
+            >
+              <img src="/github.svg" alt="" className="footer-contact__social-icon" />
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="footer-contact__resume-link"
+            >
+              Download Resume
+            </a>
+          </div>
         </div>
 
         <form className="footer-contact__form" onSubmit={handleSubmit}>
