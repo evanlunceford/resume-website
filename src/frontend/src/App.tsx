@@ -4,10 +4,12 @@ import FooterContact from './components/FooterContact'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import About from './pages/About'
+import ScrollToTop from './config/ScrollToTop'
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="app-shell">
         <Navbar />
         <main className="app-main">

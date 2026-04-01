@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1800px;
   margin: 0 auto;
-  padding: 3.5rem 2rem 6rem;
+  padding: calc(var(--navbar-height) + 1.25rem) 2rem 6rem;
 }
 
 .projects-page-header {
@@ -377,6 +377,7 @@
   color: var(--brown);
   font-size: var(--text-2xl);
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 .featured-project-card .project-card-title {
@@ -425,15 +426,11 @@
     aspect-ratio: auto;
     min-height: 300px;
   }
-
-  .project-card-button--standard {
-    grid-template-columns: 1fr;
-  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 920px) {
   .projects-content-container {
-    padding-top: 4rem;
+    padding-top: calc(var(--navbar-height) + 1rem);
     padding-inline: 1rem;
   }
 
@@ -464,7 +461,7 @@
   }
 
   .projects-section-header--banner {
-    min-height: 6.5rem;
+    min-height: 6rem;
   }
 
   .projects-section-title--banner {
@@ -482,6 +479,10 @@
     width: 100%;
   }
 
+  .project-card-button--standard {
+    grid-template-columns: 1fr;
+  }
+
   .project-listing-index {
     justify-content: flex-start;
     border-right: 0;
@@ -495,7 +496,7 @@
   }
 
   .project-listing-meta {
-    grid-template-columns: 1fr;
+    align-items: flex-start;
     justify-content: flex-start;
     gap: 0.6rem;
   }
@@ -503,5 +504,9 @@
   .project-listing-timeline {
     min-width: 0;
     width: min(100%, 280px);
+  }
+
+  .project-listing-loc {
+    white-space: normal;
   }
 }

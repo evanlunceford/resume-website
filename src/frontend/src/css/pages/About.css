@@ -371,7 +371,7 @@
 
   .about-hero__media,
   .about-story__media {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .about-hero__fact-strip,

@@ -25,6 +25,8 @@ export const skills: Skill[] = [
   { id: 'sql',        name: 'SQL',         category: 'language', stackCategory: 'database' },
   { id: 'cpp',        name: 'C/C++',       category: 'language', stackCategory: 'backend' },
   { id: 'css', name: 'CSS',  category: 'language', stackCategory: 'frontend' },
+  { id: 'numpy',      name: 'NumPy',       category: 'language', stackCategory: 'data' },
+  { id: 'pandas',     name: 'Pandas',      category: 'language', stackCategory: 'data' },
 
   // Frameworks & Libraries
   { id: 'react',      name: 'React',       category: 'framework', stackCategory: 'frontend' },
@@ -39,6 +41,7 @@ export const skills: Skill[] = [
   { id: 'postgres',   name: 'PostgreSQL',    category: 'other', stackCategory: 'database' },
   { id: 'firebase',   name: 'Firebase',    category: 'other', stackCategory: 'database' },
   { id: 'qdrant',   name: 'Qdrant',    category: 'other', stackCategory: 'database' },
+  { id: 'azure',      name: 'Azure',         category: 'other', stackCategory: 'cloud' },
 
 ];
 
@@ -56,4 +59,5 @@ export const STACK_CATEGORY_LABELS: Record<TechStackCategory, string> = {
   cloud: 'Cloud',
   devops: 'DevOps',
   tooling: 'Tooling',
+  markup: 'Markup',
 };

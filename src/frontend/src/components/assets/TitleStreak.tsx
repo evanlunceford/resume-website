@@ -7,7 +7,7 @@ const TitleStreak: React.FC = () => {
 
     const lineVariants: Variants = {
         hidden: { pathLength: 0, opacity: 0 },
-        visible: (i: number) => ({
+        visible: () => ({
             pathLength: 1,
             opacity: 1,
             transition: {
@@ -50,7 +50,6 @@ const iconVariants: Variants = {
                         y2={20 + i * 15}
                         stroke={brandColor}
                         strokeWidth="2"
-                        custom={i}
                         variants={lineVariants}
                         initial="hidden"
                         animate="visible"

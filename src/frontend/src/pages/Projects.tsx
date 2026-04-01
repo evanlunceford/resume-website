@@ -128,7 +128,7 @@ export default function Projects() {
                     </div>
                   </div>
 
-                  <p className="project-card-description">{project.description}</p>
+                  <p className="project-card-description">{project.shortDescription}</p>
 
                   <div className="project-skills" aria-label={`${project.name} skills`}>
                     {project.skills.map((skillId) => (

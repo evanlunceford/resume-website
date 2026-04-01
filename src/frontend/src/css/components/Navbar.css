@@ -6,8 +6,8 @@
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  padding: 0 2rem;
-  height: 60px;
+  padding: 0 clamp(0.75rem, 3vw, 2rem);
+  height: var(--navbar-height);
   background: var(--tan-hover);
   backdrop-filter: blur(5px);
   z-index: 100;
@@ -26,24 +26,26 @@
 
 .navbar-links {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.85rem, 2.6vw, 2rem);
   grid-column: 2;
-  justify-self: center;
+  max-width: 100%;
 }
 
 .navbar-links a,
 .navbar-resume-button {
-  font-size: var(--text-md);
+  font-size: clamp(0.95rem, 0.8rem + 0.55vw, var(--text-md));
   color: var(--brown);
   opacity: 0.7;
   transition: opacity 0.2s ease;
   position: relative;
-
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 4px;
+  white-space: nowrap;
 }
 
 .navbar-links a::after {
@@ -85,7 +87,6 @@
   opacity: 1;
 }
 
-
 .navbar-resume-button span,
 .navbar-resume-button img {
   position: relative;
@@ -99,15 +100,18 @@
 }
 
 @media (max-width: 900px) {
-  .navbar {
-    padding: 0 1rem;
-  }
-
-  .navbar-links {
-    gap: 1.25rem;
-  }
-
   .navbar-resume-button {
     display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0 0.75rem;
+  }
+
+  .navbar-icon {
+    width: 18px;
+    height: 18px;
   }
 }

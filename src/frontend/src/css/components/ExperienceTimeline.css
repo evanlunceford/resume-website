@@ -3,14 +3,13 @@
 }
 
 .timeline-scroll {
-  overflow-y: visible;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 .timeline-canvas {
-  min-width: 720px;
-  padding-right: 2rem;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   position: relative;
 }
 
@@ -254,4 +253,40 @@
   font-family: "Righteous", sans-serif;
   color: rgba(243, 221, 195, 0.82);
   line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .timeline-section {
+    padding: 4rem 1rem 5rem;
+  }
+
+  .timeline-canvas {
+    width: 100%;
+  }
+
+  .timeline-year-label {
+    font-size: 11px;
+  }
+
+  .timeline-today-marker::before {
+    font-size: 9px;
+  }
+
+  .timeline-bar {
+    padding: 0 0.7rem;
+  }
+
+  .timeline-bar-company {
+    font-size: 0.7rem;
+  }
+
+  .timeline-bar-role {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .timeline-canvas {
+    padding: 0.5rem;
+  }
 }
