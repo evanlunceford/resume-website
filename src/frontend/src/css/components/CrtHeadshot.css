@@ -26,8 +26,16 @@
   height: 100%;
   object-fit: cover;
   filter: grayscale(0.75) sepia(0.42) contrast(1.02);
+  transition: opacity 180ms ease, transform 180ms ease, filter 180ms ease;
 }
 
+.crt-headshot--transitioning {
+  opacity: 0.45;
+  transform: scale(1.03);
+  filter: grayscale(0.9) sepia(0.5) contrast(1.18) brightness(1.1);
+}
+
+.crt-static,
 .crt-tint,
 .crt-glow,
 .crt-scanlines,
@@ -35,6 +43,28 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
+}
+
+.crt-static {
+  opacity: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(243, 221, 195, 0.16) 0 1px,
+      rgba(17, 24, 39, 0.18) 1px 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.08) 0 2px,
+      rgba(0, 0, 0, 0.18) 2px 4px
+    ),
+    radial-gradient(circle at 30% 30%, rgba(243, 221, 195, 0.28), transparent 42%);
+  mix-blend-mode: screen;
+}
+
+.crt-static--active {
+  opacity: 1;
+  animation: crt-static-burst 320ms steps(4, end) 1;
 }
 
 .crt-tint {
@@ -111,5 +141,24 @@
   100% {
     opacity: 1;
     filter: brightness(1);
+  }
+}
+
+@keyframes crt-static-burst {
+  0% {
+    opacity: 0.05;
+    transform: translateX(-2%) scaleX(1.01);
+  }
+  35% {
+    opacity: 0.95;
+    transform: translateX(2%) scaleX(0.99);
+  }
+  70% {
+    opacity: 0.6;
+    transform: translateX(-1%) scaleX(1.02);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(0) scaleX(1);
   }
 }

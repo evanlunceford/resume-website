@@ -2,32 +2,6 @@ import CrtHeadshot from "../components/CrtHeadshot";
 import ExperienceTimeline from "../components/ExperienceTimeline";
 import "../css/pages/About.css";
 
-const storyBlocks = [
-  {
-    title: "Outside The Editor",
-    eyebrow: "Hobbies",
-    body: [
-      "Placeholder copy for the part where I talk about what I do when I am not building software and how those interests shape the way I think.",
-      "Another sentence can live here to add a little personality, mention a routine, or point to the kinds of projects I naturally gravitate toward.",
-    ],
-  },
-  {
-    title: "Favorite Things",
-    eyebrow: "Preferences",
-    body: [
-      "This is a good place for a few quick details about the media, games, environments, or creative work that keep me inspired and curious.",
-      "You can also use this card to mention the kinds of problems you enjoy solving most or the style of collaboration you tend to enjoy.",
-    ],
-  },
-  {
-    title: "How I Work",
-    eyebrow: "Approach",
-    body: [
-      "Use this section to describe the rhythm of how you like to build: thoughtful planning, fast iteration, careful cleanup, and finishing with polish.",
-      "It can also hold a short note about communication, ownership, and the kind of team energy you try to bring into a project.",
-    ],
-  },
-];
 
 const stackGroups = [
   {
@@ -51,6 +25,11 @@ const quickFacts = [
   "I excel in situations that call for leadership and communication.",
   "I enjoy the translation between business expectations and software implementation.",
   "I like to document my code, and ensure my code is self-documenting and readable.",
+];
+
+const offTheClockImages = [
+  "/off-the-clock-pictures/disc-golf.jpg",
+  "/off-the-clock-pictures/drums.jpg",
 ];
 
 export default function About() {
@@ -88,51 +67,41 @@ export default function About() {
       </section>
 
       <section className="about-story">
-        <div className="about-section-heading">
-          <div className="about-section-heading__title">
-            <h2>Off The Clock</h2>
-            <div className="about-section-heading__underline" aria-hidden="true">
-              <span />
-              <span />
-              <span />
+        <div className="about-story__layout about-otc__layout">
+          <div className="about-story__copy about-hero__copy">
+            <h2 className="about-title">Off The Clock</h2>
+            <div className="about-title-divider" aria-hidden="true">
+              <span className="about-title-divider__line about-title-divider__line--teal" />
+              <span className="about-title-divider__line about-title-divider__line--orange" />
+              <span className="about-title-divider__line about-title-divider__line--brown" />
             </div>
+            <p className="about-lead">
+              When I'm not working, there are several hobbies that occupy most of my free time.
+              
+            </p>
           </div>
-          <img src="/about-me.svg" alt="" className="about-section-heading__icon" />
-        </div>
 
-        <div className="about-story__grid">
-          {storyBlocks.map((block) => (
-            <article key={block.title} className="about-story-card">
-              <span className="about-story-card__eyebrow">{block.eyebrow}</span>
-              <h3>{block.title}</h3>
-              {block.body.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </article>
-          ))}
+          <div className="about-story__media">
+            <CrtHeadshot
+              ariaLabel="Off The Clock photo display"
+              alt="Off The Clock hobby photos"
+              className="about-story__crt"
+              images={offTheClockImages}
+              intervalMs={10000}
+            />
+          </div>
         </div>
       </section>
 
       <section className="about-stack">
-        <div className="about-section-heading">
-          <div className="about-section-heading__title">
-            <h2>Preferred Stack</h2>
-            <div className="about-section-heading__underline" aria-hidden="true">
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-          <img src="/skills.svg" alt="" className="about-section-heading__icon" />
-        </div>
-
         <div className="about-stack__panel">
-          <div className="about-stack__screen">
-            <div className="about-stack__header">
-              <span className="about-stack__status">Preferred Setup</span>
-              <span className="about-stack__label">Retro Signal Board</span>
+          <div className="about-stack__screen about-hero__copy about-stack__copy">
+            <h2 className="about-title about-stack__title">My Go-To Tech Stack</h2>
+            <div className="about-title-divider about-stack__divider" aria-hidden="true">
+              <span className="about-title-divider__line about-title-divider__line--teal" />
+              <span className="about-title-divider__line about-title-divider__line--orange" />
+              <span className="about-title-divider__line about-title-divider__line--brown" />
             </div>
-
             <div className="about-stack__bands">
               {stackGroups.map((group) => (
                 <section key={group.label} className="about-stack-band">
@@ -147,32 +116,10 @@ export default function About() {
                 </section>
               ))}
             </div>
-
-            <div className="about-stack__footer">
-              <span>Built for shipping, iteration, and clean handoff.</span>
-              <span className="about-stack__footer-accent">Stable / Flexible / Practical</span>
-            </div>
           </div>
         </div>
       </section>
 
-      <section className="about-experience">
-        <div className="about-section-heading">
-          <div className="about-section-heading__title">
-            <h2>Experience</h2>
-            <div className="about-section-heading__underline" aria-hidden="true">
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-          <img src="/experience.svg" alt="" className="about-section-heading__icon" />
-        </div>
-
-        <div className="about-experience__timeline">
-          <ExperienceTimeline />
-        </div>
-      </section>
     </main>
   );
 }

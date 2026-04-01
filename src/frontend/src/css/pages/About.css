@@ -62,7 +62,6 @@
 
 .about-hero__copy::before,
 .about-stack__screen::before,
-.about-story-card::before,
 .about-experience__timeline::before {
   content: "";
   position: absolute;
@@ -80,14 +79,12 @@
 
 .about-hero__copy > *,
 .about-stack__screen > *,
-.about-story-card > *,
 .about-experience__timeline > * {
   position: relative;
   z-index: 1;
 }
 
 .about-eyebrow,
-.about-story-card__eyebrow,
 .about-stack__status {
   color: var(--teal);
   font-size: var(--text-sm);
@@ -130,8 +127,11 @@
 }
 
 .about-lead,
-.about-story-card p {
+.about-stack-band__tool {
   color: color-mix(in srgb, var(--tan) 92%, var(--white));
+}
+
+.about-lead {
   font-size: var(--text-lg);
   line-height: 1.7;
   max-width: 62ch;
@@ -207,29 +207,44 @@
   object-fit: contain;
 }
 
-.about-story__grid {
+.about-story__layout {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(340px, clamp(420px, 31vw, 620px));
+  align-items: stretch;
+  gap: clamp(1.75rem, 4vw, 5rem);
 }
 
-.about-story-card {
-  position: relative;
-  display: grid;
-  gap: 0.9rem;
-  padding: 1.35rem 1.35rem 1.5rem;
-  border: 3px solid var(--brown);
-  background:
-    linear-gradient(180deg, rgba(17, 24, 39, 0.95), rgba(27, 39, 52, 0.92));
-  box-shadow:
-    0.45rem 0.45rem 0 0 rgba(82, 63, 56, 0.16),
-    inset 0 0 0 3px rgba(243, 221, 195, 0.12);
+.about-otc__layout{
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(340px, clamp(320px, 31vw, 620px));
 }
 
-.about-story-card h3 {
-  color: var(--tan);
-  font-size: var(--text-2xl);
-  line-height: 1;
+.about-story__copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-story__media {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.about-story__media .crt-frame {
+  width: min(100%, clamp(420px, 31vw, 620px));
+  max-width: none;
+  height: 100%;
+  display: flex;
+}
+
+.about-story__crt .crt-screen,
+.about-story__screen {
+  width: 100%;
+  min-height: 100%;
+  aspect-ratio: 4 / 5;
 }
 
 .about-stack__panel {
@@ -239,43 +254,41 @@
 
 .about-stack__screen {
   position: relative;
-  width: min(1180px, 100%);
-  padding: 1.35rem;
-  border: 3px solid var(--brown);
-  background:
-    linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(27, 39, 52, 0.92));
-  box-shadow:
-    0.75rem 0.75rem 0 0 rgba(82, 63, 56, 0.18),
-    inset 0 0 0 3px rgba(243, 221, 195, 0.12);
-  color: var(--tan);
+  width: 100%;
 }
 
-.about-stack__header,
-.about-stack__footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+.about-stack__copy {
+  justify-items: center;
+  text-align: center;
 }
 
-.about-stack__label,
-.about-stack__footer,
-.about-stack-band__tool {
-  color: color-mix(in srgb, var(--tan) 90%, var(--white));
+.about-stack__title {
+  max-width: none;
 }
 
-.about-stack__label,
-.about-stack__footer-accent {
-  font-size: var(--text-sm);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.about-stack__divider {
+  justify-items: center;
+  width: min(100%, 22rem);
+}
+
+.about-stack__divider .about-title-divider__line--teal {
+  width: calc(100% - 2rem);
+}
+
+.about-stack__divider .about-title-divider__line--orange {
+  width: calc(100% - 4rem);
+}
+
+.about-stack__divider .about-title-divider__line--brown {
+  width: calc(100% - 6rem);
 }
 
 .about-stack__bands {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
-  margin: 1.35rem 0 1rem;
+  margin-top: 0.75rem;
+  width: 100%;
 }
 
 .about-stack-band {
@@ -351,16 +364,17 @@
 }
 
 @media (max-width: 1100px) {
-  .about-hero {
+  .about-hero,
+  .about-story__layout {
     grid-template-columns: 1fr;
   }
 
-  .about-hero__media {
+  .about-hero__media,
+  .about-story__media {
     justify-content: flex-start;
   }
 
   .about-hero__fact-strip,
-  .about-story__grid,
   .about-stack__bands {
     grid-template-columns: 1fr;
   }
@@ -373,7 +387,6 @@
   }
 
   .about-hero__copy,
-  .about-story-card,
   .about-stack__screen,
   .about-experience__timeline {
     padding: 1.25rem;
@@ -391,9 +404,4 @@
     font-size: clamp(2.3rem, 12vw, 3.4rem);
   }
 
-  .about-stack__header,
-  .about-stack__footer {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
