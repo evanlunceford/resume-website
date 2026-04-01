@@ -3,6 +3,7 @@ import { CATEGORY_LABELS, skills, type SkillCategory } from "../../data/skills";
 import type { Project } from "../../data/projects";
 import ProjectMiniTimeline from "./ProjectMiniTimeline";
 import "../../css/components/ProjectModal.css";
+import "../../css/components/SkillsSection.css";
 
 type ProjectModalProps = {
   project: Project;
@@ -181,22 +182,26 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
           </div>
 
-          <div className="project-modal-skills-grid">
+          <div className="project-modal-skills-grid skills-grid">
             {groupedSkills.map((group) => (
               <div
                 key={group.category}
-                className="project-modal-skills-column"
-                style={{ "--project-skill-accent": CATEGORY_COLORS[group.category] } as CSSProperties}
+                className="project-modal-skills-column skills-column"
+                style={{ "--cc": CATEGORY_COLORS[group.category] } as CSSProperties}
               >
-                <div className="project-modal-skills-column-header">
-                  <div className="project-modal-skills-column-accent" />
-                  <h4 className="project-modal-skills-column-title">{CATEGORY_LABELS[group.category]}</h4>
+                <div className="project-modal-skills-column-header skills-column-header">
+                  <div className="project-modal-skills-column-accent skills-column-accent" />
+                  <h4 className="project-modal-skills-column-title skills-column-title">{CATEGORY_LABELS[group.category]}</h4>
                 </div>
 
-                <ul className="project-modal-skills-list">
-                  {group.skills.map((skill) => (
-                    <li key={skill.id} className="project-modal-skill-card">
-                      <span className="project-modal-skill-name">{skill.name}</span>
+                <ul className="project-modal-skills-list skills-list">
+                  {group.skills.map((skill, index) => (
+                    <li
+                      key={skill.id}
+                      className="project-modal-skill-card skill-card"
+                      style={{ "--cc": CATEGORY_COLORS[group.category], animationDelay: `${index * 0.07}s` } as CSSProperties}
+                    >
+                      <span className="project-modal-skill-name skill-name">{skill.name}</span>
                     </li>
                   ))}
                 </ul>
