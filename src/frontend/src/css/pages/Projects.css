@@ -338,6 +338,15 @@
   grid-area: wide;
 }
 
+.featured-project-card--logo-only .project-card-header {
+  padding: clamp(1rem, 2vw, 1.75rem);
+}
+
+.featured-project-card--logo-only .project-card-logo {
+  max-width: calc(100% - clamp(2rem, 5vw, 4.5rem));
+  margin-inline: auto;
+}
+
 .featured-project-card--compact:nth-of-type(3) {
   grid-area: small-left;
 }

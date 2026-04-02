@@ -59,7 +59,7 @@ export default function Projects() {
               <button
                 key={project.id}
                 type="button"
-                className={`project-card project-card-button featured-project-card ${featuredProjectSlotClasses[index] ?? "featured-project-card--compact"}`}
+                className={`project-card project-card-button featured-project-card ${featuredProjectSlotClasses[index] ?? "featured-project-card--compact"}${project.logoOnly ? " featured-project-card--logo-only" : ""}`}
                 style={{ '--card-hue': `${project.hue ?? 0}deg` } as React.CSSProperties}
                 onClick={() => setSelectedProjectId(project.id)}
               >
