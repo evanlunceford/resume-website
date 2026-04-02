@@ -78,6 +78,8 @@ html, body {
 
 html {
   scroll-padding-top: calc(var(--navbar-height) + 1rem);
+  scrollbar-width: thin;
+  scrollbar-color: var(--brown) transparent;
 }
 
 body {
@@ -136,4 +138,29 @@ button {
 
 input, textarea, select {
   font: inherit;
+}
+
+html::-webkit-scrollbar {
+  width: 14px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--brown) 88%, var(--black)), var(--brown));
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  border-radius: 0;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--dark-teal) 55%, var(--brown)), color-mix(in srgb, var(--brown) 92%, var(--black)));
+}
+
+html::-webkit-scrollbar-corner {
+  background: transparent;
 }
