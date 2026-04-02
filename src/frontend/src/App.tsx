@@ -6,10 +6,14 @@ import Projects from './pages/Projects'
 import About from './pages/About'
 import ScrollToTop from './config/ScrollToTop'
 
+import { Analytics } from "@vercel/analytics/next"
+
+
 export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <Analytics />
       <div className="app-shell">
         <Navbar />
         <main className="app-main">
