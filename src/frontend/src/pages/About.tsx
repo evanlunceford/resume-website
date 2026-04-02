@@ -11,19 +11,19 @@ const stackGroups = [
   {
     label: "Backend",
     colorClass: "about-stack-band--orange",
-    tools: ["Python", "FastAPI", "Postgres", "REST APIs"],
+    tools: ["Python", "FastAPI", "Postgres", "SQL"],
   },
   {
-    label: "Data + Cloud",
+    label: "Cloud & Other",
     colorClass: "about-stack-band--dark-teal",
-    tools: ["Pandas", "SQL", "Docker", "GCP"],
+    tools: ["GCS", "Docker", "Vercel", "Github"],
   },
 ];
 
 const quickFacts = [
   "I excel in situations that call for leadership and communication.",
   "I enjoy the translation between business expectations and software implementation.",
-  "I like to document my code, and ensure my code is self-documenting and readable.",
+  "I thrive the most in a full stack environment where I understand the entire codebase.",
 ];
 
 const offTheClockImages = [
@@ -54,6 +54,9 @@ export default function About() {
             solve a problem, similar to how a musician's songs are a product of their ability to transpose their thoughts 
             into a musical context.
           </p>
+          <p className="about-lead">
+            In terms of how I work, here are a few facts:
+          </p>
 
           <div className="about-hero__fact-strip">
             {quickFacts.map((fact) => (
@@ -76,6 +79,10 @@ export default function About() {
             </div>
             <p className="about-lead">
               When I'm not working, there are several hobbies that occupy most of my free time.
+              My creative outlet of choice is music, specfically drums and piano. I have been playing
+              drums for a decade, and piano for 4 years. Because of my tenure in the trees of Flagstaff,
+              I am also an avid disc golfer. There's nothing like throwing plastic at a metal cage in the
+              forest while the birds are chirping!
               
             </p>
           </div>

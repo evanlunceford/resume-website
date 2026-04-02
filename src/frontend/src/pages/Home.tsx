@@ -121,12 +121,12 @@ export default function Home() {
                 <span className="intro-copy-divider__line intro-copy-divider__line--brown" />
               </div>
               <p className="intro-text">
-                Nice of you to be here. As noted by the gigantic title, my name is Evan Lunceford, and I am currently
+                Thanks for visiting my website! As noted by the gigantic title, my name is Evan Lunceford, and I am currently
                 a Computer Science student at Northern Arizona University.
               </p>
               <p className="intro-text">
-                This site is meant to show the kind of work I like doing most: building things that solve real
-                problems, communicate clearly, and feel intentional from the code to the interface.
+                This website is meant to showcase the type of software I produce in order to show you what kind of
+                programmer I am. If you want to learn more about how I work, check out the About page. Thanks again!
               </p>
             </div>
           </div>

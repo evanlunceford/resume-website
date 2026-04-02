@@ -87,7 +87,7 @@ export const projects: Project[] = [
   {
     id: 3,
     name: 'Ad Strategies Dashboard',
-    skills: ['python', 'fastapi', 'react', 'javascript', 'postgres', 'gcs', 'docker', 'github', 'css', 'sql'],
+    skills: ['python', 'fastapi', 'react', 'typescript', 'java', 'spring-boot', 'postgres', 'gcs', 'docker', 'github', 'css', 'sql'],
     featured: true,
     background: AdStrategiesBackground,
     logoOnly: false,

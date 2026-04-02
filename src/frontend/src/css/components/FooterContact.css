@@ -203,8 +203,34 @@
 
 @media (max-width: 900px) {
   .footer-contact__inner {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     padding: 2.5rem 1rem;
+  }
+
+  .footer-contact__intro {
+    display: contents;
+  }
+
+  .footer-contact__title {
+    text-align: center;
+    order: 1;
+  }
+
+  .footer-contact__copy {
+    text-align: center;
+    order: 2;
+  }
+
+  .footer-contact__form {
+    order: 3;
+  }
+
+  .footer-contact__links {
+    order: 4;
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
   }
 
   .footer-contact__actions {

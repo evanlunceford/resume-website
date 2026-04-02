@@ -29,9 +29,9 @@ export const skills: Skill[] = [
   // Frameworks & Libraries
   { id: 'react',      name: 'React',       category: 'framework', stackCategory: 'frontend' },
   { id: 'fastapi',    name: 'FastAPI',     category: 'framework', stackCategory: 'backend' },
-  { id: 'flask',    name: 'Flask',     category: 'framework', stackCategory: 'backend' },
   { id: 'nodejs',     name: 'Node.js',     category: 'framework', stackCategory: 'backend' },
   { id: 'express',     name: 'Express',     category: 'framework', stackCategory: 'backend' },
+  { id: 'spring-boot',     name: 'Spring Boot',     category: 'framework', stackCategory: 'backend' },
 
   // Other (tools, platforms, services)
   { id: 'gcs',        name: 'Google Cloud',  category: 'other', stackCategory: 'cloud' },
@@ -40,7 +40,6 @@ export const skills: Skill[] = [
   { id: 'postgres',   name: 'PostgreSQL',    category: 'other', stackCategory: 'database' },
   { id: 'firebase',   name: 'Firebase',    category: 'other', stackCategory: 'database' },
   { id: 'qdrant',   name: 'Qdrant',    category: 'other', stackCategory: 'database' },
-  { id: 'azure',      name: 'Azure',         category: 'other', stackCategory: 'cloud' },
 
 ];
 
