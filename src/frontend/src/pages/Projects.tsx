@@ -131,11 +131,14 @@ export default function Projects() {
                   <p className="project-card-description">{project.shortDescription}</p>
 
                   <div className="project-skills" aria-label={`${project.name} skills`}>
-                    {project.skills.map((skillId) => (
+                    {project.skills.slice(0, 3).map((skillId) => (
                       <span key={skillId} className="project-skill-chip">
                         {skillNameById.get(skillId) ?? skillId}
                       </span>
                     ))}
+                    {project.skills.length > 3 && (
+                      <span className="project-skill-chip">+{project.skills.length - 3} more</span>
+                    )}
                   </div>
                 </div>
               </button>

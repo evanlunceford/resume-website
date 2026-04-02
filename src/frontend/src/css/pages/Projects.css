@@ -401,6 +401,9 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.55rem;
+  align-self: start;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 
 .project-skill-chip {

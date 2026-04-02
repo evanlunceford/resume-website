@@ -17,7 +17,7 @@ export type Skill = {
 };
 
 export const skills: Skill[] = [
-  // Programming Languages
+  // Languages
   { id: 'python',     name: 'Python',      category: 'language', stackCategory: 'backend' },
   { id: 'typescript', name: 'TypeScript',  category: 'language', stackCategory: 'frontend' },
   { id: 'javascript', name: 'JavaScript',  category: 'language', stackCategory: 'frontend' },
@@ -25,14 +25,13 @@ export const skills: Skill[] = [
   { id: 'sql',        name: 'SQL',         category: 'language', stackCategory: 'database' },
   { id: 'cpp',        name: 'C/C++',       category: 'language', stackCategory: 'backend' },
   { id: 'css', name: 'CSS',  category: 'language', stackCategory: 'frontend' },
-  { id: 'numpy',      name: 'NumPy',       category: 'language', stackCategory: 'data' },
-  { id: 'pandas',     name: 'Pandas',      category: 'language', stackCategory: 'data' },
 
   // Frameworks & Libraries
   { id: 'react',      name: 'React',       category: 'framework', stackCategory: 'frontend' },
   { id: 'fastapi',    name: 'FastAPI',     category: 'framework', stackCategory: 'backend' },
   { id: 'flask',    name: 'Flask',     category: 'framework', stackCategory: 'backend' },
   { id: 'nodejs',     name: 'Node.js',     category: 'framework', stackCategory: 'backend' },
+  { id: 'express',     name: 'Express',     category: 'framework', stackCategory: 'backend' },
 
   // Other (tools, platforms, services)
   { id: 'gcs',        name: 'Google Cloud',  category: 'other', stackCategory: 'cloud' },

@@ -73,12 +73,13 @@
 .navbar-resume-button {
   grid-column: 3;
   justify-self: end;
-  padding: 0.5rem 0.95rem;
+  padding: 0.5rem 0.55rem;
   border: 3px solid var(--black);
   background: var(--white);
   color: var(--black);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  font-size: var(--font-sm)
   overflow: hidden;
   transition: 0.3s opacity ease-in-out;
 }

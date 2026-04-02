@@ -116,11 +116,11 @@ export const projects: Project[] = [
     background: MrCassetteBackground,
     logoOnly: false,
     shortDescription: "Created for the 2026 Sandbox Hackathon: A website that recommends songs based on a user-provided PDF file.",
-    screenshotDirectory: "/images/projects/mr-cassette",
+    screenshotDirectory: "/project-screenshots/mr-cassette",
     screenshots: [
-      { title: "Cassette Player: Waiting for file", caption: "" },
-      { title: "Cassette Player: Ready to recommend", caption: "" },
-      { title: "Recommendations", caption: "" },
+      { title: "Cassette Player: Waiting for file", caption: "", filename: "01-home-page.png" },
+      { title: "Cassette Player: Ready to recommend", caption: "", filename: "02-home-file.png" },
+      { title: "Recommendations", caption: "", filename: "03-recommended-songs.png" },
     ],
     features: [
       "10,000 songs in the database to recommend.",
@@ -157,7 +157,7 @@ export const projects: Project[] = [
   {
     id: 6,
     name: 'Life Concierge',
-    skills: ['node.js', 'express', 'docker', 'gcs', 'react', 'javascript', 'sql', 'css'],
+    skills: ['nodejs', 'express', 'docker', 'gcs', 'react', 'javascript', 'sql', 'css'],
     featured: false,
     logoOnly: false,
     shortDescription: "An AI chat interface for students aging out of the foster care system.",
