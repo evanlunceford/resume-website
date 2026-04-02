@@ -6,7 +6,7 @@ import Projects from './pages/Projects'
 import About from './pages/About'
 import ScrollToTop from './config/ScrollToTop'
 
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 
 export default function App() {
