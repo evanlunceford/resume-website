@@ -81,9 +81,7 @@ export default function About() {
               When I'm not working, there are several hobbies that occupy most of my free time.
               My creative outlet of choice is music, specfically drums and piano. I have been playing
               drums for a decade, and piano for 4 years. Because of my tenure in the trees of Flagstaff,
-              I am also an avid disc golfer. There's nothing like throwing plastic at a metal cage in the
-              forest while the birds are chirping!
-              
+              I am also an avid disc golfer. And yes, there is a difference between a disc and a Frisbee...
             </p>
           </div>
 

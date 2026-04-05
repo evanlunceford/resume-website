@@ -46,15 +46,14 @@ export const projects: Project[] = [
       { title: "Home Page", caption: "An overview of a student/worker's portfolio.", filename: "01-home-page.png"},
       { title: "Admin Panel", caption: "Placeholder for internal metrics and workforce reporting.", filename: "02-manage-users.png"},
       { title: "Resume Assessment", caption: "Adds skills, projects, certificates, and work experience to your portfolio.", filename: "03-resume-assessment.png" },
-      { title: "Cohort Analysis", caption: "View strengths and weaknesses in your companies skillset.", filename: "04-cohort-analysis.png" },
-      { title: "Login Screen", caption: "", filename: "05-login-screen.png" },
-      
+      { title: "Cohort Analysis", caption: "View strengths and weaknesses in your company's skillset.", filename: "04-cohort-analysis.png" },
+      { title: "Login Screen", caption: "", filename: "05-login-screen.png" }
     ],
     link: { type: "public", href: "https://scoutworkforce.com" },
     features: [
-      "Proactive student/worker career mapping to oppurtunities they are interested in.",
+      "Proactive student/worker career mapping to opportunities they are interested in.",
       "Analysis and visualization of a group of employees' skillset.",
-      "Resume analysis and recommendation engine.",
+      "Resume analysis and recommendation engine."
     ],
     estimatedLinesOfCode: 30000,
     startDate: "2024-08",
@@ -70,19 +69,19 @@ export const projects: Project[] = [
     shortDescription: "A website that streamlines the relet process for both students and property managers.",
     screenshotDirectory: "/images/projects/lease-lift",
     screenshots: [
-      { title: "Home Page", caption: "Shows nearby people looking to relet their leases." },
-      { title: "Create a Relet", caption: "Define the specifications of a lease, and add a bounty price to improve transfer chances." },
-      { title: "Message System", caption: "Message students about lease takeovers." },
+      { title: "Home Page", caption: "Public screenshots coming soon." },
+      { title: "Create a Relet", caption: "Public screenshots coming soon." },
+      { title: "Message System", caption: "Public screenshots coming soon." }
     ],
     features: [
       "Post a relet for people in your area to see.",
       "Browse relets in your university, and collect a bounty for picking up a lease.",
-      "Message users about availability & specifications.",
+      "Message users about availability & specifications."
     ],
     link: { type: "public", href: "https://leaselift.app" },
     estimatedLinesOfCode: 15000,
     startDate: "2025-09",
-    endDate: "present",
+    endDate: "Present",
   },
   {
     id: 3,
@@ -94,19 +93,19 @@ export const projects: Project[] = [
     shortDescription: "An enterprise analytics dashboard for campaign performance and marketing health.",
     screenshotDirectory: "/images/projects/ad-strategies",
     screenshots: [
-      { title: "Campaign Overview", caption: "Placeholder for top-line spend, conversions, and efficiency." },
-      { title: "Performance Trends", caption: "Placeholder for time-series graphing across channels." },
-      { title: "KPI Breakdown", caption: "Placeholder for drill-down metrics and comparisons." },
+      { title: "Campaign Overview", caption: "Public screenshots coming soon." },
+      { title: "Performance Trends", caption: "Public screenshots coming soon." },
+      { title: "KPI Breakdown", caption: "Public screenshots coming soon." }
     ],
     features: [
       "Full control over user and client management.",
       "Data mapping to generalize statistics across several job boards.",
-      "Analytical insights into performance and visibility for the future.",
+      "Analytical insights into performance and visibility for the future."
     ],
     link: { type: "private" },
     estimatedLinesOfCode: 30000,
     startDate: "2025-05",
-    endDate: "present",
+    endDate: "Present",
   },
   {
     id: 4,
@@ -120,12 +119,12 @@ export const projects: Project[] = [
     screenshots: [
       { title: "Cassette Player: Waiting for file", caption: "", filename: "01-home-page.png" },
       { title: "Cassette Player: Ready to recommend", caption: "", filename: "02-home-file.png" },
-      { title: "Recommendations", caption: "", filename: "03-recommended-songs.png" },
+      { title: "Recommendations", caption: "", filename: "03-recommended-songs.png" }
     ],
     features: [
       "10,000 songs in the database to recommend.",
       "Uses cosine similarity on vector embeddings to recommend instead of an LLM.",
-      "Open source: https://github.com/evanlunceford/Mr-Cassette",
+      "Open source: https://github.com/evanlunceford/Mr-Cassette"
     ],
     link: { type: "public", href: "https://mr-cassette-626975713933.us-central1.run.app/" },
     estimatedLinesOfCode: 4000,
@@ -141,18 +140,18 @@ export const projects: Project[] = [
     shortDescription: "A tool used to analyze the elements of a song: chords, rhythm, and structure.",
     screenshotDirectory: "/images/projects/project-placeholder-a",
     screenshots: [
-      { title: "Overview Screen", caption: "Placeholder screenshot slot one." },
-      { title: "Workflow Screen", caption: "Placeholder screenshot slot two." },
+      { title: "Overview Screen", caption: "Public screenshots coming soon." },
+      { title: "Workflow Screen", caption: "Public screenshots coming soon." }
     ],
     features: [
       "Detects the key a song is in, and associated chords.",
       "Analyzes the rhythm context of a song.",
-      "Graphs songs on a live spectogram for inspection.",
+      "Graphs songs on a live spectrogram for inspection."
     ],
     link: { type: "open-source", href: "https://github.com/evanlunceford/Music-Visualization" },
     estimatedLinesOfCode: 3000,
     startDate: "2026-02",
-    endDate: "present",
+    endDate: "Present",
   },
   {
     id: 6,
@@ -163,13 +162,13 @@ export const projects: Project[] = [
     shortDescription: "An AI chat interface for students aging out of the foster care system.",
     screenshotDirectory: "/images/projects/project-placeholder-b",
     screenshots: [
-      { title: "Landing View", caption: "Placeholder screenshot slot one." },
-      { title: "Detail View", caption: "Placeholder screenshot slot two." },
+      { title: "Landing View", caption: "Public screenshots coming soon." },
+      { title: "Detail View", caption: "Public screenshots coming soon." }
     ],
     features: [
       "Gives related foster care resources when prompted.",
       "Anonymous mode for heavy conversations, or for user data privacy.",
-      "Remembers anonymous users through multiple sessions using cookies.",
+      "Remembers anonymous users through multiple sessions using cookies."
     ],
     link: { type: "private" },
     estimatedLinesOfCode: 6000,
@@ -185,13 +184,13 @@ export const projects: Project[] = [
     shortDescription: "A low-level time management space simulation.",
     screenshotDirectory: "/images/projects/project-placeholder-b",
     screenshots: [
-      { title: "Landing View", caption: "Placeholder screenshot slot one." },
-      { title: "Detail View", caption: "Placeholder screenshot slot two." },
+      { title: "Landing View", caption: "Public screenshots coming soon." },
+      { title: "Detail View", caption: "Public screenshots coming soon." }
     ],
     features: [
       "Handles timeline management across several timelines.",
-      "Utilizes linked lists to effiecently manage memory for timelines.",
-      "UI to perform CRUD operations on a mission.",
+      "Utilizes linked lists to efficiently manage memory for timelines.",
+      "UI to perform CRUD operations on a mission."
     ],
     link: { type: "open-source", href: "https://github.com/evanlunceford/space-mini-mission" },
     estimatedLinesOfCode: 6000,
