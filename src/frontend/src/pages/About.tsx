@@ -83,6 +83,11 @@ export default function About() {
               drums for a decade, and piano for 4 years. Because of my tenure in the trees of Flagstaff,
               I am also an avid disc golfer. And yes, there is a difference between a disc and a Frisbee...
             </p>
+            <p className="about-lead">
+              I also enjoy programming, and spend lots of my time working on fun projects that do something cool.
+              While projects I do for work are often focused on software that can make money, my personal projects
+              usually focus more on ideas that I find interesting.
+            </p>
           </div>
 
           <div className="about-story__media">

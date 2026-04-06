@@ -151,10 +151,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   />
                 ) : (
                   <div className="project-modal-photo-placeholder">
-                    <span className="project-modal-photo-placeholder-title">Screenshot Coming Soon</span>
-                    <span className="project-modal-photo-placeholder-caption">
-                      {activeScreenshot?.caption ?? "This project does not have a public screenshot yet."}
-                    </span>
+                    <span className="project-modal-photo-placeholder-title">Screenshot Not Available</span>
                   </div>
                 )}
               </div>
