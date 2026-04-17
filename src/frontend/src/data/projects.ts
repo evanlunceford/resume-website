@@ -133,6 +133,30 @@ export const projects: Project[] = [
   },
   {
     id: 5,
+    name: 'SW Bookkeeping',
+    skills: ['typescript', 'github', 'react', 'css'],
+    featured: false,
+    logoOnly: false,
+    shortDescription: "A landing page for a local bookkeeping business.",
+    screenshotDirectory: "/project-screenshots/sw-bookkeeping",
+    screenshots: [
+      { title: "", caption: "", filename: "01-home-screen.png" },
+      { title: "", caption: "", filename: "02-prices-section.png" },
+      { title: "", caption: "", filename: "03-graph-section.png" },
+      { title: "", caption: "", filename: "04-about-section.png" }
+    ],
+    features: [
+      "Custom graphics that fit the brand.",
+      "Responsive design for all devices.",
+      "Consise explanation of services."
+    ],
+    link: { type: "public", href: "https://www.sw-books.com/" },
+    estimatedLinesOfCode: 5000,
+    startDate: "2026-03",
+    endDate: "2026-04",
+  },
+  {
+    id: 6,
     name: 'Music Analyzer',
     skills: ['python', 'github'],
     featured: false,
@@ -154,7 +178,7 @@ export const projects: Project[] = [
     endDate: "Present",
   },
   {
-    id: 6,
+    id: 7,
     name: 'Life Concierge',
     skills: ['nodejs', 'express', 'docker', 'gcs', 'react', 'javascript', 'sql', 'css'],
     featured: false,
@@ -176,7 +200,7 @@ export const projects: Project[] = [
     endDate: "2025-11",
   },
   {
-    id: 7,
+    id: 8,
     name: 'Space Mini Mission',
     skills: ['cpp'],
     featured: false,
