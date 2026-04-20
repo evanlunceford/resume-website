@@ -86,7 +86,7 @@ const packages: PackageTier[] = [
   {
     name: "Custom Solutions",
     price: "Starting at $15,000",
-    delivery: "Scoped per engagement",
+    delivery: "",
     subscription: "$300/month",
     supportIncludes: [
       "Custom support scope based on your stack and business risk.",
@@ -128,7 +128,7 @@ export default function Design() {
           <div className="design-hero__layout">
             <div className="design-hero__content">
               <span className="design-eyebrow">Evan Lunceford Software Design</span>
-              <h1 className="design-title">Software and web design for businesses that need more than just a template.</h1>
+              <h1 className="design-title">Software for businesses that need more than just a template.</h1>
               <div className="design-title-divider" aria-hidden="true">
                 <span className="design-title-divider__line design-title-divider__line--teal" />
                 <span className="design-title-divider__line design-title-divider__line--orange" />
@@ -166,14 +166,18 @@ export default function Design() {
       </section>
 
       <section className="design-section" id="design-packages" aria-labelledby="design-packages-title">
-        <div className="design-for">
-          <div className="design-section__copy">
-            <h2 className="design-section__title" id="design-for-title">Who I do my best work for</h2>
-            <p>
-              I am usually the best fit for businesses that need thoughtful execution, not just a nicer-looking website. The strongest results
-              tend to come from teams that have a real business goal, a specific bottleneck, or a product idea that needs to be shaped carefully.
-            </p>
+        <div className="projects-section-header projects-section-header--banner">
+          <div className="projects-title-banner" aria-hidden="true">
+            <span className="projects-title-banner__stripe projects-title-banner__stripe--teal" />
+            <span className="projects-title-banner__stripe projects-title-banner__stripe--orange" />
+            <span className="projects-title-banner__stripe projects-title-banner__stripe--brown" />
           </div>
+          <h2 className="projects-section-title projects-section-title--banner" id="design-for-title">
+            Built For
+          </h2>
+        </div>
+
+        <div className="design-for">
 
           <div className="design-for__grid" aria-labelledby="design-for-title">
             <article className="design-panel design-for__card">

@@ -68,34 +68,27 @@ const iconVariants: Variants = {
                     animate="visible"
                     style={{ overflow: "visible" }}
                 >
+                    <defs>
+                        <clipPath id="title-streak-logo-clip">
+                            <ellipse cx="35" cy="35" rx="40" ry="30" />
+                        </clipPath>
+                    </defs>
                     <ellipse
                         cx="35"
                         cy="35"
-                        rx="45"
-                        ry="35"
+                        rx="42"
+                        ry="33"
                         fill="rgba(243, 221, 195, 1)"
                     />
-                    <g fill="none" stroke={brandColor} strokeWidth="2">
-                        {/* Outer Oval Boundary */}
-                        <ellipse cx="35" cy="35" rx="40" ry="30" />
-
-                        {/* Vertical Meridians (Longitude) */}
-                        <line x1="35" y1="5" x2="35" y2="65" /> 
-                        
-                        
-                        {/* Middle Set */}
-                        <path d="M35,5 C18,10 18,60 35,65" />
-                        <path d="M35,5 C52,10 52,60 35,65" />
-                        
-                        {/* Outer Set */}
-                        <path d="M35,5 C-2.5,12 -2.5,58 35,65" />
-                        <path d="M35,5 C72.5,12 72.5,58 35,65" />
-
-                        {/* Horizontal Parallels (Latitude) */}
-                        <line x1="-6" y1="35" x2="75" y2="35" />
-                        <line x1="0" y1="20" x2="70" y2="20" />
-                        <line x1="0" y1="50" x2="70" y2="50" />
-                    </g>
+                    <image
+                        href="/brand-assets/hero-logo.svg"
+                        x="-4"
+                        y="5"
+                        width="78"
+                        height="60"
+                        preserveAspectRatio="xMidYMid meet"
+                        clipPath="url(#title-streak-logo-clip)"
+                    />
                 </motion.svg>
             </svg>
         </div>
