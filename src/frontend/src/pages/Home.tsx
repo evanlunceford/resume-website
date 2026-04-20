@@ -55,6 +55,16 @@ const skillLineVariants: Variants = {
   }
 };
 
+const designTickerItems = [
+  "Custom Software",
+  "Design That Sells",
+  "Systems That Scale",
+  "Launch Faster",
+  "Build Smarter",
+  "Interfaces With Teeth",
+  "Tools For Real Work",
+];
+
 
 
 export default function Home() {
@@ -132,6 +142,47 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <section className="design-promo-banner" aria-label="EL Design">
+          <div className="design-promo-banner__track design-promo-banner__track--forward" aria-hidden="true">
+            <div className="design-promo-banner__ticker">
+              {[...designTickerItems, ...designTickerItems].map((item, index) => (
+                <span key={`forward-${item}-${index}`} className="design-promo-banner__item">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="design-promo-banner__panel">
+            <img
+              src="/brand-assets/logo-horizontal.png"
+              alt="EL Design"
+              className="design-promo-banner__logo"
+            />
+            <div className="design-promo-banner__panel-lines" aria-hidden="true">
+              <span className="design-promo-banner__line design-promo-banner__line--teal" />
+              <span className="design-promo-banner__line design-promo-banner__line--orange" />
+              <span className="design-promo-banner__line design-promo-banner__line--brown" />
+            </div>
+            <p className="design-promo-banner__copy">
+              Built for businesses that need custom tools, stronger UX, and systems that stop wasting time.
+            </p>
+            <Link to="/design" className="design-promo-banner__link">
+              <span>See The Design Page</span>
+            </Link>
+          </div>
+
+          <div className="design-promo-banner__track design-promo-banner__track--reverse" aria-hidden="true">
+            <div className="design-promo-banner__ticker">
+              {[...designTickerItems, ...designTickerItems].map((item, index) => (
+                <span key={`reverse-${item}-${index}`} className="design-promo-banner__item">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <div className="timeline-content-container" ref={sectionRef}>
           <div className="timeline-header">

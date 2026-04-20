@@ -187,7 +187,7 @@
   height: 100%;
   padding: 1.5rem;
   display: grid;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .design-panel__column {
@@ -227,7 +227,7 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 0.7rem;
+  top: 30%;
   width: 0.55rem;
   height: 0.55rem;
   background: var(--orange);
@@ -415,7 +415,7 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 0.7rem;
+  top: 30%;
   width: 0.55rem;
   height: 0.55rem;
   background: var(--teal);

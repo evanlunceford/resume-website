@@ -104,7 +104,6 @@
   width: 100%;
   max-width: 1800px;
   margin: 0 auto;
-  overflow-x: hidden;
 }
 
 .intro-container {
@@ -215,6 +214,224 @@
   font-size: var(--text-lg);
   line-height: 1.7;
   max-width: 58ch;
+}
+
+.design-promo-banner {
+  position: relative;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 2rem 0;
+  border-block: 4px solid var(--brown);
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(27, 39, 52, 0.94));
+  box-shadow:
+    inset 0 0 0 3px rgba(243, 221, 195, 0.08),
+    0 1rem 2rem rgba(17, 24, 39, 0.18);
+  overflow: hidden;
+}
+
+.design-promo-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(17, 24, 39, 0.85), transparent 16%, transparent 84%, rgba(17, 24, 39, 0.85)),
+    repeating-linear-gradient(
+      180deg,
+      rgba(243, 221, 195, 0.04) 0 2px,
+      rgba(0, 0, 0, 0.12) 2px 4px
+    );
+  mix-blend-mode: screen;
+}
+
+.design-promo-banner__track {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  overflow: hidden;
+  padding: 0.4rem 0;
+}
+
+.design-promo-banner__ticker {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: max-content;
+  padding-right: 1rem;
+  animation: homeTickerScroll 24s linear infinite;
+}
+
+.design-promo-banner__track--reverse .design-promo-banner__ticker {
+  animation-name: homeTickerScrollReverse;
+  animation-duration: 28s;
+}
+
+.design-promo-banner__item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.45rem 1rem 0.35rem;
+  border: 2px solid rgba(243, 221, 195, 0.24);
+  background: rgba(243, 221, 195, 0.08);
+  color: var(--tan);
+  font-size: clamp(0.9rem, 1vw + 0.45rem, 1.15rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.design-promo-banner__item::after {
+  content: "";
+  width: 0.65rem;
+  height: 0.65rem;
+  background: var(--orange);
+  box-shadow: 0 0 0 2px rgba(243, 221, 195, 0.16);
+}
+
+.design-promo-banner__panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.95rem;
+  width: min(94vw, 62rem);
+  margin: 1.15rem auto;
+  padding: 1.65rem 1.5rem 1.5rem;
+  border: 3px solid var(--brown);
+  background:
+    linear-gradient(180deg, rgba(243, 221, 195, 0.98), rgba(236, 207, 169, 0.95));
+  box-shadow:
+    0.7rem 0.7rem 0 rgba(82, 63, 56, 0.22),
+    0 0 0 6px rgba(243, 221, 195, 0.18);
+  justify-items: center;
+  text-align: center;
+}
+
+.design-promo-banner__logo {
+  display: block;
+  width: min(100%, 42rem);
+  height: auto;
+  object-fit: contain;
+}
+
+.design-promo-banner__panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.26), transparent 45%),
+    repeating-linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.16) 0 2px,
+      rgba(0, 0, 0, 0.04) 2px 4px
+    );
+  mix-blend-mode: multiply;
+}
+
+.design-promo-banner__panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.design-promo-banner__panel-lines {
+  display: grid;
+  gap: 0.35rem;
+  width: min(100%, 24rem);
+}
+
+.design-promo-banner__line {
+  display: block;
+  height: 0.45rem;
+}
+
+.design-promo-banner__line--teal {
+  width: 100%;
+  background: var(--teal);
+}
+
+.design-promo-banner__line--orange {
+  width: calc(100% - 1.4rem);
+  justify-self: center;
+  background: var(--orange);
+}
+
+.design-promo-banner__line--brown {
+  width: calc(100% - 3rem);
+  justify-self: center;
+  background: var(--brown);
+}
+
+.design-promo-banner__callout {
+  max-width: 44rem;
+  color: var(--brown);
+  font-size: clamp(1.2rem, 1vw + 1rem, 2rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.design-promo-banner__copy {
+  max-width: 36rem;
+  color: color-mix(in srgb, var(--brown) 86%, var(--black));
+  font-size: clamp(1rem, 1vw + 0.7rem, 1.2rem);
+  line-height: 1.65;
+}
+
+.design-promo-banner__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.1rem;
+  border: 3px solid var(--brown);
+  background: var(--white);
+  color: var(--brown);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  box-shadow: 0.35rem 0.35rem 0 rgba(82, 63, 56, 0.18);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    filter 0.18s ease;
+}
+
+.design-promo-banner__link:hover {
+  transform: translate(-0.16rem, -0.16rem);
+  box-shadow: 0.5rem 0.5rem 0 rgba(82, 63, 56, 0.2);
+  filter: saturate(1.08);
+}
+
+.design-promo-banner__link-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+@keyframes homeTickerScroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes homeTickerScrollReverse {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
 }
 
 
@@ -456,6 +673,37 @@
   .intro-text {
     font-size: var(--text-base);
     line-height: 1.65;
+  }
+
+  .design-promo-banner {
+    padding: 1.5rem 0;
+  }
+
+  .design-promo-banner__ticker {
+    gap: 0.75rem;
+  }
+
+  .design-promo-banner__item {
+    padding-inline: 0.85rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+  }
+
+  .design-promo-banner__panel {
+    width: min(92vw, 36rem);
+    margin: 0.9rem auto;
+    padding: 1.3rem 1rem 1.1rem;
+    box-shadow:
+      0.45rem 0.45rem 0 rgba(82, 63, 56, 0.18),
+      0 0 0 4px rgba(243, 221, 195, 0.18);
+  }
+
+  .design-promo-banner__logo {
+    width: min(100%, 28rem);
+  }
+
+  .design-promo-banner__copy {
+    font-size: 0.98rem;
   }
 
 }

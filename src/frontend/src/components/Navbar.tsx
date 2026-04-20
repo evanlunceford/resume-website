@@ -6,18 +6,14 @@ export default function Navbar() {
     <nav className="navbar">
       <div className="navbar-links">
         <NavLink to="/"><img src="/home.svg" alt="" className="navbar-icon" />Home</NavLink>
-        <NavLink to="/design"><img src="/brand-assets/logo-nav-bar.svg" alt="" className="navbar-icon" />EL Design</NavLink>
         <NavLink to="/projects"><img src="/projects.svg" alt="" className="navbar-icon" />Projects</NavLink>
         <NavLink to="/about"><img src="/about-me.svg" alt="" className="navbar-icon" />About</NavLink>
       </div>
-      <a
-        href="/resume/Evan Lunceford - Resume.pdf"
-        download="Evan Lunceford - Resume.pdf"
-        className="navbar-resume-button"
-      >
-        <img src="/resume.svg" alt="" className="navbar-icon" />
-        <span>Resume</span>
-      </a>
+      <NavLink to="/design" className="navbar-design-button">
+        <img src="/brand-assets/logo-black.png" alt="" className="navbar-icon" />
+        <span>Software Design</span>
+      </NavLink>
+
     </nav>
   )
 }
