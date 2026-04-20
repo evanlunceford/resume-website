@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">SW Bookkeeping testimonial placeholder</title>
+  <desc id="desc">Illustrated placeholder headshot for a future testimonial.</desc>
+  <rect width="160" height="160" fill="#f3ddc3"/>
+  <rect x="10" y="10" width="140" height="140" fill="#ffb8ad" stroke="#523f38" stroke-width="4"/>
+  <circle cx="80" cy="62" r="28" fill="#ffffff"/>
+  <path d="M40 132c8-23 25-34 40-34s32 11 40 34" fill="#1ea896"/>
+  <path d="M56 63c0-13 11-24 24-24s24 11 24 24-11 24-24 24-24-11-24-24Z" fill="#523f38" opacity=".12"/>
+  <rect x="44" y="118" width="72" height="22" fill="#523f38"/>
+  <text x="80" y="133" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" fill="#f3ddc3">S W</text>
+</svg>

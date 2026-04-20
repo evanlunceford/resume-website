@@ -4,6 +4,7 @@ import FooterContact from './components/FooterContact'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import About from './pages/About'
+import Design from './pages/Design'
 import ScrollToTop from './config/ScrollToTop'
 
 import { Analytics } from "@vercel/analytics/react"
@@ -19,6 +20,7 @@ export default function App() {
         <main className="app-main">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/design" element={<Design />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
           </Routes>

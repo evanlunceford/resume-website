@@ -15,7 +15,7 @@
   position: relative;
   border-radius: 0;
   overflow: hidden;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: var(--crt-screen-aspect-ratio, 4 / 5);
   border: 4px solid var(--black);
   background-color: var(--grey-900);
   animation: crt-flicker 5.2s steps(1, end) infinite;

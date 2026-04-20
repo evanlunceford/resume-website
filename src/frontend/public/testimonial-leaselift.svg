@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">LeaseLift testimonial placeholder</title>
+  <desc id="desc">Illustrated placeholder headshot for a future testimonial.</desc>
+  <rect width="160" height="160" fill="#f3ddc3"/>
+  <rect x="10" y="10" width="140" height="140" fill="#1ea896" stroke="#523f38" stroke-width="4"/>
+  <circle cx="80" cy="60" r="27" fill="#ffffff"/>
+  <path d="M42 132c10-23 25-34 38-34 14 0 29 11 38 34" fill="#ff715b"/>
+  <path d="M55 61c0-14 11-25 25-25s25 11 25 25-11 25-25 25-25-11-25-25Z" fill="#523f38" opacity=".12"/>
+  <rect x="46" y="118" width="68" height="22" fill="#523f38"/>
+  <text x="80" y="133" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" fill="#f3ddc3">L L</text>
+</svg>

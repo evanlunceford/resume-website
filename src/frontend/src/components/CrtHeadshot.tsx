@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import "../css/components/CrtHeadshot.css";
 
 const DEFAULT_IMAGES = ["/evan-headshot.jpg"];
@@ -9,6 +9,10 @@ type CrtHeadshotProps = {
   className?: string;
   images?: string[];
   intervalMs?: number;
+  imageClassName?: string;
+  imageFit?: CSSProperties["objectFit"];
+  screenAspectRatio?: string;
+  showVignette?: boolean;
 };
 
 export default function CrtHeadshot({
@@ -17,6 +21,10 @@ export default function CrtHeadshot({
   className = "",
   images = DEFAULT_IMAGES,
   intervalMs = 10000,
+  imageClassName = "",
+  imageFit = "cover",
+  screenAspectRatio = "4 / 5",
+  showVignette = true,
 }: CrtHeadshotProps) {
   const validImages = useMemo(
     () => (images.length > 0 ? images : DEFAULT_IMAGES),
@@ -55,11 +63,15 @@ export default function CrtHeadshot({
 
   return (
     <div className={`crt-frame ${className}`.trim()} aria-label={ariaLabel}>
-      <div className="crt-screen">
+      <div
+        className="crt-screen"
+        style={{ "--crt-screen-aspect-ratio": screenAspectRatio } as CSSProperties}
+      >
         <img
           src={validImages[activeIndex]}
           alt={alt}
-          className={`crt-headshot ${isTransitioning ? "crt-headshot--transitioning" : ""}`.trim()}
+          className={`crt-headshot ${imageClassName} ${isTransitioning ? "crt-headshot--transitioning" : ""}`.trim()}
+          style={{ objectFit: imageFit }}
         />
         <span
           className={`crt-static ${isTransitioning ? "crt-static--active" : ""}`.trim()}
@@ -68,7 +80,7 @@ export default function CrtHeadshot({
         <span className="crt-tint" aria-hidden="true" />
         <span className="crt-glow" aria-hidden="true" />
         <span className="crt-scanlines" aria-hidden="true" />
-        <span className="crt-vignette" aria-hidden="true" />
+        {showVignette ? <span className="crt-vignette" aria-hidden="true" /> : null}
       </div>
     </div>
   );

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">SCOUT testimonial placeholder</title>
+  <desc id="desc">Illustrated placeholder headshot for a future testimonial.</desc>
+  <rect width="160" height="160" fill="#f3ddc3"/>
+  <rect x="10" y="10" width="140" height="140" fill="#4c5454" stroke="#523f38" stroke-width="4"/>
+  <circle cx="80" cy="60" r="27" fill="#ffffff"/>
+  <path d="M39 132c7-23 24-34 41-34 16 0 33 11 41 34" fill="#1ea896"/>
+  <path d="M54 60c0-14 12-25 26-25s26 11 26 25-12 25-26 25-26-11-26-25Z" fill="#523f38" opacity=".12"/>
+  <rect x="40" y="118" width="80" height="22" fill="#523f38"/>
+  <text x="80" y="133" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" fill="#f3ddc3">SC</text>
+</svg>

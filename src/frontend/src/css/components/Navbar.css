@@ -79,7 +79,7 @@
   color: var(--black);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: var(--font-sm)
+  font-size: var(--text-sm);
   overflow: hidden;
   transition: 0.3s opacity ease-in-out;
 }
@@ -111,8 +111,16 @@
     padding: 0 0.75rem;
   }
 
+  .navbar-links {
+    gap: 0.7rem;
+  }
+
+  .navbar-links a {
+    font-size: 0.82rem;
+  }
+
   .navbar-icon {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
 }
