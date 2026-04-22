@@ -237,7 +237,6 @@
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(17, 24, 39, 0.85), transparent 16%, transparent 84%, rgba(17, 24, 39, 0.85)),
     repeating-linear-gradient(
       180deg,
       rgba(243, 221, 195, 0.04) 0 2px,
@@ -299,21 +298,66 @@
   width: min(94vw, 62rem);
   margin: 1.15rem auto;
   padding: 1.65rem 1.5rem 1.5rem;
-  border: 3px solid var(--brown);
-  background:
-    linear-gradient(180deg, rgba(243, 221, 195, 0.98), rgba(236, 207, 169, 0.95));
-  box-shadow:
-    0.7rem 0.7rem 0 rgba(82, 63, 56, 0.22),
-    0 0 0 6px rgba(243, 221, 195, 0.18);
+  border: none;
+  background: transparent;
+  box-shadow: none;
   justify-items: center;
   text-align: center;
 }
 
 .design-promo-banner__logo {
   display: block;
-  width: min(100%, 42rem);
+  width: 4.2em;
+  max-width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+.design-promo-banner__title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+  font-size: clamp(1.2rem, 2.2vw + 0.7rem, 3.2rem);
+}
+
+.design-promo-banner__title-text {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 6.6em;
+  text-align: left;
+  padding-top: 1rem;
+}
+
+.design-promo-banner__title-text > span {
+  display: block;
+  color: var(--white);
+  font-size: 1em;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.design-promo-banner__title-text > p {
+  width: 100%;
+  margin: 0.32em 0 0;
+  color: var(--tan);
+  font-size: 0.24em;
+  font-weight: 700;
+  letter-spacing: 1.1em;
+  line-height: 1;
+  text-align: start;
+  text-transform: uppercase;
+  padding-left: 0.2rem;
+}
+
+.design-promo-banner__title-text > p::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
 
 .design-promo-banner__panel::before {
@@ -321,14 +365,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.26), transparent 45%),
-    repeating-linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.16) 0 2px,
-      rgba(0, 0, 0, 0.04) 2px 4px
-    );
-  mix-blend-mode: multiply;
+  background: none;
 }
 
 .design-promo-banner__panel > * {
@@ -376,7 +413,7 @@
 
 .design-promo-banner__copy {
   max-width: 36rem;
-  color: color-mix(in srgb, var(--brown) 86%, var(--black));
+  color: color-mix(in srgb, var(--tan) 84%, var(--white));
   font-size: clamp(1rem, 1vw + 0.7rem, 1.2rem);
   line-height: 1.65;
 }
@@ -442,6 +479,7 @@
 }
 
 .timeline-header {
+  margin-top: 4rem;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -693,13 +731,11 @@
     width: min(92vw, 36rem);
     margin: 0.9rem auto;
     padding: 1.3rem 1rem 1.1rem;
-    box-shadow:
-      0.45rem 0.45rem 0 rgba(82, 63, 56, 0.18),
-      0 0 0 4px rgba(243, 221, 195, 0.18);
+    box-shadow: none;
   }
 
-  .design-promo-banner__logo {
-    width: min(100%, 28rem);
+  .design-promo-banner__title {
+    font-size: clamp(1.7rem, 5.8vw, 2.45rem);
   }
 
   .design-promo-banner__copy {

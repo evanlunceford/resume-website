@@ -59,10 +59,12 @@ const designTickerItems = [
   "Custom Software",
   "Design That Sells",
   "Systems That Scale",
-  "Launch Faster",
-  "Build Smarter",
-  "Interfaces With Teeth",
-  "Tools For Real Work",
+  "Automated Workflows",
+  "Robust Applications",
+  "Professional Interfaces",
+  "Time-Saving Tools",
+  "Full-Stack Development",
+  "Security First"
 ];
 
 
@@ -155,19 +157,26 @@ export default function Home() {
           </div>
 
           <div className="design-promo-banner__panel">
-            <img
-              src="/brand-assets/logo-horizontal.png"
-              alt="EL Design"
-              className="design-promo-banner__logo"
-            />
-            <div className="design-promo-banner__panel-lines" aria-hidden="true">
-              <span className="design-promo-banner__line design-promo-banner__line--teal" />
-              <span className="design-promo-banner__line design-promo-banner__line--orange" />
-              <span className="design-promo-banner__line design-promo-banner__line--brown" />
+            <div className="design-promo-banner__title">
+              <img
+                src="/brand-assets/logo-white.png"
+                alt="EL Design"
+                className="design-promo-banner__logo"
+              />
+              <div className="design-promo-banner__title-text">
+                <span>Evan</span>
+                <span>Lunceford</span>
+                <p>SOFTWARE DESIGN</p>
+              </div>
+              
             </div>
+
+
+
             <p className="design-promo-banner__copy">
-              Built for businesses that need custom tools, stronger UX, and systems that stop wasting time.
+              Professional, custom software and web design for businesses at a competitive rate.
             </p>
+
             <Link to="/design" className="design-promo-banner__link">
               <span>See The Design Page</span>
             </Link>
