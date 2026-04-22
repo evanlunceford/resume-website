@@ -46,10 +46,10 @@ const packages: PackageTier[] = [
     ],
     exampleProjectName: "SW Bookkeeping",
     testimonial: {
-      name: "Client quote pending",
+      name: "Steven Faria",
       title: "Owner, SW Bookkeeping",
       quote: "Add a short quote here about clarity, trust, and the speed of delivery.",
-      headshot: "/testimonial-sw-bookkeeping.svg",
+      headshot: "/steven-headshot.jpg",
       status: "Awaiting approved testimonial",
     },
   },
@@ -273,7 +273,6 @@ export default function Design() {
                     />
                   </div>
                   <div className="design-testimonial-card__body">
-                    <span className="design-testimonial-card__status">{tier.testimonial.status}</span>
                     <blockquote>{tier.testimonial.quote}</blockquote>
                     <div>
                       <p className="design-testimonial-card__name">{tier.testimonial.name}</p>
