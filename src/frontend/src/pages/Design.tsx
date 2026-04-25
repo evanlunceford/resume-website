@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import CrtHeadshot from "../components/CrtHeadshot";
+import DesignInquiryModal from "../components/design/DesignInquiryModal";
 import { projects } from "../data/projects";
 import "../css/pages/Design.css";
 
@@ -116,6 +118,7 @@ const packages: PackageTier[] = [
 ];
 
 export default function Design() {
+  const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
   const packageDetails = packages.map((tier) => ({
     ...tier,
     project: projects.find((entry) => entry.name === tier.exampleProjectName),
@@ -128,14 +131,14 @@ export default function Design() {
           <div className="design-hero__layout">
             <div className="design-hero__content">
               <span className="design-eyebrow">Evan Lunceford Software Design</span>
-              <h1 className="design-title">Software for businesses that need more than just a template.</h1>
+              <h1 className="design-title">Software that solves business problems.</h1>
               <div className="design-title-divider" aria-hidden="true">
                 <span className="design-title-divider__line design-title-divider__line--teal" />
                 <span className="design-title-divider__line design-title-divider__line--orange" />
                 <span className="design-title-divider__line design-title-divider__line--brown" />
               </div>
               <p className="design-lead">
-                I design and build websites and software that feel intentional, solve real business problems, and stay maintainable after launch.
+                I build websites and software tailored to your business, designed to solve complicated problems, and built to stay maintainable after launch.              
               </p>
 
               <div className="design-hero__actions">
@@ -143,10 +146,14 @@ export default function Design() {
                   <img src="/projects.svg" alt="" className="navbar-icon" />
                   <span>View Packages</span>
                 </a>
-                <a href="#contact" className="design-action-button design-action-button--secondary">
+                <button
+                  type="button"
+                  className="design-action-button design-action-button--secondary"
+                  onClick={() => setIsInquiryModalOpen(true)}
+                >
                   <img src="/mail.svg" alt="" className="navbar-icon" />
-                  <span>Start a Project</span>
-                </a>
+                  <span>Start Your Project</span>
+                </button>
               </div>
             </div>
 
@@ -299,14 +306,14 @@ export default function Design() {
       <section className="design-section design-cta" aria-labelledby="design-cta-title">
         <div className="design-cta__panel">
           <div>
-            <p className="design-cta__eyebrow">Need a fit check?</p>
-            <h2 id="design-cta-title">If you already know the kind of project you need, I can help scope it quickly.</h2>
+            <p className="design-cta__eyebrow">Already know what you want?</p>
+            <h2 id="design-cta-title">Send a quick message and I'll help you scope the right next step.</h2>
           </div>
           <div className="design-cta__actions">
-            <a href="#contact" className="design-action-button">
+            <button type="button" className="design-action-button" onClick={() => setIsInquiryModalOpen(true)}>
               <img src="/mail.svg" alt="" className="navbar-icon" />
-              <span>Contact Me</span>
-            </a>
+              <span>Start Your Project</span>
+            </button>
             <Link to="/projects" className="design-action-button design-action-button--secondary">
               <img src="/projects.svg" alt="" className="navbar-icon" />
               <span>See More Work</span>
@@ -314,6 +321,8 @@ export default function Design() {
           </div>
         </div>
       </section>
+
+      <DesignInquiryModal isOpen={isInquiryModalOpen} onClose={() => setIsInquiryModalOpen(false)} />
     </main>
   );
 }

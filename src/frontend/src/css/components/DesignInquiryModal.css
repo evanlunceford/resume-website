@@ -1,0 +1,182 @@
+.design-inquiry-modal {
+  width: min(880px, 100%);
+  background: var(--tan);
+}
+
+.design-inquiry-modal::before {
+  background:
+    repeating-linear-gradient(
+      180deg,
+      rgba(243, 221, 195, 0.03) 0 2px,
+      rgba(0, 0, 0, 0.04) 2px 4px
+    );
+}
+
+.design-inquiry-modal__header {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.design-inquiry-modal__eyebrow {
+  margin-bottom: 0.45rem;
+  color: var(--teal);
+  font-size: var(--text-sm);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.design-inquiry-modal__form {
+  display: grid;
+  gap: 1rem;
+}
+
+.design-inquiry-modal__field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.design-inquiry-modal__field,
+.design-inquiry-modal__project-type {
+  display: grid;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 3px solid var(--brown);
+  background: color-mix(in srgb, var(--tan) 92%, var(--white));
+  box-shadow: inset 0 0 0 2px rgba(82, 63, 56, 0.1);
+}
+
+.design-inquiry-modal__field span,
+.design-inquiry-modal__legend {
+  color: var(--brown);
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.design-inquiry-modal__field input,
+.design-inquiry-modal__field textarea {
+  width: 100%;
+  border: 2px solid rgba(82, 63, 56, 0.5);
+  background: var(--white);
+  color: var(--brown);
+  padding: 0.8rem 0.9rem;
+  border-radius: 0;
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.design-inquiry-modal__field input::placeholder,
+.design-inquiry-modal__field textarea::placeholder {
+  color: color-mix(in srgb, var(--brown) 65%, var(--white));
+}
+
+.design-inquiry-modal__field input:focus,
+.design-inquiry-modal__field textarea:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--teal) 18%, transparent);
+}
+
+.design-inquiry-modal__field textarea {
+  resize: vertical;
+  min-height: 7.5rem;
+}
+
+.design-inquiry-modal__legend-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.design-inquiry-modal__type-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.design-inquiry-modal__type-card {
+  display: grid;
+  gap: 0.45rem;
+  align-content: start;
+  min-height: 9.5rem;
+  padding: 1rem;
+  border: 3px solid rgba(82, 63, 56, 0.45);
+  background: var(--white);
+  color: var(--brown);
+  text-align: left;
+  box-shadow: 0.24rem 0.24rem 0 0 rgba(82, 63, 56, 0.12);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.design-inquiry-modal__type-card strong {
+  font-size: var(--text-md);
+  line-height: 1.2;
+}
+
+.design-inquiry-modal__type-card span {
+  color: color-mix(in srgb, var(--brown) 82%, var(--black));
+  font-family: "Inter", sans-serif;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.design-inquiry-modal__type-card:hover {
+  transform: translate(-0.12rem, -0.12rem);
+  box-shadow: 0.36rem 0.36rem 0 0 rgba(82, 63, 56, 0.16);
+}
+
+.design-inquiry-modal__type-card--selected {
+  border-color: var(--teal);
+  background: color-mix(in srgb, var(--teal) 12%, var(--white));
+  box-shadow: 0.36rem 0.36rem 0 0 rgba(30, 168, 150, 0.2);
+}
+
+.design-inquiry-modal__actions {
+  display: grid;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.design-inquiry-modal__submit {
+  width: fit-content;
+  min-width: 14rem;
+}
+
+.design-inquiry-modal__submit:disabled {
+  opacity: 0.72;
+  cursor: progress;
+}
+
+.design-inquiry-modal__status {
+  min-height: 1.5rem;
+  color: color-mix(in srgb, var(--brown) 85%, var(--black));
+  font-family: "Inter", sans-serif;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+}
+
+.design-inquiry-modal__status--success {
+  color: var(--dark-teal);
+}
+
+.design-inquiry-modal__status--error {
+  color: color-mix(in srgb, var(--orange) 82%, var(--brown));
+}
+
+@media (max-width: 840px) {
+  .design-inquiry-modal__field-grid,
+  .design-inquiry-modal__type-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .design-inquiry-modal__type-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .design-inquiry-modal__header {
+    grid-template-columns: 1fr;
+  }
+}
