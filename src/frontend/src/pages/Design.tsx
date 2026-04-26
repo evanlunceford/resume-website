@@ -78,10 +78,10 @@ const packages: PackageTier[] = [
     ],
     exampleProjectName: "LeaseLift",
     testimonial: {
-      name: "Client quote pending",
+      name: "Jacob Wyatt",
       title: "Founder, LeaseLift",
-      quote: "Add a short quote here about shipping quickly, handling complexity, and building around business needs.",
-      headshot: "/testimonial-leaselift.svg",
+      quote: "\"Our original platform was expensive to run and lacked key functionality, but after working with Evan, we now operate a cost efficient site with the features necessary for our business.\"",
+      headshot: "/jacob-headshot.png",
       status: "Awaiting approved testimonial",
     },
   },
@@ -281,20 +281,22 @@ export default function Design() {
                   </div>
                   <div className="design-testimonial-card__body">
                     <blockquote>{tier.testimonial.quote}</blockquote>
-                    <div>
-                      <p className="design-testimonial-card__name">{tier.testimonial.name}</p>
-                      <p className="design-testimonial-card__title">{tier.testimonial.title}</p>
+                    <div className="design-testimonial-card__footer">
+                      <div className="design-testimonial-card__footer-text">
+                        <p className="design-testimonial-card__name">{tier.testimonial.name}</p>
+                        <p className="design-testimonial-card__title">{tier.testimonial.title}</p>
+                      </div>
+                      {tier.project?.link.type !== "private" && tier.project?.link.href ? (
+                        <a
+                          href={tier.project.link.href}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="design-testimonial-card__project-link"
+                        >
+                          View Project
+                        </a>
+                      ) : null}
                     </div>
-                    {tier.project?.link.type !== "private" && tier.project?.link.href ? (
-                      <a
-                        href={tier.project.link.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="design-testimonial-card__project-link"
-                      >
-                        View Project
-                      </a>
-                    ) : null}
                   </div>
                 </div>
               </div>

@@ -443,6 +443,13 @@
   gap: 0.65rem;
 }
 
+.design-testimonial-card__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .design-testimonial-card__status {
   display: inline-flex;
   align-items: center;
