@@ -50,7 +50,7 @@ const packages: PackageTier[] = [
     testimonial: {
       name: "Steven Faria",
       title: "Owner, SW Bookkeeping",
-      quote: "Add a short quote here about clarity, trust, and the speed of delivery.",
+      quote: "My site looks 100x better on mobile than before, and generally looks way better than I managed on my own. It's designed much more intuitively for the end user, and I'm excited to put a QR for the new site on my new cards. ",
       headshot: "/steven-headshot.jpg",
       status: "Awaiting approved testimonial",
     },
@@ -108,10 +108,10 @@ const packages: PackageTier[] = [
     ],
     exampleProjectName: "SCOUT",
     testimonial: {
-      name: "Client quote pending",
-      title: "Leadership Team, SCOUT Workforce",
-      quote: "Add a short quote here about ownership, architectural thinking, and building something that can scale.",
-      headshot: "/testimonial-scout.svg",
+      name: "Brandon Clarke",
+      title: "Entrepreneur",
+      quote: "Placeholder",
+      headshot: "/brandon-headshot.jpg",
       status: "Awaiting approved testimonial",
     },
   },
