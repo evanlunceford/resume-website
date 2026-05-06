@@ -67,11 +67,13 @@ export const projects: Project[] = [
     background: LeaseLiftBackground,
     logoOnly: false,
     shortDescription: "A website that streamlines the relet process for both students and property managers.",
-    screenshotDirectory: "/images/projects/lease-lift",
+    screenshotDirectory: "/project-screenshots/leaselift",
     screenshots: [
-      { title: "Home Page", caption: "Public screenshots coming soon." },
-      { title: "Create a Relet", caption: "Public screenshots coming soon." },
-      { title: "Message System", caption: "Public screenshots coming soon." }
+      { title: "Home Page", caption: "Find or post your relet in minutes.", filename: "01-home-page.png"},
+      { title: "Create a Relet", caption: "", filename: "04-create-listing.png" },
+      { title: "Message System", caption: "Includes the ability to see chat history & see unread messages.", filename: "05-lease-takeover.png" },
+      { title: "Find Relets", caption: "Browse relets based on your university.", filename: "02-find-relets.png" },
+      { title: "Relet Page", caption: "View details of a relet, including the bounty price and contact information.", filename: "03-relet-page.png" },
     ],
     features: [
       "Post a relet for people in your area to see.",
