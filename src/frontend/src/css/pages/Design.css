@@ -355,6 +355,7 @@
 @media (max-width: 768px) {
   .design-scope__layout {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 
   .design-scope__diagram {
@@ -697,9 +698,9 @@
 
 .design-testimonial-card__footer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.65rem;
+  align-items: flex-start;
 }
 
 .design-testimonial-card__status {
@@ -783,9 +784,33 @@
     grid-template-columns: 1fr;
   }
 
+  .design-package-card__secondary {
+    border-top: 2px solid rgba(243, 221, 195, 0.18);
+    padding-top: 1.25rem;
+  }
 }
 
 @media (max-width: 720px) {
+  .design-package-grid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+  }
+
+  .design-package-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .design-package-card {
+    flex: 0 0 min(88vw, 26rem);
+    scroll-snap-align: start;
+    grid-template-columns: 1fr;
+  }
+
   .design-page {
     padding: calc(var(--nav-top) + 1rem) 1rem 4rem;
     gap: 3rem;
@@ -830,6 +855,69 @@
   .design-section__copy p,
   .design-cta__panel h2 {
     font-size: var(--text-base);
+  }
+
+  /* Diagram bleeds edge-to-edge */
+  .design-scope__diagram {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    width: calc(100% + 2rem);
+  }
+
+  /* Center hero text */
+  .design-hero__content {
+    text-align: center;
+  }
+
+  .design-hero__actions,
+  .design-cta__actions {
+    justify-content: center;
+  }
+
+  .design-cta__panel {
+    text-align: center;
+  }
+
+  /* Center scope copy */
+  .design-scope__copy {
+    text-align: center;
+  }
+
+  .design-scope__heading {
+    text-align: center;
+  }
+
+  /* Center dividers — container centers, each line centers within it */
+  .design-title-divider {
+    margin: 0 auto;
+  }
+
+  .design-title-divider__line {
+    margin: 0 auto;
+  }
+
+  /* Ticker: swap left border for top border and center contents */
+  .design-scope__ticker {
+    border-left: none;
+    border-top: 3px solid var(--teal);
+    padding: 0.65rem 0 0;
+    align-items: center;
+  }
+
+  .design-scope__ticker-item {
+    align-items: center;
+  }
+
+  .design-scope__ticker-desc {
+    text-align: center;
+  }
+
+  .design-scope__ticker-progress {
+    width: 100%;
+  }
+
+  .design-scope__ticker-dots {
+    justify-content: center;
   }
 
   .design-package-card__subscription,

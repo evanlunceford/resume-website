@@ -362,10 +362,8 @@ export default function Design() {
                   <div className="design-testimonial-card__body">
                     <blockquote>{tier.testimonial.quote}</blockquote>
                     <div className="design-testimonial-card__footer">
-                      <div className="design-testimonial-card__footer-text">
-                        <p className="design-testimonial-card__name">{tier.testimonial.name}</p>
-                        <p className="design-testimonial-card__title">{tier.testimonial.title}</p>
-                      </div>
+                      <p className="design-testimonial-card__name">{tier.testimonial.name}</p>
+                      <p className="design-testimonial-card__title">{tier.testimonial.title}</p>
                       {tier.project?.link.type !== "private" && tier.project?.link.href ? (
                         <a
                           href={tier.project.link.href}

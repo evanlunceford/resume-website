@@ -454,11 +454,14 @@
 @media (max-width: 640px) {
   .project-modal-backdrop {
     padding: 0.85rem;
+    align-items: start;
+    overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   .project-modal {
     padding: 0.85rem;
-    max-height: 94vh;
+    max-height: none;
   }
 
   .project-modal-title {

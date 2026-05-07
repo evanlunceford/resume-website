@@ -110,7 +110,7 @@
 
   /* Reset design button to plain nav link alongside the centered group */
   .navbar-design-button {
-    position: static;
+    position: relative;
     border: none;
     background: none;
     padding: 0;
@@ -119,6 +119,7 @@
     font-size: clamp(0.95rem, 0.8rem + 0.55vw, var(--text-md));
     color: var(--brown);
     overflow: visible;
+    right: unset;
   }
 
   .navbar-design-button::after {
