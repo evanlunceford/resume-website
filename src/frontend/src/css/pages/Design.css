@@ -2,14 +2,14 @@
   min-height: 100vh;
   max-width: 1800px;
   margin: 0 auto;
-  padding: calc(var(--navbar-height) + 1.25rem) 2rem 5rem;
+  padding: calc(var(--nav-top) + 1.25rem) 2rem 5rem;
   display: grid;
   gap: 4rem;
 }
 
 .design-hero {
   width: 100%;
-  min-height: calc(100svh - var(--navbar-height) - 1.25rem);
+  min-height: calc(100svh - var(--nav-top) - 1.25rem);
   display: flex;
   align-items: stretch;
 }
@@ -256,7 +256,7 @@
 }
 
 .design-scope--visible .design-scope__copy {
-  animation: scope-text-in 0.5s ease forwards 1.65s;
+  animation: scope-text-in 0.4s ease forwards 0.45s;
 }
 
 .design-scope__heading {
@@ -304,7 +304,7 @@
 }
 
 .design-scope--visible .design-scope__diagram {
-  animation: scope-slide-right 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards 1.25s;
+  animation: scope-slide-right 0.38s cubic-bezier(0.22, 1, 0.36, 1) forwards 0s;
 }
 
 .design-scope__circles-svg {
@@ -320,7 +320,7 @@
 }
 
 .design-scope--visible .design-scope__circle--large {
-  animation: scope-circle-draw 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards 0s;
+  animation: scope-circle-draw 0.55s cubic-bezier(0.4, 0, 0.2, 1) forwards 0s;
 }
 
 .design-scope__circle--small {
@@ -329,7 +329,7 @@
 }
 
 .design-scope--visible .design-scope__circle--small {
-  animation: scope-circle-draw 0.55s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.6s;
+  animation: scope-circle-draw 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.1s;
 }
 
 @keyframes scope-circle-draw {
@@ -362,11 +362,11 @@
   }
 
   .design-scope--visible .design-scope__diagram {
-    animation: scope-fade-in 0.7s ease forwards 0.15s;
+    animation: scope-fade-in 0.4s ease forwards 0s;
   }
 
   .design-scope--visible .design-scope__copy {
-    animation: scope-fade-in 0.6s ease forwards 0.95s;
+    animation: scope-fade-in 0.4s ease forwards 0.45s;
   }
 }
 
@@ -375,7 +375,7 @@
 }
 
 .design-scope--visible .design-scope__svg-text {
-  animation: scope-fade-in 0.5s ease forwards;
+  animation: scope-fade-in 0.35s ease forwards;
 }
 
 /* ── Icon states ───────────────────────────────────────────── */
@@ -399,102 +399,107 @@
 
 .design-scope--visible .design-scope__icon--static {
   opacity: 0.38;
-  transition-delay: 1.8s;
+  transition-delay: 0.7s;
 }
 
-/* ── Slide list ────────────────────────────────────────────── */
-.design-scope__slides {
-  display: grid;
-  gap: 0;
-  margin-top: 0.5rem;
-}
-
-.design-scope__slide {
+/* ── Ticker ─────────────────────────────────────────────────── */
+.design-scope__ticker {
   display: flex;
-  gap: 0.8rem;
-  padding: 0.75rem 0;
-  opacity: 0.3;
-  cursor: default;
-  transition: opacity 0.35s ease;
-  border-top: 1px solid rgba(82, 63, 56, 0.15);
+  flex-direction: column;
+  gap: 0.55rem;
+  border-left: 3px solid var(--teal);
+  padding: 0.75rem 0 0.75rem 1rem;
+  margin-top: 0.35rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
-.design-scope__slide:last-child {
-  border-bottom: 1px solid rgba(82, 63, 56, 0.15);
-}
-
-.design-scope__slide--active {
+.design-scope__ticker--visible {
   opacity: 1;
+  transform: translateY(0);
 }
 
-.design-scope__slide-marker-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  padding-top: 6px;
-  flex-shrink: 0;
-}
-
-.design-scope__slide-marker {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--brown);
-  transition: background 0.3s ease;
-  flex-shrink: 0;
-}
-
-.design-scope__slide--active .design-scope__slide-marker {
-  background: var(--teal);
-}
-
-.design-scope__slide-body {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  min-width: 0;
-  flex: 1;
-}
-
-.design-scope__slide-title {
-  font-size: var(--text-md);
-  color: var(--brown);
-  letter-spacing: 0.03em;
-}
-
-.design-scope__slide--active .design-scope__slide-title {
+.design-scope__ticker-label {
+  font-family: "Righteous", sans-serif;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
   color: var(--teal);
 }
 
-.design-scope__slide-desc {
+.design-scope__ticker-window {
+  overflow: hidden;
+  min-height: 3.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.design-scope__ticker-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  animation: ticker-slide-in 0.38s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes ticker-slide-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.design-scope__ticker-category {
+  font-family: "Righteous", sans-serif;
+  font-size: var(--text-md);
+  color: var(--brown);
+  letter-spacing: 0.02em;
+}
+
+.design-scope__ticker-desc {
   font-family: "Inter", sans-serif;
   font-size: var(--text-sm);
   color: var(--brown);
+  opacity: 0.72;
   line-height: 1.55;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.35s ease, opacity 0.35s ease;
 }
 
-.design-scope__slide--active .design-scope__slide-desc {
-  max-height: 5rem;
-  opacity: 0.75;
-}
-
-.design-scope__slide-progress {
+.design-scope__ticker-progress {
   height: 2px;
   background: var(--teal);
   transform-origin: left center;
   transform: scaleX(0);
   animation: scope-slide-progress 3s linear forwards;
   border-radius: 1px;
-  margin-top: 4px;
 }
 
 @keyframes scope-slide-progress {
   to { transform: scaleX(1); }
+}
+
+.design-scope__ticker-dots {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.design-scope__ticker-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(82, 63, 56, 0.2);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.design-scope__ticker-dot:hover {
+  transform: scale(1.4);
+}
+
+.design-scope__ticker-dot--active {
+  background: var(--teal);
+  transform: scale(1.2);
 }
 
 .design-list--teal li::before {
@@ -782,12 +787,12 @@
 
 @media (max-width: 720px) {
   .design-page {
-    padding: calc(var(--navbar-height) + 1rem) 1rem 4rem;
+    padding: calc(var(--nav-top) + 1rem) 1rem 4rem;
     gap: 3rem;
   }
 
   .design-hero {
-    min-height: calc(100svh - var(--navbar-height) - 1rem);
+    min-height: calc(100svh - var(--nav-top) - 1rem);
   }
 
   .design-hero__copy,

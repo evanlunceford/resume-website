@@ -102,10 +102,10 @@ const packages: PackageTier[] = [
 ];
 
 const scopeSlides = [
-  { id: "frontend",  category: "Modern Frontend",   description: "Component-driven UIs built with React, TypeScript, CSS, and Vite.",          icons: ["react", "typescript", "css", "vite"] },
-  { id: "backend",   category: "Custom Backends",   description: "Purpose-built APIs, server logic, and containerized deployment with Docker.", icons: ["python", "server", "docker"] },
+  { id: "frontend",  category: "Modern Frontend",   description: "Frontend UIs built with React, TypeScript, CSS, and Vite.",          icons: ["react", "typescript", "css", "vite"] },
+  { id: "backend",   category: "Custom Backends",   description: "Custom APIs, server logic, and containerized deployment.", icons: ["python", "server", "docker", "aws"] },
   { id: "data",      category: "Data & Analytics",  description: "Database design, SQL queries, and analytics reporting.",                  icons: ["database", "sql", "analytics"] },
-  { id: "tooling",   category: "Tooling & Workflow", description: "Git-based workflows, VS Code extensibility, and WordPress CMS integration.", icons: ["github", "vscode"] },
+  { id: "tooling",   category: "Tooling & Workflow", description: "Git-based workflows, extensive testing, all with a custom codebase.", icons: ["github", "vscode", "terminal"] },
 ];
 
 export default function Design() {
@@ -120,7 +120,7 @@ export default function Design() {
     if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { setScopeVisible(true); observer.disconnect(); } },
-      { threshold: 0.15 }
+      { threshold: 0.4 }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -128,11 +128,11 @@ export default function Design() {
 
   useEffect(() => {
     if (!scopeVisible) return;
-    const showTimer = setTimeout(() => setIconsVisible(true), 1800);
+    const showTimer = setTimeout(() => setIconsVisible(true), 700);
     let interval: ReturnType<typeof setInterval>;
     const cycleTimer = setTimeout(() => {
       interval = setInterval(() => setActiveScopeSlide(i => (i + 1) % scopeSlides.length), 3000);
-    }, 2500);
+    }, 900);
     return () => { clearTimeout(showTimer); clearTimeout(cycleTimer); clearInterval(interval); };
   }, [scopeVisible]);
 
@@ -214,24 +214,30 @@ export default function Design() {
               <span className="design-title-divider__line design-title-divider__line--orange" />
               <span className="design-title-divider__line design-title-divider__line--brown" />
             </div>
-            <ul className="design-scope__slides">
-              {scopeSlides.map((slide, i) => (
-                <li
-                  key={slide.id}
-                  className={`design-scope__slide${i === activeScopeSlide && iconsVisible ? " design-scope__slide--active" : ""}`}
-                  onClick={() => setActiveScopeSlide(i)}
-                >
-                  <div className="design-scope__slide-marker" />
-                  <div className="design-scope__slide-body">
-                    <p className="design-scope__slide-title">{slide.category}</p>
-                    <p className="design-scope__slide-desc">{slide.description}</p>
-                    {i === activeScopeSlide && iconsVisible && (
-                      <div key={activeScopeSlide} className="design-scope__slide-progress" />
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <p className="design-scope__lead">
+              I build beautiful websites, but I also build the systems that can power your business. 
+              Whether it’s automation workflows, custom applications, database integration, or internal software tools, I can do it.
+            </p>
+            <div className={`design-scope__ticker${iconsVisible ? " design-scope__ticker--visible" : ""}`} aria-live="polite">
+              <div className="design-scope__ticker-window">
+                <div key={activeScopeSlide} className="design-scope__ticker-item">
+                  <span className="design-scope__ticker-category">{scopeSlides[activeScopeSlide].category}</span>
+                  <span className="design-scope__ticker-desc">{scopeSlides[activeScopeSlide].description}</span>
+                </div>
+              </div>
+              <div key={`progress-${activeScopeSlide}`} className="design-scope__ticker-progress" />
+              <div className="design-scope__ticker-dots">
+                {scopeSlides.map((slide, i) => (
+                  <button
+                    key={slide.id}
+                    type="button"
+                    className={`design-scope__ticker-dot${i === activeScopeSlide ? " design-scope__ticker-dot--active" : ""}`}
+                    onClick={() => setActiveScopeSlide(i)}
+                    aria-label={slide.category}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="design-scope__diagram" aria-hidden="true">
@@ -252,43 +258,47 @@ export default function Design() {
               <path d="M 358 319 A 100 100 0 1 1 242 319" fill="none" stroke="rgba(255,113,91,1)" strokeWidth="3.5" className="design-scope__circle design-scope__circle--small" pathLength="1000" />
 
               {/* Labels curve along each circle's arc, centered in the gap */}
-              <text textAnchor="middle" fontSize="11" letterSpacing="3" fill="rgba(30,168,150,0.9)" fontFamily="Righteous, sans-serif" className="design-scope__svg-text" style={{ animationDelay: "1.6s" }}>
+              <text textAnchor="middle" fontSize="11" letterSpacing="3" fill="rgba(30,168,150,0.9)" fontFamily="Righteous, sans-serif" className="design-scope__svg-text" style={{ animationDelay: "0.35s" }}>
                 <textPath href="#scope-large-text-path" startOffset="50%">MY SERVICE</textPath>
               </text>
-              <text textAnchor="middle" fontSize="10" letterSpacing="2.5" fill="rgba(255,113,91,0.9)" fontFamily="Righteous, sans-serif" className="design-scope__svg-text" style={{ animationDelay: "1.8s" }}>
+              <text textAnchor="middle" fontSize="10" letterSpacing="2.5" fill="rgba(255,113,91,0.9)" fontFamily="Righteous, sans-serif" className="design-scope__svg-text" style={{ animationDelay: "0.45s" }}>
                 <textPath href="#scope-small-text-path" startOffset="50%">WEB DESIGNER</textPath>
               </text>
 
               {/* WordPress — static, centered in the small orange circle */}
-              <image className="design-scope__icon design-scope__icon--static" href="/diagram-icons/wordpress.svg" x="280" y="380" width="40" height="40" />
+              <image className="design-scope__icon design-scope__icon--active" href="/diagram-icons/wordpress.svg" x="275" y="375" width="50" height="50" />
 
               {/* ── Icons scattered throughout the large circle interior ── */}
               {/* Sizes reflect importance; lower icons pushed to outer lobes away from orange circle */}
 
-              {/* react      50×50 — upper left, most prominent */}
-              <image className={iconCls("react")}      href="/diagram-icons/react.svg"      x="147" y="137" width="50" height="50" />
-              {/* typescript 46×46 — upper right, equally prominent */}
-              <image className={iconCls("typescript")} href="/diagram-icons/typescript.svg" x="415" y="135" width="46" height="46" />
-              {/* python     42×42 — left side */}
-              <image className={iconCls("python")}     href="/diagram-icons/python.svg"     x="91"  y="251" width="42" height="42" />
-              {/* docker     40×40 — right side */}
-              <image className={iconCls("docker")}     href="/diagram-icons/docker.svg"     x="452" y="242" width="40" height="40" />
-              {/* server     34×34 — upper center-left */}
-              <image className={iconCls("server")}     href="/diagram-icons/server.svg"     x="233" y="175" width="34" height="34" />
-              {/* vite       34×34 — upper center-right */}
-              <image className={iconCls("vite")}       href="/diagram-icons/vite.svg"       x="348" y="175" width="34" height="34" />
-              {/* github     30×30 — top center */}
-              <image className={iconCls("github")}     href="/diagram-icons/github.svg"     x="285" y="65"  width="30" height="30" />
-              {/* database   34×34 — lower left lobe, pushed toward edge */}
-              <image className={iconCls("database")}   href="/diagram-icons/database.svg"   x="141" y="373" width="34" height="34" />
-              {/* analytics  26×26 — lower left lobe, further out */}
-              <image className={iconCls("analytics")}  href="/diagram-icons/analytics.svg"  x="180" y="270" width="26" height="26" />
-              {/* css        36×36 — lower right lobe, pushed toward edge */}
-              <image className={iconCls("css")}        href="/diagram-icons/css.svg"        x="422" y="367" width="36" height="36" />
-              {/* vscode     28×28 — lower right lobe, outer edge */}
-              <image className={iconCls("vscode")}     href="/diagram-icons/vscode.svg"     x="451" y="306" width="28" height="28" />
-              {/* sql        34×34 — lower right lobe, further out */}
-              <image className={iconCls("sql")}        href="/diagram-icons/sql.svg"        x="340" y="250" width="34" height="34" />
+              {/* react      62×62 — upper left, most prominent */}
+              <image className={iconCls("react")}      href="/diagram-icons/react.svg"      x="141" y="131" width="62" height="62" />
+              {/* typescript 58×58 — upper right, equally prominent */}
+              <image className={iconCls("typescript")} href="/diagram-icons/typescript.svg" x="409" y="129" width="58" height="58" />
+              {/* python     52×52 — left side */}
+              <image className={iconCls("python")}     href="/diagram-icons/python.svg"     x="86"  y="246" width="52" height="52" />
+              {/* docker     50×50 — right side */}
+              <image className={iconCls("docker")}     href="/diagram-icons/docker.svg"     x="447" y="237" width="50" height="50" />
+              {/* server     42×42 — upper center-left */}
+              <image className={iconCls("server")}     href="/diagram-icons/server.svg"     x="229" y="171" width="42" height="42" />
+              {/* vite       42×42 — upper center-right */}
+              <image className={iconCls("vite")}       href="/diagram-icons/vite.svg"       x="344" y="171" width="42" height="42" />
+              {/* github     38×38 — top center */}
+              <image className={iconCls("github")}     href="/diagram-icons/github.svg"     x="281" y="61"  width="38" height="38" />
+              {/* database   42×42 — lower left lobe, pushed toward edge */}
+              <image className={iconCls("database")}   href="/diagram-icons/database.svg"   x="137" y="369" width="42" height="42" />
+              {/* analytics  34×34 — lower left lobe, further out */}
+              <image className={iconCls("analytics")}  href="/diagram-icons/analytics.svg"  x="176" y="266" width="34" height="34" />
+              {/* css        44×44 — lower right lobe, pushed toward edge */}
+              <image className={iconCls("css")}        href="/diagram-icons/css.svg"        x="418" y="363" width="44" height="44" />
+              {/* vscode     36×36 — lower right lobe, outer edge */}
+              <image className={iconCls("vscode")}     href="/diagram-icons/vscode.svg"     x="447" y="302" width="36" height="36" />
+              {/* sql        42×42 — lower right lobe, further out */}
+              <image className={iconCls("sql")}        href="/diagram-icons/sql.svg"        x="336" y="246" width="42" height="42" />
+              {/* aws        38×38 — right side, between docker and vite */}
+              <image className={iconCls("aws")}        href="/diagram-icons/aws.svg"        x="200" y="70" width="38" height="38" />
+              {/* terminal   34×34 — upper area, left of github */}
+              <image className={iconCls("terminal")}   href="/diagram-icons/terminal.svg"   x="365" y="80"  width="34" height="34" />
             </svg>
           </div>
         </div>

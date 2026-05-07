@@ -77,6 +77,10 @@
   height: 35px;
 }
 
+.navbar-design-button .navbar-design-button__logo--mobile {
+  display: none;
+}
+
 .navbar-design-button:hover {
   opacity: 1;
 }
@@ -96,8 +100,97 @@
 }
 
 @media (max-width: 900px) {
+  .navbar {
+    top: auto;
+    bottom: 0;
+    border-top: 1px solid rgba(82, 63, 56, 0.15);
+    padding-bottom: env(safe-area-inset-bottom);
+    gap: clamp(0.85rem, 2.6vw, 2rem);
+  }
+
+  /* Reset design button to plain nav link alongside the centered group */
   .navbar-design-button {
+    position: static;
+    border: none;
+    background: none;
+    padding: 0;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: clamp(0.95rem, 0.8rem + 0.55vw, var(--text-md));
+    color: var(--brown);
+    overflow: visible;
+  }
+
+  .navbar-design-button::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--brown);
+    border-radius: var(--radius-full);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+  }
+
+  .navbar-design-button.active::after {
+    transform: scaleX(1);
+  }
+
+  .navbar-design-button.active {
+    opacity: 1;
+  }
+
+  .navbar-design-button img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .navbar-design-button .navbar-design-button__logo--desktop {
     display: none;
+  }
+
+  .navbar-design-button .navbar-design-button__logo--mobile {
+    display: block;
+  }
+
+  /* Icon-only by default — collapse all label spans */
+  .navbar-links a,
+  .navbar-design-button {
+    gap: 0;
+  }
+
+  .navbar-links a span,
+  .navbar-design-button span {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-left: 0;
+    transition:
+      max-width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      padding-left 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.2s ease;
+  }
+
+  /* Active link slides its label in */
+  .navbar-links a.active span,
+  .navbar-design-button.active span {
+    max-width: 10rem;
+    opacity: 1;
+    padding-left: 0.45rem;
+  }
+
+  /* Icon pops on active */
+  .navbar-links a .navbar-icon,
+  .navbar-design-button .navbar-icon {
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .navbar-links a.active .navbar-icon,
+  .navbar-design-button.active .navbar-icon {
+    transform: scale(1.18);
   }
 }
 
@@ -106,20 +199,16 @@
     padding: 0 0.75rem;
   }
 
-  .navbar-design-button {
-    right: 0.75rem;
-  }
-
   .navbar-links {
-    gap: 0.7rem;
+    gap: 1.4rem;
   }
 
   .navbar-links a {
-    font-size: 0.82rem;
+    font-size: 1rem;
   }
 
   .navbar-icon {
-    width: 16px;
-    height: 16px;
+    width: 22px;
+    height: 22px;
   }
 }

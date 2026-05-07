@@ -1,7 +1,7 @@
 
 .home-container{
   min-height: 100vh;
-  padding-top: calc(var(--navbar-height) + 1rem);
+  padding-top: calc(var(--nav-top) + 1rem);
 
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@
   justify-content: center;
   width: 100%;
   max-width: 1800px;
-  min-height: min(46rem, calc(100svh - var(--navbar-height)));
+  min-height: min(46rem, calc(100svh - var(--nav-top)));
   margin: 0 auto;
   padding-inline: 2rem;
   padding-block: clamp(1.5rem, 4vw, 3rem) 2rem;
@@ -644,7 +644,7 @@
 
 @media (max-width: 780px) {
   .home-container {
-    padding-top: calc(var(--navbar-height) + 0.75rem);
+    padding-top: calc(var(--nav-top) + 0.75rem);
   }
 
   .home-content-container {

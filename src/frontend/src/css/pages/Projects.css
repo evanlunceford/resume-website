@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1800px;
   margin: 0 auto;
-  padding: calc(var(--navbar-height) + 1.25rem) 2rem 6rem;
+  padding: calc(var(--nav-top) + 1.25rem) 2rem 6rem;
 }
 
 .projects-page-header {
@@ -442,7 +442,7 @@
 
 @media (max-width: 920px) {
   .projects-content-container {
-    padding-top: calc(var(--navbar-height) + 1rem);
+    padding-top: calc(var(--nav-top) + 1rem);
     padding-inline: 1rem;
   }
 

@@ -6,6 +6,8 @@
 /* ─── Color Tokens ─────────────────────────────────────────── */
 :root {
   --navbar-height: 60px;
+  --nav-top: var(--navbar-height);
+  --nav-bottom: 0px;
   --white: #ffffff;
   --black: #000000;
 
@@ -102,6 +104,22 @@ body {
 
 .app-main {
   flex: 1;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --nav-top: 0px;
+    --nav-bottom: var(--navbar-height);
+  }
+
+  html {
+    scroll-padding-top: 1rem;
+    scroll-padding-bottom: calc(var(--navbar-height) + 1rem);
+  }
+
+  .app-main {
+    padding-bottom: var(--navbar-height);
+  }
 }
 
 @media (max-width: 600px) {
