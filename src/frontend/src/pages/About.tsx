@@ -1,21 +1,23 @@
 import CrtHeadshot from "../components/CrtHeadshot";
 import "../css/pages/About.css";
+import "../css/components/SkillsSection.css";
+import "../css/pages/Projects.css";
 
 
 const stackGroups = [
   {
     label: "Frontend",
-    colorClass: "about-stack-band--teal",
+    color: "var(--teal)",
     tools: ["React", "TypeScript", "CSS", "Vite"],
   },
   {
     label: "Backend",
-    colorClass: "about-stack-band--orange",
+    color: "var(--orange)",
     tools: ["Python", "FastAPI", "Postgres", "SQL"],
   },
   {
     label: "Cloud & Other",
-    colorClass: "about-stack-band--dark-teal",
+    color: "var(--dark-teal)",
     tools: ["GCS", "Docker", "Vercel", "Github"],
   },
 ];
@@ -84,7 +86,12 @@ export default function About() {
               I am also an avid disc golfer. And yes, there is a difference between a disc and a Frisbee...
             </p>
             <p className="about-lead">
-              I also enjoy programming, and spend lots of my time working on fun projects that do something cool.
+              I also enjoy playing single-player videogames, my favorite being the Fallout series. I don't have a ton of time to play,
+              so I end up finishing about one videogame a year (which is pathetic). I do not play multiplayer videogames ever, simply because
+              I am TERRIBLE at them.
+            </p>
+            <p className="about-lead">
+              I especially enjoy programming, and spend lots of my time working on fun projects that do something cool.
               While projects I do for work are often focused on software that can make money, my personal projects
               usually focus more on ideas that I find interesting.
             </p>
@@ -103,28 +110,45 @@ export default function About() {
       </section>
 
       <section className="about-stack">
-        <div className="about-stack__panel">
-          <div className="about-stack__screen about-hero__copy about-stack__copy">
-            <h2 className="about-title about-stack__title">My Go-To Tech Stack</h2>
-            <div className="about-title-divider about-stack__divider" aria-hidden="true">
-              <span className="about-title-divider__line about-title-divider__line--teal" />
-              <span className="about-title-divider__line about-title-divider__line--orange" />
-              <span className="about-title-divider__line about-title-divider__line--brown" />
-            </div>
-            <div className="about-stack__bands">
-              {stackGroups.map((group) => (
-                <section key={group.label} className="about-stack-band">
-                  <div className={`about-stack-band__label ${group.colorClass}`}>{group.label}</div>
-                  <div className="about-stack-band__tools">
-                    {group.tools.map((tool) => (
-                      <span key={tool} className="about-stack-band__tool">
-                        {tool}
-                      </span>
-                    ))}
-                  </div>
-                </section>
-              ))}
-            </div>
+        <div className="projects-section-header projects-section-header--banner">
+          <div className="projects-title-banner" aria-hidden="true">
+            <span className="projects-title-banner__stripe projects-title-banner__stripe--teal" />
+            <span className="projects-title-banner__stripe projects-title-banner__stripe--orange" />
+            <span className="projects-title-banner__stripe projects-title-banner__stripe--brown" />
+          </div>
+          <h2 className="projects-section-title projects-section-title--banner">
+            My Go-To Tech Stack
+          </h2>
+        </div>
+
+        <div className="skills-panel">
+          <div className="skills-grid">
+            {stackGroups.map((group) => (
+              <div
+                key={group.label}
+                className="skills-column"
+                style={{ '--cc': group.color } as React.CSSProperties}
+              >
+                <div className="skills-column-header">
+                  <div className="skills-column-accent" />
+                  <h3 className="skills-column-title">{group.label}</h3>
+                </div>
+                <ul className="skills-list">
+                  {group.tools.map((tool, i) => (
+                    <li
+                      key={tool}
+                      className="skill-card"
+                      style={{
+                        '--cc': group.color,
+                        animationDelay: `${i * 0.07}s`,
+                      } as React.CSSProperties}
+                    >
+                      <span className="skill-name">{tool}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>

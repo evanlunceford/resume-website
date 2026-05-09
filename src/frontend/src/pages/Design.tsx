@@ -12,7 +12,11 @@ type PackageTier = {
   subscription: string;
   supportIncludes: string[];
   summary: string;
-  scope: string[];
+  features: {
+    icon: string;
+    alt: string;
+    label: string;
+  }[];
   exampleProjectName: string;
   testimonial: {
     name: string;
@@ -31,14 +35,26 @@ const packages: PackageTier[] = [
     subscription: "$100/month",
     supportIncludes: [
       "Hosting, domain, and uptime monitoring check-ins.",
-      "Security updates, plugin maintenance, and bug fixes.",
-      "Monthly performance review with small copy or content updates.",
+      "Monthly performance updates and bug fixes.",
+      "Anytime website content updates.",
     ],
-    summary: "A polished static marketing site for small businesses that need credibility, SEO basics, and a clear path to contact.",
-    scope: [
-      "Static website with 3 to 5 pages.",
-      "Basic SEO and contact form.",
-      "Monthly reports, growth emails, maintenance, and security support.",
+    summary: "A polished, professional-grade website designed to brand your business confidently. Built for all media sizes including desktop, tablet, and mobile.",
+    features: [
+      {
+        icon: "/design-package-icons/starter/webpages.svg",
+        alt: "Stacked website pages icon",
+        label: "Up to 5 unique pages",
+      },
+      {
+        icon: "/design-package-icons/starter/seo.svg",
+        alt: "Search icon for SEO basics",
+        label: "SEO Optimization",
+      },
+      {
+        icon: "/design-package-icons/starter/certificate.svg",
+        alt: "Certificate icon for trust signals",
+        label: "Your Branding, 100% Ownership",
+      },
     ],
     exampleProjectName: "SW Bookkeeping",
     testimonial: {
@@ -55,15 +71,27 @@ const packages: PackageTier[] = [
     delivery: "1 month delivery time",
     subscription: "$250/month",
     supportIncludes: [
-      "Everything in the starter support plan.",
+      "Additonal feature support and refinement.",
       "Database, auth, integration, and form-flow monitoring.",
-      "Priority fixes plus a monthly bucket for feature refinements.",
+      "Access to custom website analytics dashboard.",
     ],
-    summary: "A production-ready product or business platform with a backend, user flows, automations, and reporting.",
-    scope: [
-      "Everything in the starter package, plus more pages.",
-      "Backend, database, authentication, and API connections.",
-      "Analytics dashboards, email services, and automations.",
+    summary: "A custom platform branded exclusively for your business. Includes backend services such as authentication, admin dashboards, databases, and user flows.",
+    features: [
+      {
+        icon: "/design-package-icons/dynamic/custom-ui/custom-ui.svg",
+        alt: "Custom interface icon inside a browser window",
+        label: "Custom UI For Your Brand",
+      },
+      {
+        icon: "/design-package-icons/dynamic/database.svg",
+        alt: "Database",
+        label: "Database Integration",
+      },
+        {
+          icon: "/design-package-icons/dynamic/api.svg",
+          alt: "Network icon for API connections",
+          label: "API Integrations",
+        },
     ],
     exampleProjectName: "LeaseLift",
     testimonial: {
@@ -78,17 +106,29 @@ const packages: PackageTier[] = [
     name: "Custom Software",
     price: "Starting at $15,000",
     delivery: "",
-    subscription: "$300/month",
+    subscription: "$500/month",
     supportIncludes: [
-      "Custom support scope based on your stack and business risk.",
+      "Same-day bug fixes and feature refinement.",
       "Monitoring, maintenance, and incident response for critical systems.",
       "Ongoing roadmap work, experiments, and feature delivery as needed.",
     ],
-    summary: "A custom software engagement for advanced research, scalable systems, and product ideas that go beyond a standard website.",
-    scope: [
-      "Anything I can do with software, scoped around your business problem.",
-      "Advanced features like proprietary research and specialized workflows.",
-      "Scalable backend systems for larger user bases and long-term growth.",
+    summary: "Built for businesses that want proprietary software that requires deep research, heavy automation, big datasets, and custom API integrations.",
+    features: [
+      {
+        icon: "/design-package-icons/custom/proprietary-technology.svg",
+        alt: "Settings and code icon for custom systems",
+        label: "Custom Systems",
+      },
+      {
+        icon: "/design-package-icons/custom/automation.svg",
+        alt: "Automation workflow icon",
+        label: "Workflow Automation",
+      },
+      {
+        icon: "/design-package-icons/custom/analytics.svg",
+        alt: "Analytics icon",
+        label: "Real-time analytic dashboards",
+      },
     ],
     exampleProjectName: "SCOUT",
     testimonial: {
@@ -102,7 +142,7 @@ const packages: PackageTier[] = [
 ];
 
 const scopeSlides = [
-  { id: "frontend",  category: "Modern Frontend",   description: "Frontend UIs built with React, TypeScript, CSS, and Vite.",          icons: ["react", "typescript", "css", "vite"] },
+  { id: "frontend",  category: "Modern UI Design",   description: "Frontend UIs built with React, TypeScript, CSS, and Vite.",          icons: ["react", "typescript", "css", "vite"] },
   { id: "backend",   category: "Custom Backends",   description: "Custom APIs, server logic, and containerized deployment.", icons: ["python", "server", "docker", "aws"] },
   { id: "data",      category: "Data & Analytics",  description: "Database design, SQL queries, and analytics reporting.",                  icons: ["database", "sql", "analytics"] },
   { id: "tooling",   category: "Tooling & Workflow", description: "Git-based workflows, extensive testing, all with a custom codebase.", icons: ["github", "vscode", "terminal"] },
@@ -111,9 +151,11 @@ const scopeSlides = [
 export default function Design() {
   const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
   const scopeRef = useRef<HTMLElement>(null);
+  const packageCardRefs = useRef<Array<HTMLElement | null>>([]);
   const [scopeVisible, setScopeVisible] = useState(false);
   const [activeScopeSlide, setActiveScopeSlide] = useState(0);
   const [iconsVisible, setIconsVisible] = useState(false);
+  const [visiblePackageCards, setVisiblePackageCards] = useState<string[]>([]);
 
   useEffect(() => {
     const el = scopeRef.current;
@@ -131,10 +173,34 @@ export default function Design() {
     const showTimer = setTimeout(() => setIconsVisible(true), 700);
     let interval: ReturnType<typeof setInterval>;
     const cycleTimer = setTimeout(() => {
-      interval = setInterval(() => setActiveScopeSlide(i => (i + 1) % scopeSlides.length), 3000);
+      interval = setInterval(() => setActiveScopeSlide(i => (i + 1) % scopeSlides.length), 4500);
     }, 900);
     return () => { clearTimeout(showTimer); clearTimeout(cycleTimer); clearInterval(interval); };
   }, [scopeVisible]);
+
+  useEffect(() => {
+    const cards = packageCardRefs.current.filter((card): card is HTMLElement => Boolean(card));
+    if (!cards.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const cardName = entry.target.getAttribute("data-package-name");
+          if (!cardName) return;
+
+          setVisiblePackageCards((current) =>
+            current.includes(cardName) ? current : [...current, cardName]
+          );
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.05, rootMargin: "0px 0px -10% 0px" }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
 
   const iconCls = (id: string) =>
     `design-scope__icon${iconsVisible ? (scopeSlides[activeScopeSlide].icons.includes(id) ? " design-scope__icon--active" : " design-scope__icon--dim") : ""}`;
@@ -317,8 +383,15 @@ export default function Design() {
         </div>
 
         <div className="design-package-grid">
-          {packageDetails.map((tier) => (
-            <article key={tier.name} className="design-package-card">
+          {packageDetails.map((tier, index) => (
+            <article
+              key={tier.name}
+              ref={(node) => {
+                packageCardRefs.current[index] = node;
+              }}
+              data-package-name={tier.name}
+              className={`design-package-card${visiblePackageCards.includes(tier.name) ? " design-package-card--visible" : ""}`}
+            >
               <div className="design-package-card__primary">
                 <div className="design-package-card__header">
                   <div>
@@ -330,11 +403,18 @@ export default function Design() {
 
                 <p className="design-package-card__summary">{tier.summary}</p>
 
-                <ul className="design-package-card__scope">
-                  {tier.scope.map((item) => (
-                    <li key={item}>{item}</li>
+                <div className="design-package-card__features" aria-label={`${tier.name} feature highlights`}>
+                  {tier.features.map((feature) => (
+                    <div key={feature.label} className="design-package-card__feature">
+                      <img
+                        src={feature.icon}
+                        alt={feature.alt}
+                        className="design-package-card__feature-icon"
+                      />
+                      <p className="design-package-card__feature-label">{feature.label}</p>
+                    </div>
                   ))}
-                </ul>
+                </div>
 
               </div>
 
@@ -362,8 +442,10 @@ export default function Design() {
                   <div className="design-testimonial-card__body">
                     <blockquote>{tier.testimonial.quote}</blockquote>
                     <div className="design-testimonial-card__footer">
-                      <p className="design-testimonial-card__name">{tier.testimonial.name}</p>
-                      <p className="design-testimonial-card__title">{tier.testimonial.title}</p>
+                      <div className="design-testimonial-card__meta">
+                        <p className="design-testimonial-card__name">{tier.testimonial.name}</p>
+                        <p className="design-testimonial-card__title">{tier.testimonial.title}</p>
+                      </div>
                       {tier.project?.link.type !== "private" && tier.project?.link.href ? (
                         <a
                           href={tier.project.link.href}
@@ -386,7 +468,7 @@ export default function Design() {
       <section className="design-section design-cta" aria-labelledby="design-cta-title">
         <div className="design-cta__panel">
           <div>
-            <p className="design-cta__eyebrow">Already know what you want?</p>
+            <p className="design-cta__eyebrow">Ready To Get Started?</p>
             <h2 id="design-cta-title">Send a quick message and I'll help you scope the right next step.</h2>
           </div>
           <div className="design-cta__actions">

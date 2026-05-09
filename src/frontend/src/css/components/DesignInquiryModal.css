@@ -179,4 +179,8 @@
   .design-inquiry-modal__header {
     grid-template-columns: 1fr;
   }
+
+  .design-inquiry-modal__submit {
+    justify-self: center;
+  }
 }

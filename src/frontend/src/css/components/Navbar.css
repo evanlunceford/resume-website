@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 clamp(0.75rem, 3vw, 2rem); 
+  padding: 0 clamp(0.75rem, 3vw, 2rem);
   height: var(--navbar-height);
   background: var(--tan-hover);
   backdrop-filter: blur(5px);
@@ -21,8 +21,7 @@
   max-width: 100%;
 }
 
-.navbar-links a,
-.navbar-design-button {
+.navbar-links a {
   font-size: clamp(0.95rem, 0.8rem + 0.55vw, var(--text-md));
   color: var(--brown);
   opacity: 0.7;
@@ -58,39 +57,6 @@
   opacity: 1;
 }
 
-.navbar-design-button {
-  position: absolute;
-  right: clamp(0.75rem, 3vw, 2rem);
-  padding: 0.20rem 0.8rem;
-  border: 3px solid var(--black);
-  background: var(--white);
-  color: var(--black);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: var(--text-sm);
-  overflow: hidden;
-  transition: 0.3s opacity ease-in-out;
-}
-
-.navbar-design-button img {
-  width: 35px;
-  height: 35px;
-}
-
-.navbar-design-button .navbar-design-button__logo--mobile {
-  display: none;
-}
-
-.navbar-design-button:hover {
-  opacity: 1;
-}
-
-.navbar-design-button span,
-.navbar-design-button img {
-  position: relative;
-  z-index: 1;
-}
-
 .navbar-icon {
   width: 20px;
   height: 20px;
@@ -108,62 +74,11 @@
     gap: clamp(0.85rem, 2.6vw, 2rem);
   }
 
-  /* Reset design button to plain nav link alongside the centered group */
-  .navbar-design-button {
-    position: relative;
-    border: none;
-    background: none;
-    padding: 0;
-    text-transform: none;
-    letter-spacing: normal;
-    font-size: clamp(0.95rem, 0.8rem + 0.55vw, var(--text-md));
-    color: var(--brown);
-    overflow: visible;
-    right: unset;
-  }
-
-  .navbar-design-button::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: var(--brown);
-    border-radius: var(--radius-full);
-    transform: scaleX(0);
-    transition: transform 0.2s ease;
-  }
-
-  .navbar-design-button.active::after {
-    transform: scaleX(1);
-  }
-
-  .navbar-design-button.active {
-    opacity: 1;
-  }
-
-  .navbar-design-button img {
-    width: 20px;
-    height: 20px;
-  }
-
-  .navbar-design-button .navbar-design-button__logo--desktop {
-    display: none;
-  }
-
-  .navbar-design-button .navbar-design-button__logo--mobile {
-    display: block;
-  }
-
-  /* Icon-only by default — collapse all label spans */
-  .navbar-links a,
-  .navbar-design-button {
+  .navbar-links a {
     gap: 0;
   }
 
-  .navbar-links a span,
-  .navbar-design-button span {
+  .navbar-links a span {
     max-width: 0;
     opacity: 0;
     overflow: hidden;
@@ -175,22 +90,17 @@
       opacity 0.2s ease;
   }
 
-  /* Active link slides its label in */
-  .navbar-links a.active span,
-  .navbar-design-button.active span {
+  .navbar-links a.active span {
     max-width: 10rem;
     opacity: 1;
     padding-left: 0.45rem;
   }
 
-  /* Icon pops on active */
-  .navbar-links a .navbar-icon,
-  .navbar-design-button .navbar-icon {
+  .navbar-links a .navbar-icon {
     transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .navbar-links a.active .navbar-icon,
-  .navbar-design-button.active .navbar-icon {
+  .navbar-links a.active .navbar-icon {
     transform: scale(1.18);
   }
 }

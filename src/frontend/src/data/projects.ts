@@ -112,7 +112,7 @@ export const projects: Project[] = [
   {
     id: 4,
     name: 'Mr. Cassette',
-    skills: ['javascript', 'react', 'github', 'python', 'fastapi', 'qdrant', 'docker'],
+    skills: ['javascript', 'react', 'css', 'github', 'python', 'fastapi', 'qdrant', 'docker'],
     featured: true,
     background: MrCassetteBackground,
     logoOnly: false,
@@ -159,24 +159,25 @@ export const projects: Project[] = [
   },
   {
     id: 6,
-    name: 'Music Analyzer',
-    skills: ['python', 'github'],
+    name: 'SignatureSound',
+    skills: ['typescript', 'react', 'css','github', 'python', 'fastapi', 'qdrant', 'docker'],
     featured: false,
     logoOnly: false,
-    shortDescription: "A tool used to analyze the elements of a song: chords, rhythm, and structure.",
-    screenshotDirectory: "/images/projects/project-placeholder-a",
+    shortDescription: "A tool for local musicians to brand their music in minutes.",
+    screenshotDirectory: "/project-screenshots/soundsignature",
     screenshots: [
-      { title: "Overview Screen", caption: "Public screenshots coming soon." },
-      { title: "Workflow Screen", caption: "Public screenshots coming soon." }
+      { title: "Home Screen", caption: "", filename: "01-home-screen.png"},
+      { title: "Integrations", caption: "", filename: "02-integration-screen.png" },
+      { title: "Features", caption: "", filename: "03-features-screen.png" }
     ],
     features: [
-      "Detects the key a song is in, and associated chords.",
-      "Analyzes the rhythm context of a song.",
-      "Graphs songs on a live spectrogram for inspection."
+      "Detects a musicians unique musical traits.",
+      "Uses vector embeddings to recommend venues to a musician.",
+      "Creates a unique profile to share with venues."
     ],
-    link: { type: "open-source", href: "https://github.com/evanlunceford/Music-Visualization" },
-    estimatedLinesOfCode: 3000,
-    startDate: "2026-02",
+    link: { type: "public", href: "https://signature-sound-landing-page.vercel.app/" },
+    estimatedLinesOfCode: 5000,
+    startDate: "2026-03",
     endDate: "Present",
   },
   {
