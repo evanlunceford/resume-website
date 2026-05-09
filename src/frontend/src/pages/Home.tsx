@@ -134,7 +134,7 @@ export default function Home() {
               </div>
               <p className="intro-text">
                 Thanks for visiting my website! My name is Evan Lunceford, and I am currently
-                a Computer Science student at Northern Arizona University. I am also working part-time one several software projects
+                a Computer Science student at Northern Arizona University. I am also working part-time on several software projects
                 highlighted in the Projects section.
               </p>
               <p className="intro-text">

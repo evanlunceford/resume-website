@@ -141,8 +141,8 @@ export default function DesignInquiryModal({ isOpen, onClose }: DesignInquiryMod
               Start Your Project
             </h2>
             <p className="project-modal-description">
-              Pick the closest fit, share one sentence about what you are trying to build or improve, and I'll reach
-              back out by email.
+              Pick the closest fit, share one sentence about what you are trying to build or improve, and I'll follow
+              up by email.
             </p>
           </div>
 

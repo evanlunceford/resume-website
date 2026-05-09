@@ -38,7 +38,7 @@ const packages: PackageTier[] = [
       "Monthly performance updates and bug fixes.",
       "Anytime website content updates.",
     ],
-    summary: "A polished, professional-grade website designed to brand your business confidently. Built for all media sizes including desktop, tablet, and mobile.",
+    summary: "A polished, professional-grade website designed to brand your business confidently. Built for all screen sizes including desktop, tablet, and mobile.",
     features: [
       {
         icon: "/design-package-icons/starter/webpages.svg",
@@ -73,7 +73,7 @@ const packages: PackageTier[] = [
     supportIncludes: [
       "Additonal feature support and refinement.",
       "Database, auth, integration, and form-flow monitoring.",
-      "Access to custom website analytics dashboard.",
+      "Access to a custom website analytics dashboard.",
     ],
     summary: "A custom platform branded exclusively for your business. Includes backend services such as authentication, admin dashboards, databases, and user flows.",
     features: [
@@ -97,7 +97,7 @@ const packages: PackageTier[] = [
     testimonial: {
       name: "Jacob Wyatt",
       title: "Founder, LeaseLift",
-      quote: "\"Our original platform was expensive to run and lacked key functionality, but after working with Evan, we now operate a cost efficient site with the features necessary for our business.\"",
+      quote: "\"Our original platform was expensive to run and lacked key functionality, but after working with Evan, we now operate a cost-efficient site with the features necessary for our business.\"",
       headshot: "/jacob-headshot.png",
       status: "Awaiting approved testimonial",
     },
@@ -127,7 +127,7 @@ const packages: PackageTier[] = [
       {
         icon: "/design-package-icons/custom/analytics.svg",
         alt: "Analytics icon",
-        label: "Real-time analytic dashboards",
+        label: "Real-time Analytics Dashboards",
       },
     ],
     exampleProjectName: "SCOUT",
