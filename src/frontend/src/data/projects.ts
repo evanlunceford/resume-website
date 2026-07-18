@@ -1,5 +1,6 @@
 import React from "react";
 import AdStrategiesBackground from "../components/projects/AdStrategiesBackground";
+import ConversionAuditBackground from "../components/projects/ConversionAuditBackground";
 import LeaseLiftBackground from "../components/projects/LeaseLiftBackground";
 import MrCassetteBackground from "../components/projects/MrCassetteBackground";
 import ScoutBackground from "../components/projects/ScoutBackground";
@@ -60,29 +61,29 @@ export const projects: Project[] = [
     endDate: "Present",
   },
   {
-    id: 2,
-    name: 'LeaseLift',
-    skills: ['python', 'fastapi', 'react', 'javascript', 'postgres', 'gcs', 'docker', 'github', 'css', 'sql'],
+    id: 9,
+    name: 'Conversion Audit',
+    skills: ['typescript', 'react', 'nodejs', 'postgres', 'docker', 'github', 'css'],
     featured: true,
-    background: LeaseLiftBackground,
-    logoOnly: false,
-    shortDescription: "A website that streamlines the relet process for both students and property managers.",
-    screenshotDirectory: "/project-screenshots/leaselift",
+    background: ConversionAuditBackground,
+    logoOnly: true,
+    logo: "/conversionaudit.png",
+    hue: 150,
+    shortDescription: "Finds broken pixels, misfired events, and missing tags before they drain your ad spend.",
+    screenshotDirectory: "/project-screenshots/conversion-audit",
     screenshots: [
-      { title: "Home Page", caption: "Find or post your relet in minutes.", filename: "01-home-page.png"},
-      { title: "Create a Relet", caption: "", filename: "04-create-listing.png" },
-      { title: "Message System", caption: "Includes the ability to see chat history & see unread messages.", filename: "05-lease-takeover.png" },
-      { title: "Find Relets", caption: "Browse relets based on your university.", filename: "02-find-relets.png" },
-      { title: "Relet Page", caption: "View details of a relet, including the bounty price and contact information.", filename: "03-relet-page.png" },
+      { title: "Pixels & Tags", caption: "Public screenshots coming soon." },
+      { title: "Active Diagnostics", caption: "Public screenshots coming soon." },
+      { title: "Automated Reports", caption: "Public screenshots coming soon." },
     ],
     features: [
-      "Post a relet for people in your area to see.",
-      "Browse relets in your university, and collect a bounty for picking up a lease.",
-      "Message users about availability & specifications."
+      "Direct integration with Google Tag Manager to read the tags already in your container.",
+      "Active diagnostics that submit real test conversions to confirm tags actually fire.",
+      "Automated daily and weekly tracking health reports across monitored sites and funnels.",
     ],
-    link: { type: "public", href: "https://leaselift.app" },
+    link: { type: "public", href: "https://conversionaudit.net" },
     estimatedLinesOfCode: 15000,
-    startDate: "2025-09",
+    startDate: "2026-06",
     endDate: "Present",
   },
   {
@@ -132,6 +133,33 @@ export const projects: Project[] = [
     estimatedLinesOfCode: 4000,
     startDate: "2025-02",
     endDate: "2025-03",
+  },
+  {
+    id: 2,
+    name: 'LeaseLift',
+    skills: ['python', 'fastapi', 'react', 'javascript', 'postgres', 'gcs', 'docker', 'github', 'css', 'sql'],
+    featured: true,
+    background: LeaseLiftBackground,
+    logoOnly: true,
+    logo: "/leaselift.png",
+    shortDescription: "A website that streamlines the relet process for both students and property managers.",
+    screenshotDirectory: "/project-screenshots/leaselift",
+    screenshots: [
+      { title: "Home Page", caption: "Find or post your relet in minutes.", filename: "01-home-page.png"},
+      { title: "Create a Relet", caption: "", filename: "04-create-listing.png" },
+      { title: "Message System", caption: "Includes the ability to see chat history & see unread messages.", filename: "05-lease-takeover.png" },
+      { title: "Find Relets", caption: "Browse relets based on your university.", filename: "02-find-relets.png" },
+      { title: "Relet Page", caption: "View details of a relet, including the bounty price and contact information.", filename: "03-relet-page.png" },
+    ],
+    features: [
+      "Post a relet for people in your area to see.",
+      "Browse relets in your university, and collect a bounty for picking up a lease.",
+      "Message users about availability & specifications."
+    ],
+    link: { type: "public", href: "https://leaselift.app" },
+    estimatedLinesOfCode: 15000,
+    startDate: "2025-09",
+    endDate: "Present",
   },
   {
     id: 5,

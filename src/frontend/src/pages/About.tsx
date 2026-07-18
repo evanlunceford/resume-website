@@ -50,11 +50,8 @@ export default function About() {
             <span className="about-title-divider__line about-title-divider__line--brown" />
           </div>
           <p className="about-lead">
-            Some people enjoy crunching numbers, writing papers, or studying our Earth. It is their preferred way 
-            to contribute to the world. Others, like me, enjoy creating new things that reflect themselves. 
-            Musicians, artists, and (naturally) software engineers! Even the in-depth analytical systems I 
-            have worked on have a certain elegance to them. The software I build is the product of my ability to 
-            solve a problem, similar to how a musician's songs are a product of their ability to transpose their thoughts 
+            I approach my software design with an emphasis on elegance, efficiency, and user experience.
+            The software I build is the product of my ability to solve a problem, similar to how a musician's songs are a product of their ability to transpose their thoughts 
             into a musical context.
           </p>
           <p className="about-lead">
@@ -81,20 +78,14 @@ export default function About() {
               <span className="about-title-divider__line about-title-divider__line--brown" />
             </div>
             <p className="about-lead">
-              When I'm not working, there are several hobbies that occupy most of my free time.
+              When I'm not working, there are several hobbies that occupy my free time.
               My creative outlet of choice is music, specfically drums and piano. I have been playing
               drums for a decade, and piano for 4 years. Because of my tenure in the trees of Flagstaff,
               I am also an avid disc golfer. And yes, there is a difference between a disc and a Frisbee...
             </p>
             <p className="about-lead">
-              I also enjoy playing single-player videogames, my favorite being the Fallout series. I don't have a ton of time to play,
-              so I end up finishing about one videogame a year (which is pathetic). I do not play multiplayer videogames ever, simply because
-              I am TERRIBLE at them.
-            </p>
-            <p className="about-lead">
-              I especially enjoy programming, and spend lots of my time working on fun projects that do something cool.
-              While projects I do for work are often focused on software that can make money, my personal projects
-              usually focus more on ideas that I find interesting.
+              I also enjoy a good story. It could be a physical book, movie, or a single-player videogame. My favorite movie
+              of all time is <i>Pursuit of Happyness</i> and my favorite videogame is <i>Fallout: New Vegas</i>.
             </p>
           </div>
 

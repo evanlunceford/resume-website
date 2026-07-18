@@ -42,6 +42,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   const activeScreenshot = project.screenshots[currentScreenshot];
   const canMove = project.screenshots.length > 1;
+  const hasScreenshots = project.screenshots.some((screenshot) => screenshot.filename);
   const projectLinkMeta =
     project.link.type === "public"
       ? { href: project.link.href, icon: "/redirect.svg", alt: "Website Icon", label: "Visit Project" }
@@ -95,7 +96,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
         </div>
 
-        <div className="project-modal-main">
+        <div className={`project-modal-main${hasScreenshots ? "" : " project-modal-main--no-photos"}`}>
           <div className="project-modal-main-features">
             <div className="project-modal-section-header">
               <h3>Features</h3>
@@ -122,56 +123,58 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </div>
             </div>
           </div>
-          <div className="project-modal-main-photos">
-            <div className="project-modal-section-header">
-              <h3>Screenshots</h3>
-              <span className="project-modal-photo-count">
-                {String(currentScreenshot + 1).padStart(2, "0")} / {String(project.screenshots.length).padStart(2, "0")}
-              </span>
-            </div>
-
-            <div className="project-modal-photo-widget">
-              <button
-                type="button"
-                className="project-modal-photo-arrow"
-                onClick={goPrevious}
-                disabled={!canMove}
-                aria-label="Previous screenshot"
-              >
-                &lt;
-              </button>
-
-              <div className="project-modal-photo-stage">
-                {activeScreenshot?.filename ? (
-                  <img
-                    src={`${project.screenshotDirectory}/${activeScreenshot.filename}`}
-                    alt={activeScreenshot.title}
-                    className="project-modal-photo-image project-modal-photo-image--clickable"
-                    onClick={() => setLightboxOpen(true)}
-                  />
-                ) : (
-                  <div className="project-modal-photo-placeholder">
-                    <span className="project-modal-photo-placeholder-title">Screenshot Not Available</span>
-                  </div>
-                )}
+          {hasScreenshots && (
+            <div className="project-modal-main-photos">
+              <div className="project-modal-section-header">
+                <h3>Screenshots</h3>
+                <span className="project-modal-photo-count">
+                  {String(currentScreenshot + 1).padStart(2, "0")} / {String(project.screenshots.length).padStart(2, "0")}
+                </span>
               </div>
 
-              <button
-                type="button"
-                className="project-modal-photo-arrow"
-                onClick={goNext}
-                disabled={!canMove}
-                aria-label="Next screenshot"
-              >
-                &gt;
-              </button>
-            </div>
+              <div className="project-modal-photo-widget">
+                <button
+                  type="button"
+                  className="project-modal-photo-arrow"
+                  onClick={goPrevious}
+                  disabled={!canMove}
+                  aria-label="Previous screenshot"
+                >
+                  &lt;
+                </button>
 
-            <div className="project-modal-photo-caption">
-              <strong>{activeScreenshot?.title}</strong>
-              <p>{activeScreenshot?.caption}</p>
+                <div className="project-modal-photo-stage">
+                  {activeScreenshot?.filename ? (
+                    <img
+                      src={`${project.screenshotDirectory}/${activeScreenshot.filename}`}
+                      alt={activeScreenshot.title}
+                      className="project-modal-photo-image project-modal-photo-image--clickable"
+                      onClick={() => setLightboxOpen(true)}
+                    />
+                  ) : (
+                    <div className="project-modal-photo-placeholder">
+                      <span className="project-modal-photo-placeholder-title">Screenshot Not Available</span>
+                    </div>
+                  )}
+                </div>
+
+                <button
+                  type="button"
+                  className="project-modal-photo-arrow"
+                  onClick={goNext}
+                  disabled={!canMove}
+                  aria-label="Next screenshot"
+                >
+                  &gt;
+                </button>
+              </div>
+
+              <div className="project-modal-photo-caption">
+                <strong>{activeScreenshot?.title}</strong>
+                <p>{activeScreenshot?.caption}</p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <div className="project-modal-skills">

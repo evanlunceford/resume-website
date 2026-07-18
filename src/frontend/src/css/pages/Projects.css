@@ -130,8 +130,9 @@
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
   grid-template-areas:
     "primary wide wide"
-    "primary small-left small-right";
-  grid-auto-rows: minmax(180px, 1fr);
+    "primary small-left small-right"
+    "full-row full-row full-row";
+  grid-template-rows: minmax(180px, 1fr) minmax(180px, 1fr) minmax(160px, auto);
   gap: 1.5rem;
   width: 100%;
 }
@@ -355,6 +356,12 @@
   grid-area: small-right;
 }
 
+.featured-project-card--full-row {
+  grid-area: full-row;
+  min-height: 340px;
+  justify-content: center;
+}
+
 .project-card-bg {
   position: absolute;
   inset: 0;
@@ -398,6 +405,8 @@
 
 .project-card-logo {
   width: 100%;
+  max-height: 130px;
+  object-fit: contain;
 }
 
 .project-card-description {
@@ -430,7 +439,9 @@
     grid-template-areas:
       "primary primary"
       "wide wide"
-      "small-left small-right";
+      "small-left small-right"
+      "full-row full-row";
+    grid-template-rows: none;
     grid-auto-rows: minmax(180px, auto);
   }
 
@@ -460,7 +471,9 @@
       "primary"
       "wide"
       "small-left"
-      "small-right";
+      "small-right"
+      "full-row";
+    grid-template-rows: none;
     grid-auto-rows: auto;
   }
 

@@ -11,6 +11,7 @@ const featuredProjectSlotClasses = [
   "featured-project-card--wide",
   "featured-project-card--compact",
   "featured-project-card--compact",
+  "featured-project-card--full-row",
 ];
 
 export default function Projects() {

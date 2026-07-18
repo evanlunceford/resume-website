@@ -6,9 +6,6 @@ const BAR_COLORS = [
   'var(--teal)',
   'var(--orange)',
   'var(--dark-teal)',
-  'var(--peach)',
-  'var(--brown)',
-  'var(--grey)',
 ];
 
 const LANE_HEIGHT = 48;

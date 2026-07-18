@@ -36,6 +36,15 @@ export const experiences: Experience[] = [
     type: "education",
     description: "Completing a 4-year degree",
   },
+  {
+    id: 4,
+    company: "Center for Entrepreneurial Innovation ",
+    title: "Lead Software Developer",
+    startDate: "2026-05",
+    endDate: "present",
+    type: "full-time",
+    description: "Leading a district-wide workforce intelligence software built for students."
+  }
 
 
 ];

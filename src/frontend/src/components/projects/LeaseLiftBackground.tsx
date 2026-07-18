@@ -13,19 +13,25 @@ type Building = {
 };
 
 const buildingBlueprints: Building[] = [
-  { name: "lecture-hall", width: "8%", height: "22%", windows: 4, top: "24%", columns: 2, shape: "hall", usage: "academic" },
-  { name: "admin", width: "9%", height: "30%", windows: 8, top: "18%", columns: 3, shape: "block", usage: "academic" },
-  { name: "lab", width: "7%", height: "24%", windows: 4, top: "22%", columns: 2, shape: "flat", usage: "academic" },
-  { name: "dorm-east", width: "12%", height: "48%", windows: 15, top: "8%", columns: 3, shape: "flat", usage: "dorm" },
-  { name: "library", width: "10%", height: "34%", windows: 8, top: "14%", columns: 3, shape: "stepped", usage: "academic" },
-  { name: "apartments", width: "14%", height: "60%", windows: 15, top: "4%", columns: 3, shape: "tower", usage: "apartment" },
-  { name: "student-center", width: "10%", height: "27%", windows: 7, top: "20%", columns: 3, shape: "block", usage: "student-center" },
-  { name: "science", width: "9%", height: "32%", windows: 8, top: "16%", columns: 3, shape: "flat", usage: "academic" },
-  { name: "dorm-west", width: "11%", height: "44%", windows: 12, top: "10%", columns: 3, shape: "stepped", usage: "dorm" },
-  { name: "arts", width: "8%", height: "26%", windows: 5, top: "22%", columns: 2, shape: "gable", usage: "academic" },
-  { name: "rec", width: "7%", height: "20%", windows: 4, top: "26%", columns: 2, shape: "hall", usage: "academic" },
-  { name: "residence", width: "10%", height: "38%", windows: 12, top: "12%", columns: 3, shape: "block", usage: "dorm" },
-  { name: "classroom", width: "7%", height: "24%", windows: 4, top: "22%", columns: 2, shape: "flat", usage: "academic" },
+  { name: "lecture-hall", width: "6%", height: "22%", windows: 4, top: "24%", columns: 2, shape: "hall", usage: "academic" },
+  { name: "admin", width: "7%", height: "30%", windows: 8, top: "18%", columns: 3, shape: "block", usage: "academic" },
+  { name: "lab", width: "6%", height: "24%", windows: 4, top: "22%", columns: 2, shape: "flat", usage: "academic" },
+  { name: "annex", width: "5%", height: "18%", windows: 3, top: "28%", columns: 2, shape: "flat", usage: "academic" },
+  { name: "dorm-east", width: "9%", height: "48%", windows: 15, top: "8%", columns: 3, shape: "flat", usage: "dorm" },
+  { name: "library", width: "8%", height: "34%", windows: 8, top: "14%", columns: 3, shape: "stepped", usage: "academic" },
+  { name: "apartments", width: "10%", height: "60%", windows: 15, top: "4%", columns: 3, shape: "tower", usage: "apartment" },
+  { name: "student-center", width: "8%", height: "27%", windows: 7, top: "20%", columns: 3, shape: "block", usage: "student-center" },
+  { name: "science", width: "7%", height: "32%", windows: 8, top: "16%", columns: 3, shape: "flat", usage: "academic" },
+  { name: "gym", width: "6%", height: "20%", windows: 4, top: "26%", columns: 2, shape: "hall", usage: "student-center" },
+  { name: "dorm-west", width: "8%", height: "54%", windows: 12, top: "20%", columns: 3, shape: "block", usage: "dorm" },
+  { name: "arts", width: "6%", height: "26%", windows: 5, top: "22%", columns: 2, shape: "gable", usage: "academic" },
+  { name: "rec", width: "6%", height: "20%", windows: 4, top: "26%", columns: 2, shape: "hall", usage: "academic" },
+  { name: "residence", width: "8%", height: "38%", windows: 0, top: "12%", columns: 2, shape: "block", usage: "dorm" },
+  { name: "classroom", width: "6%", height: "24%", windows: 4, top: "22%", columns: 2, shape: "flat", usage: "academic" },
+  { name: "chapel", width: "6%", height: "29%", windows: 5, top: "18%", columns: 2, shape: "gable", usage: "academic" },
+  { name: "dorm-south", width: "8%", height: "40%", windows: 12, top: "12%", columns: 3, shape: "flat", usage: "dorm" },
+  { name: "tower-annex", width: "7%", height: "52%", windows: 12, top: "6%", columns: 3, shape: "tower", usage: "apartment" },
+  { name: "commons", width: "7%", height: "23%", windows: 6, top: "22%", columns: 3, shape: "block", usage: "student-center" },
 ];
 
 export default function LeaseLiftBackground({ className }: { className?: string }) {
