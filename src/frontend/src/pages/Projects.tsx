@@ -68,7 +68,7 @@ export default function Projects() {
                 <div className="project-card-header">
                   {project.logo && (
                     <img
-                      className="project-card-logo"
+                      className={`project-card-logo${project.name === "Datago" ? " project-card-logo--mono" : ""}`}
                       src={project.logo}
                       alt={project.logo}
                     />

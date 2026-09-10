@@ -1,0 +1,19 @@
+.datago-bg {
+  overflow: hidden;
+}
+
+/* DriftWall ships tuned for cover-fit photos on a near-black tile — override
+   both for transparent-background company logo images on a project card. */
+.datago-bg__drift .drift-wall__inner {
+  background: var(--tan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.datago-bg__drift .drift-wall__tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

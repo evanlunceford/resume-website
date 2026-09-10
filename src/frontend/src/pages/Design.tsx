@@ -130,7 +130,7 @@ const packages: PackageTier[] = [
         label: "Real-time Analytics Dashboards",
       },
     ],
-    exampleProjectName: "SCOUT",
+    exampleProjectName: "Datago",
     testimonial: {
       name: "Brandon Clarke",
       title: "Entrepreneur, Startup AZ",

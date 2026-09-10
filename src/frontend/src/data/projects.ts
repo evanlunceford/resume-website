@@ -1,9 +1,9 @@
 import React from "react";
 import AdStrategiesBackground from "../components/projects/AdStrategiesBackground";
 import ConversionAuditBackground from "../components/projects/ConversionAuditBackground";
+import DatagoBackground from "../components/projects/DatagoBackground";
 import LeaseLiftBackground from "../components/projects/LeaseLiftBackground";
 import MrCassetteBackground from "../components/projects/MrCassetteBackground";
-import ScoutBackground from "../components/projects/ScoutBackground";
 
 export type Project = {
   id: number;
@@ -32,32 +32,30 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 1,
-    name: 'SCOUT',
+    name: 'Datago',
     skills: ['python', 'fastapi', 'react', 'javascript', 'postgres', 'gcs', 'docker', 'github', 'qdrant', 'firebase', 'css', 'sql'],
     featured: true,
-    background: ScoutBackground,
-    font: "'Inter', sans-serif",
-    fontWeight: "600",
-    logo: "/scout-horizontal.png",
+    background: DatagoBackground,
+    logo: "/datago.png",
     logoOnly: true,
     hue: 150,
-    shortDescription: "Internal workforce management platform for students, workers, and employers.",
-    screenshotDirectory: "/project-screenshots/scout",
+    shortDescription: "Workforce management platform for students, district, and employers.",
+    screenshotDirectory: "/project-screenshots/datago",
     screenshots: [
-      { title: "Home Page", caption: "An overview of a student/worker's portfolio.", filename: "01-home-page.png"},
-      { title: "Admin Panel", caption: "Placeholder for internal metrics and workforce reporting.", filename: "02-manage-users.png"},
-      { title: "Resume Assessment", caption: "Adds skills, projects, certificates, and work experience to your portfolio.", filename: "03-resume-assessment.png" },
-      { title: "Cohort Analysis", caption: "View strengths and weaknesses in your company's skillset.", filename: "04-cohort-analysis.png" },
-      { title: "Login Screen", caption: "", filename: "05-login-screen.png" }
+      { title: "Home Dashboard", caption: "A worker's personalized dashboard, showing top-matched companies and an overall market readiness score.", filename: "01-home-dashboard.png" },
+      { title: "Choose Your Persona", caption: "Workers pick the career archetype that best matches their goals to personalize recommendations.", filename: "02-choose-persona.png" },
+      { title: "Market Overview", caption: "Median salary, skill coverage, hiring trend, and ranked job recommendations for the worker's field.", filename: "03-market-overview.png" },
+      { title: "Job Fit Breakdown", caption: "A per-role match score broken down by capabilities, tools, tasks, certifications, education, and experience.", filename: "04-job-fit-detail.png" },
+      { title: "Company Fit & Skills", caption: "A company-level fit score alongside the top skills and education employers there look for.", filename: "05-company-fit.png" }
     ],
-    link: { type: "public", href: "https://scoutworkforce.com" },
+    link: { type: "public", href: "https://datago-admin-517517437882.us-central1.run.app/#portfolio-builder" },
     features: [
       "Proactive student/worker career mapping to opportunities they are interested in.",
       "Analysis and visualization of a group of employees' skillset.",
       "Resume analysis and recommendation engine."
     ],
-    estimatedLinesOfCode: 30000,
-    startDate: "2024-08",
+    estimatedLinesOfCode: 100000,
+    startDate: "2026-04",
     endDate: "Present",
   },
   {
@@ -101,9 +99,9 @@ export const projects: Project[] = [
       { title: "KPI Breakdown", caption: "Public screenshots coming soon." }
     ],
     features: [
-      "Full control over user and client management.",
-      "Data mapping to generalize statistics across several job boards.",
-      "Analytical insights into performance and visibility for the future."
+      "Create a complete portfolio in seconds.",
+      "Match to roles that actually fit your skillset.",
+      "Receive deep analytics on every job as it pertains to your portfolio."
     ],
     link: { type: "private" },
     estimatedLinesOfCode: 30000,
@@ -184,6 +182,31 @@ export const projects: Project[] = [
     estimatedLinesOfCode: 5000,
     startDate: "2026-03",
     endDate: "2026-04",
+  },
+  {
+    id: 10,
+    name: 'SCOUT',
+    skills: ['python', 'fastapi', 'react', 'javascript', 'postgres', 'gcs', 'docker', 'github', 'qdrant', 'firebase', 'css', 'sql'],
+    featured: false,
+    logoOnly: true,
+    shortDescription: "Internal workforce management platform for students, workers, and employers.",
+    screenshotDirectory: "/project-screenshots/scout",
+    screenshots: [
+      { title: "Home Page", caption: "An overview of a student/worker's portfolio.", filename: "01-home-page.png"},
+      { title: "Admin Panel", caption: "Placeholder for internal metrics and workforce reporting.", filename: "02-manage-users.png"},
+      { title: "Resume Assessment", caption: "Adds skills, projects, certificates, and work experience to your portfolio.", filename: "03-resume-assessment.png" },
+      { title: "Cohort Analysis", caption: "View strengths and weaknesses in your company's skillset.", filename: "04-cohort-analysis.png" },
+      { title: "Login Screen", caption: "", filename: "05-login-screen.png" }
+    ],
+    link: { type: "public", href: "https://scoutworkforce.com" },
+    features: [
+      "Proactive student/worker career mapping to opportunities they are interested in.",
+      "Analysis and visualization of a group of employees' skillset.",
+      "Resume analysis and recommendation engine."
+    ],
+    estimatedLinesOfCode: 30000,
+    startDate: "2024-08",
+    endDate: "Present",
   },
   {
     id: 6,
