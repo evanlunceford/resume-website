@@ -48,7 +48,7 @@ export const projects: Project[] = [
       { title: "Job Fit Breakdown", caption: "A per-role match score broken down by capabilities, tools, tasks, certifications, education, and experience.", filename: "04-job-fit-detail.png" },
       { title: "Company Fit & Skills", caption: "A company-level fit score alongside the top skills and education employers there look for.", filename: "05-company-fit.png" }
     ],
-    link: { type: "public", href: "https://datago-admin-517517437882.us-central1.run.app/#portfolio-builder" },
+    link: { type: "public", href: "https://datagoapp.com" },
     features: [
       "Proactive student/worker career mapping to opportunities they are interested in.",
       "Analysis and visualization of a group of employees' skillset.",
