@@ -1,0 +1,6 @@
+.dryft-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: rgb(11, 49, 66);
+}

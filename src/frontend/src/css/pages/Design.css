@@ -9,7 +9,6 @@
 
 .design-hero {
   width: 100%;
-  min-height: calc(100svh - var(--nav-top) - 1.25rem);
   display: flex;
   align-items: stretch;
 }
@@ -891,10 +890,6 @@
   .design-page {
     padding: calc(var(--nav-top) + 1rem) 1rem 4rem;
     gap: 3rem;
-  }
-
-  .design-hero {
-    min-height: calc(100svh - var(--nav-top) - 1rem);
   }
 
   .design-hero__copy,

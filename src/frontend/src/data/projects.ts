@@ -1,9 +1,9 @@
 import React from "react";
-import AdStrategiesBackground from "../components/projects/AdStrategiesBackground";
+import AltoredHealthBackground from "../components/projects/AltoredHealthBackground";
 import ConversionAuditBackground from "../components/projects/ConversionAuditBackground";
 import DatagoBackground from "../components/projects/DatagoBackground";
-import LeaseLiftBackground from "../components/projects/LeaseLiftBackground";
-import MrCassetteBackground from "../components/projects/MrCassetteBackground";
+import DryftBackground from "../components/projects/DryftBackground";
+import ScoutBackground from "../components/projects/ScoutBackground";
 
 export type Project = {
   id: number;
@@ -85,59 +85,87 @@ export const projects: Project[] = [
     endDate: "Present",
   },
   {
-    id: 3,
-    name: 'Ad Strategies Dashboard',
-    skills: ['python', 'fastapi', 'react', 'typescript', 'java', 'spring-boot', 'postgres', 'gcs', 'docker', 'github', 'css', 'sql'],
+    id: 10,
+    name: 'SCOUT',
+    skills: ['python', 'fastapi', 'react', 'javascript', 'postgres', 'gcs', 'docker', 'github', 'qdrant', 'firebase', 'css', 'sql'],
     featured: true,
-    background: AdStrategiesBackground,
-    logoOnly: false,
-    shortDescription: "An enterprise analytics dashboard for campaign performance and marketing health.",
-    screenshotDirectory: "/images/projects/ad-strategies",
+    background: ScoutBackground,
+    logo: "/scout-horizontal.png",
+    logoOnly: true,
+    shortDescription: "Internal workforce management platform for students, workers, and employers.",
+    screenshotDirectory: "/project-screenshots/scout",
     screenshots: [
-      { title: "Campaign Overview", caption: "Public screenshots coming soon." },
-      { title: "Performance Trends", caption: "Public screenshots coming soon." },
-      { title: "KPI Breakdown", caption: "Public screenshots coming soon." }
+      { title: "Home Page", caption: "An overview of a student/worker's portfolio.", filename: "01-home-page.png"},
+      { title: "Admin Panel", caption: "Placeholder for internal metrics and workforce reporting.", filename: "02-manage-users.png"},
+      { title: "Resume Assessment", caption: "Adds skills, projects, certificates, and work experience to your portfolio.", filename: "03-resume-assessment.png" },
+      { title: "Cohort Analysis", caption: "View strengths and weaknesses in your company's skillset.", filename: "04-cohort-analysis.png" },
+      { title: "Login Screen", caption: "", filename: "05-login-screen.png" }
     ],
+    link: { type: "public", href: "https://scoutworkforce.com" },
     features: [
-      "Create a complete portfolio in seconds.",
-      "Match to roles that actually fit your skillset.",
-      "Receive deep analytics on every job as it pertains to your portfolio."
+      "Proactive student/worker career mapping to opportunities they are interested in.",
+      "Analysis and visualization of a group of employees' skillset.",
+      "Resume analysis and recommendation engine."
     ],
-    link: { type: "private" },
     estimatedLinesOfCode: 30000,
-    startDate: "2025-05",
+    startDate: "2024-08",
     endDate: "Present",
   },
   {
-    id: 4,
-    name: 'Mr. Cassette',
-    skills: ['javascript', 'react', 'css', 'github', 'python', 'fastapi', 'qdrant', 'docker'],
+    id: 11,
+    name: 'Altored Health',
+    skills: ['python', 'react', 'typescript', 'postgres', 'docker', 'github', 'css', 'sql'],
     featured: true,
-    background: MrCassetteBackground,
-    logoOnly: false,
-    shortDescription: "Created for the 2026 Sandbox Hackathon: A website that recommends songs based on a user-provided PDF file.",
-    screenshotDirectory: "/project-screenshots/mr-cassette",
+    background: AltoredHealthBackground,
+    logo: "/altored-health.png",
+    logoOnly: true,
+    shortDescription: "Healthcare price search that shows what a procedure actually costs at each facility.",
+    screenshotDirectory: "/project-screenshots/altored-health",
     screenshots: [
-      { title: "Cassette Player: Waiting for file", caption: "", filename: "01-home-page.png" },
-      { title: "Cassette Player: Ready to recommend", caption: "", filename: "02-home-file.png" },
-      { title: "Recommendations", caption: "", filename: "03-recommended-songs.png" }
+      { title: "Procedure Search", caption: "Public screenshots coming soon." },
+      { title: "Facility Prices", caption: "Public screenshots coming soon." },
+      { title: "Watchlist", caption: "Public screenshots coming soon." }
     ],
     features: [
-      "10,000 songs in the database to recommend.",
-      "Uses cosine similarity on vector embeddings to recommend instead of an LLM.",
-      "Open source: https://github.com/evanlunceford/Mr-Cassette"
+      "Search procedures and compare prices across facilities and insurance plans.",
+      "Guided symptom questions that match people to the right service.",
+      "Watchlist that tracks price changes on saved procedures."
     ],
-    link: { type: "public", href: "https://mr-cassette-626975713933.us-central1.run.app/" },
-    estimatedLinesOfCode: 4000,
-    startDate: "2025-02",
-    endDate: "2025-03",
+    link: { type: "public", href: "https://altoredhealth.com" },
+    estimatedLinesOfCode: 115000,
+    startDate: "2026-08",
+    endDate: "2026-11",
+  },
+  {
+    id: 12,
+    name: 'Dryft',
+    skills: ['python', 'fastapi', 'react', 'typescript', 'postgres', 'gcs', 'docker', 'github', 'css', 'sql'],
+    featured: true,
+    background: DryftBackground,
+    logo: "/dryft.svg",
+    logoOnly: true,
+    shortDescription: "Gets renters out of their lease early by finding someone to take it over.",
+    screenshotDirectory: "/project-screenshots/dryft",
+    screenshots: [
+      { title: "Lease Takeover Quote", caption: "Public screenshots coming soon." },
+      { title: "Listing Marketplace", caption: "Public screenshots coming soon." },
+      { title: "Admin CRM", caption: "Public screenshots coming soon." }
+    ],
+    features: [
+      "Instant lease takeover quotes priced per apartment complex, paid in full or in installments.",
+      "Automated agents that find tenants in local Facebook groups and post listings for each customer.",
+      "Internal CRM and analytics that tie Google and Meta ad spend to each customer."
+    ],
+    link: { type: "public", href: "https://dryft.rent" },
+    estimatedLinesOfCode: 100000,
+    startDate: "2025-09",
+    endDate: "Present",
   },
   {
     id: 2,
     name: 'LeaseLift',
     skills: ['python', 'fastapi', 'react', 'javascript', 'postgres', 'gcs', 'docker', 'github', 'css', 'sql'],
-    featured: true,
-    background: LeaseLiftBackground,
+    featured: false,
     logoOnly: true,
     logo: "/leaselift.png",
     shortDescription: "A website that streamlines the relet process for both students and property managers.",
@@ -182,31 +210,6 @@ export const projects: Project[] = [
     estimatedLinesOfCode: 5000,
     startDate: "2026-03",
     endDate: "2026-04",
-  },
-  {
-    id: 10,
-    name: 'SCOUT',
-    skills: ['python', 'fastapi', 'react', 'javascript', 'postgres', 'gcs', 'docker', 'github', 'qdrant', 'firebase', 'css', 'sql'],
-    featured: false,
-    logoOnly: true,
-    shortDescription: "Internal workforce management platform for students, workers, and employers.",
-    screenshotDirectory: "/project-screenshots/scout",
-    screenshots: [
-      { title: "Home Page", caption: "An overview of a student/worker's portfolio.", filename: "01-home-page.png"},
-      { title: "Admin Panel", caption: "Placeholder for internal metrics and workforce reporting.", filename: "02-manage-users.png"},
-      { title: "Resume Assessment", caption: "Adds skills, projects, certificates, and work experience to your portfolio.", filename: "03-resume-assessment.png" },
-      { title: "Cohort Analysis", caption: "View strengths and weaknesses in your company's skillset.", filename: "04-cohort-analysis.png" },
-      { title: "Login Screen", caption: "", filename: "05-login-screen.png" }
-    ],
-    link: { type: "public", href: "https://scoutworkforce.com" },
-    features: [
-      "Proactive student/worker career mapping to opportunities they are interested in.",
-      "Analysis and visualization of a group of employees' skillset.",
-      "Resume analysis and recommendation engine."
-    ],
-    estimatedLinesOfCode: 30000,
-    startDate: "2024-08",
-    endDate: "Present",
   },
   {
     id: 6,
