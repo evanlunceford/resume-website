@@ -122,9 +122,11 @@ export const projects: Project[] = [
     shortDescription: "Healthcare price search that shows what a procedure actually costs at each facility.",
     screenshotDirectory: "/project-screenshots/altored-health",
     screenshots: [
-      { title: "Procedure Search", caption: "Public screenshots coming soon." },
-      { title: "Facility Prices", caption: "Public screenshots coming soon." },
-      { title: "Watchlist", caption: "Public screenshots coming soon." }
+      { title: "Dashboard", caption: "Watched prices, recent searches, and facilities near you.", filename: "01-dashboard.png" },
+      { title: "Procedure Search", caption: "Plain-language search across thousands of procedures.", filename: "02-procedure-search.png" },
+      { title: "Procedure Prices", caption: "Every facility's price for a procedure, on a map.", filename: "03-procedure-prices.png" },
+      { title: "Facility Price", caption: "An estimated self-pay price with what's included.", filename: "04-facility-price.png" },
+      { title: "Facilities", caption: "Search and filter facilities by type, distance, and whether they publish prices.", filename: "05-facilities.png" }
     ],
     features: [
       "Search procedures and compare prices across facilities and insurance plans.",
@@ -147,9 +149,11 @@ export const projects: Project[] = [
     shortDescription: "Gets renters out of their lease early by finding someone to take it over.",
     screenshotDirectory: "/project-screenshots/dryft",
     screenshots: [
-      { title: "Lease Takeover Quote", caption: "Public screenshots coming soon." },
-      { title: "Listing Marketplace", caption: "Public screenshots coming soon." },
-      { title: "Admin CRM", caption: "Public screenshots coming soon." }
+      { title: "Home Page", caption: "One place for students leaving a lease, students looking for one, and summer interns.", filename: "01-home-page.png" },
+      { title: "Relet Your Lease", caption: "Search your apartment complex to get an instant takeover quote.", filename: "02-relet-your-lease.png" },
+      { title: "Marketplace", caption: "Browse available lease takeovers by city.", filename: "03-marketplace.png" },
+      { title: "Listing Page", caption: "Photos, lease dates, a map, and nearby places for each lease.", filename: "04-listing-page.png" },
+      { title: "Intern Housing", caption: "Furnished summer housing for interns, in the same building as their team.", filename: "05-intern-housing.png" }
     ],
     features: [
       "Instant lease takeover quotes priced per apartment complex, paid in full or in installments.",
